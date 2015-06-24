@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: PCM Workflow Jobs and Configurations
 Bundle-SymbolicName: org.palladiosimulator.analyzer.workflow;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Vendor: sdq.ipd.kit.edu
+Bundle-Vendor: palladiosimulator.org
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.palladiosimulator.pcm;bundle-version="4.0.0",
  de.uka.ipd.sdq.workflow;bundle-version="2.0.1",
