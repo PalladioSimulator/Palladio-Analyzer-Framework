@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.palladiosimulator.analyzer.buckminster"
+      label="Palladio Analyzer Framework - Buckminster Feature"
+      version="1.0.0"
+      license-feature="org.palladiosimulator.license"
+      license-feature-version="1.0.0">
+
+   <description url="https://palladiosimulator.org">
+      Common features for Palladio analyzers, e.g., workflow integration and completion support.
+   </description>
+
+   <includes
+         id="org.palladiosimulator.analyzer.feature"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.palladiosimulator.analyzer.tests"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>
