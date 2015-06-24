@@ -14,7 +14,7 @@
     <package 
        uri = "http://palladiosimulator.org/PCM/Completions/1.0" 
        class = "org.palladiosimulator.pcm.completions.CompletionsPackage"
-       genModel = "model/Completions.genmodel" /> 
+       genModel = "model/completions.genmodel" /> 
   </extension>
 
 null
