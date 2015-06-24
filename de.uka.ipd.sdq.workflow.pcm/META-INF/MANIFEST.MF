@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: PCM Workflow Jobs and Configurations
-Bundle-SymbolicName: de.uka.ipd.sdq.workflow.pcm;singleton:=true
+Bundle-SymbolicName: org.palladiosimulator.analyzer.workflow;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: sdq.ipd.kit.edu
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
@@ -16,9 +16,9 @@ Require-Bundle: org.palladiosimulator.pcm;bundle-version="4.0.0",
  org.eclipse.debug.core;visibility:=reexport,
  de.uka.ipd.sdq.errorhandling;bundle-version="1.0.0",
  org.eclipse.debug.ui;bundle-version="3.5.1";visibility:=reexport
-Export-Package: de.uka.ipd.sdq.workflow.pcm,
- de.uka.ipd.sdq.workflow.pcm.blackboard,
- de.uka.ipd.sdq.workflow.pcm.configurations,
- de.uka.ipd.sdq.workflow.pcm.jobs,
- de.uka.ipd.sdq.workflow.pcm.runconfig
+Export-Package: org.palladiosimulator.analyzer.workflow,
+ org.palladiosimulator.analyzer.workflow.blackboard,
+ org.palladiosimulator.analyzer.workflow.configurations,
+ org.palladiosimulator.analyzer.workflow.jobs,
+ org.palladiosimulator.analyzer.workflow.runconfig
 Bundle-ActivationPolicy: lazy
