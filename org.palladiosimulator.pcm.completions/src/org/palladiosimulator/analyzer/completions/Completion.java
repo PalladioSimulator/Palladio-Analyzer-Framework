@@ -1,7 +1,7 @@
 /**
  * Copyright SDQ, IPD, U Karlsruhe, 2007
  */
-package org.palladiosimulator.pcm.completions;
+package org.palladiosimulator.analyzer.completions;
 
 import org.eclipse.emf.ecore.EObject;
 import org.palladiosimulator.pcm.core.entity.ComposedProvidingRequiringEntity;
@@ -12,7 +12,7 @@ import org.palladiosimulator.pcm.repository.ImplementationComponentType;
  * end-user-doc -->
  *
  *
- * @see org.palladiosimulator.pcm.completions.CompletionsPackage#getCompletion()
+ * @see org.palladiosimulator.analyzer.completions.CompletionsPackage#getCompletion()
  * @model
  * @generated
  */

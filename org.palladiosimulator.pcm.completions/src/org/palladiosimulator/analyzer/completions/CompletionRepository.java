@@ -1,7 +1,7 @@
 /**
  * Copyright SDQ, IPD, U Karlsruhe, 2007
  */
-package org.palladiosimulator.pcm.completions;
+package org.palladiosimulator.analyzer.completions;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
@@ -15,11 +15,11 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  * <li>
- * {@link org.palladiosimulator.pcm.completions.CompletionRepository#getCompletions_CompletionRepository
+ * {@link org.palladiosimulator.analyzer.completions.CompletionRepository#getCompletions_CompletionRepository
  * <em>Completions Completion Repository</em>}</li>
  * </ul>
  *
- * @see org.palladiosimulator.pcm.completions.CompletionsPackage#getCompletionRepository()
+ * @see org.palladiosimulator.analyzer.completions.CompletionsPackage#getCompletionRepository()
  * @model
  * @generated
  */
@@ -27,16 +27,16 @@ public interface CompletionRepository extends EObject {
 
     /**
      * Returns the value of the '<em><b>Completions Completion Repository</b></em>' reference list.
-     * The list contents are of type {@link org.palladiosimulator.pcm.completions.Completion}. <!--
-     * begin-user-doc -->
+     * The list contents are of type {@link org.palladiosimulator.analyzer.completions.Completion}.
+     * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Completions Completion Repository</em>' reference list isn't
      * clear, there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '<em>Completions Completion Repository</em>' reference list.
-     * @see org.palladiosimulator.pcm.completions.CompletionsPackage#getCompletionRepository_Completions_CompletionRepository()
+     * @see org.palladiosimulator.analyzer.completions.CompletionsPackage#getCompletionRepository_Completions_CompletionRepository()
      * @model ordered="false"
      * @generated
      */

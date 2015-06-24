@@ -1,7 +1,7 @@
 /**
  * Copyright SDQ, IPD, U Karlsruhe, 2007
  */
-package org.palladiosimulator.pcm.completions;
+package org.palladiosimulator.analyzer.completions;
 
 import org.eclipse.emf.ecore.EObject;
 import org.palladiosimulator.pcm.seff.ExternalCallAction;
@@ -11,7 +11,7 @@ import org.palladiosimulator.pcm.seff.ExternalCallAction;
  * <em><b>Delegating External Call Action</b></em>'. <!-- end-user-doc -->
  *
  *
- * @see org.palladiosimulator.pcm.completions.CompletionsPackage#getDelegatingExternalCallAction()
+ * @see org.palladiosimulator.analyzer.completions.CompletionsPackage#getDelegatingExternalCallAction()
  * @model
  * @generated
  */

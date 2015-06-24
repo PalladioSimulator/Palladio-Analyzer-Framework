@@ -1,30 +1,30 @@
 /**
  * Copyright SDQ, IPD, U Karlsruhe, 2007
  */
-package org.palladiosimulator.pcm.completions.impl;
+package org.palladiosimulator.analyzer.completions.impl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.palladiosimulator.pcm.completions.Completion;
-import org.palladiosimulator.pcm.completions.CompletionRepository;
-import org.palladiosimulator.pcm.completions.CompletionsFactory;
-import org.palladiosimulator.pcm.completions.CompletionsPackage;
-import org.palladiosimulator.pcm.completions.DelegatingExternalCallAction;
-import org.palladiosimulator.pcm.completions.NetworkDemandParametricResourceDemand;
+import org.palladiosimulator.analyzer.completions.Completion;
+import org.palladiosimulator.analyzer.completions.CompletionRepository;
+import org.palladiosimulator.analyzer.completions.CompletionsFactory;
+import org.palladiosimulator.analyzer.completions.CompletionsPackage;
+import org.palladiosimulator.analyzer.completions.DelegatingExternalCallAction;
+import org.palladiosimulator.analyzer.completions.NetworkDemandParametricResourceDemand;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
 public class CompletionsFactoryImpl extends EFactoryImpl implements CompletionsFactory {
 
     /**
      * Creates the default factory implementation. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public static CompletionsFactory init() {
@@ -42,7 +42,7 @@ public class CompletionsFactoryImpl extends EFactoryImpl implements CompletionsF
 
     /**
      * Creates an instance of the factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public CompletionsFactoryImpl() {
@@ -51,7 +51,7 @@ public class CompletionsFactoryImpl extends EFactoryImpl implements CompletionsF
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -72,7 +72,7 @@ public class CompletionsFactoryImpl extends EFactoryImpl implements CompletionsF
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -83,7 +83,7 @@ public class CompletionsFactoryImpl extends EFactoryImpl implements CompletionsF
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -94,7 +94,7 @@ public class CompletionsFactoryImpl extends EFactoryImpl implements CompletionsF
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -105,7 +105,7 @@ public class CompletionsFactoryImpl extends EFactoryImpl implements CompletionsF
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -116,7 +116,7 @@ public class CompletionsFactoryImpl extends EFactoryImpl implements CompletionsF
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -126,7 +126,7 @@ public class CompletionsFactoryImpl extends EFactoryImpl implements CompletionsF
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @deprecated
      * @generated
      */

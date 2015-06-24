@@ -1,7 +1,7 @@
 /**
  * Copyright SDQ, IPD, U Karlsruhe, 2007
  */
-package org.palladiosimulator.pcm.completions.impl;
+package org.palladiosimulator.analyzer.completions.impl;
 
 import java.util.Collection;
 
@@ -9,9 +9,9 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.palladiosimulator.pcm.completions.Completion;
-import org.palladiosimulator.pcm.completions.CompletionRepository;
-import org.palladiosimulator.pcm.completions.CompletionsPackage;
+import org.palladiosimulator.analyzer.completions.Completion;
+import org.palladiosimulator.analyzer.completions.CompletionRepository;
+import org.palladiosimulator.analyzer.completions.CompletionsPackage;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -21,7 +21,7 @@ import org.palladiosimulator.pcm.completions.CompletionsPackage;
  * </p>
  * <ul>
  * <li>
- * {@link org.palladiosimulator.pcm.completions.impl.CompletionRepositoryImpl#getCompletions_CompletionRepository
+ * {@link org.palladiosimulator.analyzer.completions.impl.CompletionRepositoryImpl#getCompletions_CompletionRepository
  * <em>Completions Completion Repository</em>}</li>
  * </ul>
  *
@@ -33,7 +33,7 @@ public class CompletionRepositoryImpl extends EObjectImpl implements CompletionR
      * The cached value of the '{@link #getCompletions_CompletionRepository()
      * <em>Completions Completion Repository</em>}' reference list. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @see #getCompletions_CompletionRepository()
      * @generated
      * @ordered
@@ -42,7 +42,7 @@ public class CompletionRepositoryImpl extends EObjectImpl implements CompletionR
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected CompletionRepositoryImpl() {
@@ -51,7 +51,7 @@ public class CompletionRepositoryImpl extends EObjectImpl implements CompletionR
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -61,7 +61,7 @@ public class CompletionRepositoryImpl extends EObjectImpl implements CompletionR
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -75,7 +75,7 @@ public class CompletionRepositoryImpl extends EObjectImpl implements CompletionR
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -89,7 +89,7 @@ public class CompletionRepositoryImpl extends EObjectImpl implements CompletionR
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @SuppressWarnings("unchecked")
@@ -106,7 +106,7 @@ public class CompletionRepositoryImpl extends EObjectImpl implements CompletionR
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -121,7 +121,7 @@ public class CompletionRepositoryImpl extends EObjectImpl implements CompletionR
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

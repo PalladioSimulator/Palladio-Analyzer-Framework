@@ -1,7 +1,7 @@
 /**
  * Copyright SDQ, IPD, U Karlsruhe, 2007
  */
-package org.palladiosimulator.pcm.completions.provider;
+package org.palladiosimulator.analyzer.completions.provider;
 
 import java.util.Collection;
 import java.util.List;
@@ -9,34 +9,34 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.ResourceLocator;
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.palladiosimulator.pcm.completions.DelegatingExternalCallAction;
-import org.palladiosimulator.pcm.seff.SeffPackage;
-import org.palladiosimulator.pcm.seff.provider.ExternalCallActionItemProvider;
+import org.palladiosimulator.analyzer.completions.CompletionsPackage;
+import org.palladiosimulator.pcm.seff.seff_performance.provider.ParametricResourceDemandItemProvider;
 
 /**
  * This is the item provider adapter for a
- * {@link org.palladiosimulator.pcm.completions.DelegatingExternalCallAction} object. <!--
- * begin-user-doc --> <!-- end-user-doc -->
- *
+ * {@link org.palladiosimulator.analyzer.completions.NetworkDemandParametricResourceDemand} object.
+ * <!-- begin-user-doc --> <!-- end-user-doc -->
+ * 
  * @generated
  */
-public class DelegatingExternalCallActionItemProvider extends ExternalCallActionItemProvider {
+public class NetworkDemandParametricResourceDemandItemProvider extends ParametricResourceDemandItemProvider {
 
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
-    public DelegatingExternalCallActionItemProvider(final AdapterFactory adapterFactory) {
+    public NetworkDemandParametricResourceDemandItemProvider(final AdapterFactory adapterFactory) {
         super(adapterFactory);
     }
 
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -44,38 +44,58 @@ public class DelegatingExternalCallActionItemProvider extends ExternalCallAction
         if (this.itemPropertyDescriptors == null) {
             super.getPropertyDescriptors(object);
 
+            this.addRequiredCommunicationLinkResource_ParametricResourceDemandPropertyDescriptor(object);
         }
         return this.itemPropertyDescriptors;
     }
 
     /**
-     * This returns DelegatingExternalCallAction.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * This adds a property descriptor for the Required Communication Link Resource Parametric
+     * Resource Demand feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
+     * @generated
+     */
+    protected void addRequiredCommunicationLinkResource_ParametricResourceDemandPropertyDescriptor(
+            final Object object) {
+        this.itemPropertyDescriptors.add(this.createItemPropertyDescriptor(
+                ((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(), this.getResourceLocator(),
+                this.getString(
+                        "_UI_NetworkDemandParametricResourceDemand_requiredCommunicationLinkResource_ParametricResourceDemand_feature"),
+                this.getString("_UI_PropertyDescriptor_description",
+                        "_UI_NetworkDemandParametricResourceDemand_requiredCommunicationLinkResource_ParametricResourceDemand_feature",
+                        "_UI_NetworkDemandParametricResourceDemand_type"),
+                CompletionsPackage.Literals.NETWORK_DEMAND_PARAMETRIC_RESOURCE_DEMAND__REQUIRED_COMMUNICATION_LINK_RESOURCE_PARAMETRIC_RESOURCE_DEMAND,
+                true, false, true, null, null, null));
+    }
+
+    /**
+     * This returns NetworkDemandParametricResourceDemand.gif. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     * 
      * @generated
      */
     @Override
     public Object getImage(final Object object) {
-        return this.overlayImage(object, this.getResourceLocator().getImage("full/obj16/DelegatingExternalCallAction"));
+        return this.overlayImage(object,
+                this.getResourceLocator().getImage("full/obj16/NetworkDemandParametricResourceDemand"));
     }
 
     /**
      * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc
      * -->
-     *
+     * 
      * @generated
      */
     @Override
     public String getText(final Object object) {
-        final String label = ((DelegatingExternalCallAction) object).getId();
-        return label == null || label.length() == 0 ? this.getString("_UI_DelegatingExternalCallAction_type")
-                : this.getString("_UI_DelegatingExternalCallAction_type") + " " + label;
+        return this.getString("_UI_NetworkDemandParametricResourceDemand_type");
     }
 
     /**
      * This handles model notifications by calling {@link #updateChildren} to update any cached
      * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -87,7 +107,7 @@ public class DelegatingExternalCallActionItemProvider extends ExternalCallAction
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
      * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -96,31 +116,9 @@ public class DelegatingExternalCallActionItemProvider extends ExternalCallAction
     }
 
     /**
-     * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public String getCreateChildText(final Object owner, final Object feature, final Object child,
-            final Collection<?> selection) {
-        final Object childFeature = feature;
-        final Object childObject = child;
-
-        final boolean qualify = childFeature == SeffPackage.Literals.CALL_ACTION__INPUT_VARIABLE_USAGES_CALL_ACTION
-                || childFeature == SeffPackage.Literals.CALL_RETURN_ACTION__RETURN_VARIABLE_USAGE_CALL_RETURN_ACTION;
-
-        if (qualify) {
-            return this.getString("_UI_CreateChild_text2", new Object[] { this.getTypeText(childObject),
-                    this.getFeatureText(childFeature), this.getTypeText(owner) });
-        }
-        return super.getCreateChildText(owner, feature, child, selection);
-    }
-
-    /**
      * Return the resource locator for this item provider's resources. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

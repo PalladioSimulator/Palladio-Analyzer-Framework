@@ -1,7 +1,7 @@
 /**
  * Copyright SDQ, IPD, U Karlsruhe, 2007
  */
-package org.palladiosimulator.pcm.completions;
+package org.palladiosimulator.analyzer.completions;
 
 import org.eclipse.emf.ecore.EObject;
 import org.palladiosimulator.pcm.resourcetype.CommunicationLinkResourceType;
@@ -16,11 +16,11 @@ import org.palladiosimulator.pcm.seff.seff_performance.ParametricResourceDemand;
  * </p>
  * <ul>
  * <li>
- * {@link org.palladiosimulator.pcm.completions.NetworkDemandParametricResourceDemand#getRequiredCommunicationLinkResource_ParametricResourceDemand
+ * {@link org.palladiosimulator.analyzer.completions.NetworkDemandParametricResourceDemand#getRequiredCommunicationLinkResource_ParametricResourceDemand
  * <em>Required Communication Link Resource Parametric Resource Demand</em>}</li>
  * </ul>
  *
- * @see org.palladiosimulator.pcm.completions.CompletionsPackage#getNetworkDemandParametricResourceDemand()
+ * @see org.palladiosimulator.analyzer.completions.CompletionsPackage#getNetworkDemandParametricResourceDemand()
  * @model
  * @generated
  */
@@ -36,11 +36,11 @@ public interface NetworkDemandParametricResourceDemand extends EObject, Parametr
      * clear, there really should be more of a description here...
      * </p>
      * <!-- end-user-doc -->
-     *
+     * 
      * @return the value of the '
      *         <em>Required Communication Link Resource Parametric Resource Demand</em>' reference.
      * @see #setRequiredCommunicationLinkResource_ParametricResourceDemand(CommunicationLinkResourceType)
-     * @see org.palladiosimulator.pcm.completions.CompletionsPackage#getNetworkDemandParametricResourceDemand_RequiredCommunicationLinkResource_ParametricResourceDemand()
+     * @see org.palladiosimulator.analyzer.completions.CompletionsPackage#getNetworkDemandParametricResourceDemand_RequiredCommunicationLinkResource_ParametricResourceDemand()
      * @model required="true" ordered="false"
      * @generated
      */
@@ -48,10 +48,10 @@ public interface NetworkDemandParametricResourceDemand extends EObject, Parametr
 
     /**
      * Sets the value of the '
-     * {@link org.palladiosimulator.pcm.completions.NetworkDemandParametricResourceDemand#getRequiredCommunicationLinkResource_ParametricResourceDemand
+     * {@link org.palladiosimulator.analyzer.completions.NetworkDemandParametricResourceDemand#getRequiredCommunicationLinkResource_ParametricResourceDemand
      * <em>Required Communication Link Resource Parametric Resource Demand</em>}' reference. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param value
      *            the new value of the '
      *            <em>Required Communication Link Resource Parametric Resource Demand</em>'

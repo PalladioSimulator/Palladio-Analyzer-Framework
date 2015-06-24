@@ -1,15 +1,15 @@
 /**
  * Copyright SDQ, IPD, U Karlsruhe, 2007
  */
-package org.palladiosimulator.pcm.completions.impl;
+package org.palladiosimulator.analyzer.completions.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.palladiosimulator.pcm.completions.CompletionsPackage;
-import org.palladiosimulator.pcm.completions.NetworkDemandParametricResourceDemand;
+import org.palladiosimulator.analyzer.completions.CompletionsPackage;
+import org.palladiosimulator.analyzer.completions.NetworkDemandParametricResourceDemand;
 import org.palladiosimulator.pcm.resourcetype.CommunicationLinkResourceType;
 import org.palladiosimulator.pcm.seff.seff_performance.impl.ParametricResourceDemandImpl;
 
@@ -21,7 +21,7 @@ import org.palladiosimulator.pcm.seff.seff_performance.impl.ParametricResourceDe
  * </p>
  * <ul>
  * <li>
- * {@link org.palladiosimulator.pcm.completions.impl.NetworkDemandParametricResourceDemandImpl#getRequiredCommunicationLinkResource_ParametricResourceDemand
+ * {@link org.palladiosimulator.analyzer.completions.impl.NetworkDemandParametricResourceDemandImpl#getRequiredCommunicationLinkResource_ParametricResourceDemand
  * <em>Required Communication Link Resource Parametric Resource Demand</em>}</li>
  * </ul>
  *
@@ -35,7 +35,7 @@ public class NetworkDemandParametricResourceDemandImpl extends ParametricResourc
      * {@link #getRequiredCommunicationLinkResource_ParametricResourceDemand()
      * <em>Required Communication Link Resource Parametric Resource Demand</em>}' reference. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #getRequiredCommunicationLinkResource_ParametricResourceDemand()
      * @generated
      * @ordered
@@ -44,7 +44,7 @@ public class NetworkDemandParametricResourceDemandImpl extends ParametricResourc
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected NetworkDemandParametricResourceDemandImpl() {
@@ -53,7 +53,7 @@ public class NetworkDemandParametricResourceDemandImpl extends ParametricResourc
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -63,7 +63,7 @@ public class NetworkDemandParametricResourceDemandImpl extends ParametricResourc
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -87,7 +87,7 @@ public class NetworkDemandParametricResourceDemandImpl extends ParametricResourc
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public CommunicationLinkResourceType basicGetRequiredCommunicationLinkResource_ParametricResourceDemand() {
@@ -96,7 +96,7 @@ public class NetworkDemandParametricResourceDemandImpl extends ParametricResourc
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -114,7 +114,7 @@ public class NetworkDemandParametricResourceDemandImpl extends ParametricResourc
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -131,7 +131,7 @@ public class NetworkDemandParametricResourceDemandImpl extends ParametricResourc
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -147,7 +147,7 @@ public class NetworkDemandParametricResourceDemandImpl extends ParametricResourc
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -162,7 +162,7 @@ public class NetworkDemandParametricResourceDemandImpl extends ParametricResourc
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

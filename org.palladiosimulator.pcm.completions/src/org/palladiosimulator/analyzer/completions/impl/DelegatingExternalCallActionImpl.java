@@ -1,11 +1,11 @@
 /**
  * Copyright SDQ, IPD, U Karlsruhe, 2007
  */
-package org.palladiosimulator.pcm.completions.impl;
+package org.palladiosimulator.analyzer.completions.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.palladiosimulator.pcm.completions.CompletionsPackage;
-import org.palladiosimulator.pcm.completions.DelegatingExternalCallAction;
+import org.palladiosimulator.analyzer.completions.CompletionsPackage;
+import org.palladiosimulator.analyzer.completions.DelegatingExternalCallAction;
 import org.palladiosimulator.pcm.seff.impl.ExternalCallActionImpl;
 
 /**
@@ -18,7 +18,7 @@ public class DelegatingExternalCallActionImpl extends ExternalCallActionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected DelegatingExternalCallActionImpl() {
@@ -27,7 +27,7 @@ public class DelegatingExternalCallActionImpl extends ExternalCallActionImpl imp
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

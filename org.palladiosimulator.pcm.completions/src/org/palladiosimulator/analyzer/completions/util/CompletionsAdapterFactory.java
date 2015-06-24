@@ -1,17 +1,17 @@
 /**
  * Copyright SDQ, IPD, U Karlsruhe, 2007
  */
-package org.palladiosimulator.pcm.completions.util;
+package org.palladiosimulator.analyzer.completions.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
-import org.palladiosimulator.pcm.completions.Completion;
-import org.palladiosimulator.pcm.completions.CompletionRepository;
-import org.palladiosimulator.pcm.completions.CompletionsPackage;
-import org.palladiosimulator.pcm.completions.DelegatingExternalCallAction;
-import org.palladiosimulator.pcm.completions.NetworkDemandParametricResourceDemand;
+import org.palladiosimulator.analyzer.completions.Completion;
+import org.palladiosimulator.analyzer.completions.CompletionRepository;
+import org.palladiosimulator.analyzer.completions.CompletionsPackage;
+import org.palladiosimulator.analyzer.completions.DelegatingExternalCallAction;
+import org.palladiosimulator.analyzer.completions.NetworkDemandParametricResourceDemand;
 import org.palladiosimulator.pcm.core.composition.ComposedStructure;
 import org.palladiosimulator.pcm.core.entity.ComposedProvidingRequiringEntity;
 import org.palladiosimulator.pcm.core.entity.Entity;
@@ -34,22 +34,22 @@ import de.uka.ipd.sdq.identifier.Identifier;
 /**
  * <!-- begin-user-doc --> The <b>Adapter Factory</b> for the model. It provides an adapter
  * <code>createXXX</code> method for each class of the model. <!-- end-user-doc -->
- *
- * @see org.palladiosimulator.pcm.completions.CompletionsPackage
+ * 
+ * @see org.palladiosimulator.analyzer.completions.CompletionsPackage
  * @generated
  */
 public class CompletionsAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * The cached model package. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected static CompletionsPackage modelPackage;
 
     /**
      * Creates an instance of the adapter factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public CompletionsAdapterFactory() {
@@ -62,7 +62,7 @@ public class CompletionsAdapterFactory extends AdapterFactoryImpl {
      * Returns whether this factory is applicable for the type of the object. <!-- begin-user-doc
      * --> This implementation returns <code>true</code> if the object is either the model's package
      * or is an instance object of the model. <!-- end-user-doc -->
-     *
+     * 
      * @return whether this factory is applicable for the type of the object.
      * @generated
      */
@@ -80,7 +80,7 @@ public class CompletionsAdapterFactory extends AdapterFactoryImpl {
     /**
      * The switch that delegates to the <code>createXXX</code> methods. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected CompletionsSwitch<Adapter> modelSwitch = new CompletionsSwitch<Adapter>() {
@@ -198,7 +198,7 @@ public class CompletionsAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates an adapter for the <code>target</code>. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @param target
      *            the object to adapt.
      * @return the adapter for the <code>target</code>.
@@ -211,13 +211,13 @@ public class CompletionsAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.pcm.completions.Completion <em>Completion</em>}'. <!--
+     * {@link org.palladiosimulator.analyzer.completions.Completion <em>Completion</em>}'. <!--
      * begin-user-doc --> This default implementation returns null so that we can easily ignore
      * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
      * end-user-doc -->
-     *
+     * 
      * @return the new adapter.
-     * @see org.palladiosimulator.pcm.completions.Completion
+     * @see org.palladiosimulator.analyzer.completions.Completion
      * @generated
      */
     public Adapter createCompletionAdapter() {
@@ -226,13 +226,13 @@ public class CompletionsAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.pcm.completions.CompletionRepository
+     * {@link org.palladiosimulator.analyzer.completions.CompletionRepository
      * <em>Completion Repository</em>}'. <!-- begin-user-doc --> This default implementation returns
      * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will
      * catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
-     * @see org.palladiosimulator.pcm.completions.CompletionRepository
+     * @see org.palladiosimulator.analyzer.completions.CompletionRepository
      * @generated
      */
     public Adapter createCompletionRepositoryAdapter() {
@@ -241,13 +241,13 @@ public class CompletionsAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.pcm.completions.DelegatingExternalCallAction
+     * {@link org.palladiosimulator.analyzer.completions.DelegatingExternalCallAction
      * <em>Delegating External Call Action</em>}'. <!-- begin-user-doc --> This default
      * implementation returns null so that we can easily ignore cases; it's useful to ignore a case
      * when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
-     * @see org.palladiosimulator.pcm.completions.DelegatingExternalCallAction
+     * @see org.palladiosimulator.analyzer.completions.DelegatingExternalCallAction
      * @generated
      */
     public Adapter createDelegatingExternalCallActionAdapter() {
@@ -256,13 +256,13 @@ public class CompletionsAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.pcm.completions.NetworkDemandParametricResourceDemand
+     * {@link org.palladiosimulator.analyzer.completions.NetworkDemandParametricResourceDemand
      * <em>Network Demand Parametric Resource Demand</em>}'. <!-- begin-user-doc --> This default
      * implementation returns null so that we can easily ignore cases; it's useful to ignore a case
      * when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
-     * @see org.palladiosimulator.pcm.completions.NetworkDemandParametricResourceDemand
+     * @see org.palladiosimulator.analyzer.completions.NetworkDemandParametricResourceDemand
      * @generated
      */
     public Adapter createNetworkDemandParametricResourceDemandAdapter() {
@@ -274,7 +274,7 @@ public class CompletionsAdapterFactory extends AdapterFactoryImpl {
      * <em>Identifier</em>}'. <!-- begin-user-doc --> This default implementation returns null so
      * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all
      * the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see de.uka.ipd.sdq.identifier.Identifier
      * @generated
@@ -289,7 +289,7 @@ public class CompletionsAdapterFactory extends AdapterFactoryImpl {
      * begin-user-doc --> This default implementation returns null so that we can easily ignore
      * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
      * end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.palladiosimulator.pcm.core.entity.NamedElement
      * @generated
@@ -303,7 +303,7 @@ public class CompletionsAdapterFactory extends AdapterFactoryImpl {
      * {@link org.palladiosimulator.pcm.core.entity.Entity <em>Entity</em>}'. <!-- begin-user-doc
      * --> This default implementation returns null so that we can easily ignore cases; it's useful
      * to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.palladiosimulator.pcm.core.entity.Entity
      * @generated
@@ -318,7 +318,7 @@ public class CompletionsAdapterFactory extends AdapterFactoryImpl {
      * <em>Composed Structure</em>}'. <!-- begin-user-doc --> This default implementation returns
      * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will
      * catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.palladiosimulator.pcm.core.composition.ComposedStructure
      * @generated
@@ -333,7 +333,7 @@ public class CompletionsAdapterFactory extends AdapterFactoryImpl {
      * <em>Interface Providing Entity</em>}'. <!-- begin-user-doc --> This default implementation
      * returns null so that we can easily ignore cases; it's useful to ignore a case when
      * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.palladiosimulator.pcm.core.entity.InterfaceProvidingEntity
      * @generated
@@ -348,7 +348,7 @@ public class CompletionsAdapterFactory extends AdapterFactoryImpl {
      * <em>Resource Interface Requiring Entity</em>}'. <!-- begin-user-doc --> This default
      * implementation returns null so that we can easily ignore cases; it's useful to ignore a case
      * when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.palladiosimulator.pcm.core.entity.ResourceInterfaceRequiringEntity
      * @generated
@@ -363,7 +363,7 @@ public class CompletionsAdapterFactory extends AdapterFactoryImpl {
      * <em>Interface Requiring Entity</em>}'. <!-- begin-user-doc --> This default implementation
      * returns null so that we can easily ignore cases; it's useful to ignore a case when
      * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.palladiosimulator.pcm.core.entity.InterfaceRequiringEntity
      * @generated
@@ -378,7 +378,7 @@ public class CompletionsAdapterFactory extends AdapterFactoryImpl {
      * <em>Interface Providing Requiring Entity</em>}'. <!-- begin-user-doc --> This default
      * implementation returns null so that we can easily ignore cases; it's useful to ignore a case
      * when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.palladiosimulator.pcm.core.entity.InterfaceProvidingRequiringEntity
      * @generated
@@ -393,7 +393,7 @@ public class CompletionsAdapterFactory extends AdapterFactoryImpl {
      * <em>Composed Providing Requiring Entity</em>}'. <!-- begin-user-doc --> This default
      * implementation returns null so that we can easily ignore cases; it's useful to ignore a case
      * when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.palladiosimulator.pcm.core.entity.ComposedProvidingRequiringEntity
      * @generated
@@ -408,7 +408,7 @@ public class CompletionsAdapterFactory extends AdapterFactoryImpl {
      * begin-user-doc --> This default implementation returns null so that we can easily ignore
      * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
      * end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.palladiosimulator.pcm.repository.RepositoryComponent
      * @generated
@@ -423,7 +423,7 @@ public class CompletionsAdapterFactory extends AdapterFactoryImpl {
      * <em>Implementation Component Type</em>}'. <!-- begin-user-doc --> This default implementation
      * returns null so that we can easily ignore cases; it's useful to ignore a case when
      * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.palladiosimulator.pcm.repository.ImplementationComponentType
      * @generated
@@ -438,7 +438,7 @@ public class CompletionsAdapterFactory extends AdapterFactoryImpl {
      * begin-user-doc --> This default implementation returns null so that we can easily ignore
      * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
      * end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.palladiosimulator.pcm.seff.AbstractAction
      * @generated
@@ -452,7 +452,7 @@ public class CompletionsAdapterFactory extends AdapterFactoryImpl {
      * {@link org.palladiosimulator.pcm.seff.CallAction <em>Call Action</em>}'. <!-- begin-user-doc
      * --> This default implementation returns null so that we can easily ignore cases; it's useful
      * to ignore a case when inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.palladiosimulator.pcm.seff.CallAction
      * @generated
@@ -467,7 +467,7 @@ public class CompletionsAdapterFactory extends AdapterFactoryImpl {
      * begin-user-doc --> This default implementation returns null so that we can easily ignore
      * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
      * end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.palladiosimulator.pcm.seff.CallReturnAction
      * @generated
@@ -482,7 +482,7 @@ public class CompletionsAdapterFactory extends AdapterFactoryImpl {
      * <em>Failure Handling Entity</em>}'. <!-- begin-user-doc --> This default implementation
      * returns null so that we can easily ignore cases; it's useful to ignore a case when
      * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.palladiosimulator.pcm.seff.seff_reliability.FailureHandlingEntity
      * @generated
@@ -497,7 +497,7 @@ public class CompletionsAdapterFactory extends AdapterFactoryImpl {
      * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
      * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
      * end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.palladiosimulator.pcm.seff.ExternalCallAction
      * @generated
@@ -512,7 +512,7 @@ public class CompletionsAdapterFactory extends AdapterFactoryImpl {
      * <em>Parametric Resource Demand</em>}'. <!-- begin-user-doc --> This default implementation
      * returns null so that we can easily ignore cases; it's useful to ignore a case when
      * inheritance will catch all the cases anyway. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @see org.palladiosimulator.pcm.seff.seff_performance.ParametricResourceDemand
      * @generated
@@ -524,7 +524,7 @@ public class CompletionsAdapterFactory extends AdapterFactoryImpl {
     /**
      * Creates a new adapter for the default case. <!-- begin-user-doc --> This default
      * implementation returns null. <!-- end-user-doc -->
-     *
+     * 
      * @return the new adapter.
      * @generated
      */

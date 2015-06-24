@@ -1,19 +1,19 @@
 /**
  * Copyright SDQ, IPD, U Karlsruhe, 2007
  */
-package org.palladiosimulator.pcm.completions.impl;
+package org.palladiosimulator.analyzer.completions.impl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.palladiosimulator.analyzer.completions.Completion;
+import org.palladiosimulator.analyzer.completions.CompletionRepository;
+import org.palladiosimulator.analyzer.completions.CompletionsFactory;
+import org.palladiosimulator.analyzer.completions.CompletionsPackage;
+import org.palladiosimulator.analyzer.completions.DelegatingExternalCallAction;
+import org.palladiosimulator.analyzer.completions.NetworkDemandParametricResourceDemand;
 import org.palladiosimulator.pcm.PcmPackage;
-import org.palladiosimulator.pcm.completions.Completion;
-import org.palladiosimulator.pcm.completions.CompletionRepository;
-import org.palladiosimulator.pcm.completions.CompletionsFactory;
-import org.palladiosimulator.pcm.completions.CompletionsPackage;
-import org.palladiosimulator.pcm.completions.DelegatingExternalCallAction;
-import org.palladiosimulator.pcm.completions.NetworkDemandParametricResourceDemand;
 import org.palladiosimulator.pcm.core.entity.EntityPackage;
 import org.palladiosimulator.pcm.repository.RepositoryPackage;
 import org.palladiosimulator.pcm.resourcetype.ResourcetypePackage;
@@ -22,35 +22,35 @@ import org.palladiosimulator.pcm.seff.seff_performance.SeffPerformancePackage;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!-- end-user-doc -->
- *
+ * 
  * @generated
  */
 public class CompletionsPackageImpl extends EPackageImpl implements CompletionsPackage {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private EClass completionEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private EClass completionRepositoryEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private EClass delegatingExternalCallActionEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private EClass networkDemandParametricResourceDemandEClass = null;
@@ -63,9 +63,9 @@ public class CompletionsPackageImpl extends EPackageImpl implements CompletionsP
      * Note: the correct way to create the package is via the static factory method {@link #init
      * init()}, which also performs initialization of the package, or returns the registered
      * package, if one already exists. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see org.eclipse.emf.ecore.EPackage.Registry
-     * @see org.palladiosimulator.pcm.completions.CompletionsPackage#eNS_URI
+     * @see org.palladiosimulator.analyzer.completions.CompletionsPackage#eNS_URI
      * @see #init()
      * @generated
      */
@@ -75,7 +75,7 @@ public class CompletionsPackageImpl extends EPackageImpl implements CompletionsP
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private static boolean isInited = false;
@@ -88,7 +88,7 @@ public class CompletionsPackageImpl extends EPackageImpl implements CompletionsP
      * This method is used to initialize {@link CompletionsPackage#eINSTANCE} when that field is
      * accessed. Clients should not invoke it directly. Instead, they should simply access that
      * field to obtain the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @see #eNS_URI
      * @see #createPackageContents()
      * @see #initializePackageContents()
@@ -125,7 +125,7 @@ public class CompletionsPackageImpl extends EPackageImpl implements CompletionsP
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -135,7 +135,7 @@ public class CompletionsPackageImpl extends EPackageImpl implements CompletionsP
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -145,7 +145,7 @@ public class CompletionsPackageImpl extends EPackageImpl implements CompletionsP
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -155,7 +155,7 @@ public class CompletionsPackageImpl extends EPackageImpl implements CompletionsP
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -165,7 +165,7 @@ public class CompletionsPackageImpl extends EPackageImpl implements CompletionsP
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -175,7 +175,7 @@ public class CompletionsPackageImpl extends EPackageImpl implements CompletionsP
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -185,7 +185,7 @@ public class CompletionsPackageImpl extends EPackageImpl implements CompletionsP
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -195,7 +195,7 @@ public class CompletionsPackageImpl extends EPackageImpl implements CompletionsP
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private boolean isCreated = false;
@@ -203,7 +203,7 @@ public class CompletionsPackageImpl extends EPackageImpl implements CompletionsP
     /**
      * Creates the meta-model objects for the package. This method is guarded to have no affect on
      * any invocation but its first. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public void createPackageContents() {
@@ -228,7 +228,7 @@ public class CompletionsPackageImpl extends EPackageImpl implements CompletionsP
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     private boolean isInitialized = false;
@@ -236,7 +236,7 @@ public class CompletionsPackageImpl extends EPackageImpl implements CompletionsP
     /**
      * Complete the initialization of the package and its meta-model. This method is guarded to have
      * no affect on any invocation but its first. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public void initializePackageContents() {

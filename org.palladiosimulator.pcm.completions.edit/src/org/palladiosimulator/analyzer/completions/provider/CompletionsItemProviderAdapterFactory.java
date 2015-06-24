@@ -1,7 +1,7 @@
 /**
  * Copyright SDQ, IPD, U Karlsruhe, 2007
  */
-package org.palladiosimulator.pcm.completions.provider;
+package org.palladiosimulator.analyzer.completions.provider;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -20,7 +20,7 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.palladiosimulator.pcm.completions.util.CompletionsAdapterFactory;
+import org.palladiosimulator.analyzer.completions.util.CompletionsAdapterFactory;
 
 /**
  * This is the factory that is used to provide the interfaces needed to support Viewers. The
@@ -28,7 +28,7 @@ import org.palladiosimulator.pcm.completions.util.CompletionsAdapterFactory;
  * {@link #fireNotifyChanged fireNotifyChanged}. The adapters also support Eclipse property sheets.
  * Note that most of the adapters are shared among multiple instances. <!-- begin-user-doc --> <!--
  * end-user-doc -->
- *
+ * 
  * @generated
  */
 public class CompletionsItemProviderAdapterFactory extends CompletionsAdapterFactory
@@ -37,7 +37,7 @@ public class CompletionsItemProviderAdapterFactory extends CompletionsAdapterFac
     /**
      * This keeps track of the root adapter factory that delegates to this adapter factory. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected ComposedAdapterFactory parentAdapterFactory;
@@ -45,7 +45,7 @@ public class CompletionsItemProviderAdapterFactory extends CompletionsAdapterFac
     /**
      * This is used to implement {@link org.eclipse.emf.edit.provider.IChangeNotifier}. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected IChangeNotifier changeNotifier = new ChangeNotifier();
@@ -53,14 +53,14 @@ public class CompletionsItemProviderAdapterFactory extends CompletionsAdapterFac
     /**
      * This keeps track of all the supported types checked by {@link #isFactoryForType
      * isFactoryForType}. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected Collection<Object> supportedTypes = new ArrayList<Object>();
 
     /**
      * This constructs an instance. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     public CompletionsItemProviderAdapterFactory() {
@@ -73,17 +73,17 @@ public class CompletionsItemProviderAdapterFactory extends CompletionsAdapterFac
 
     /**
      * This keeps track of the one adapter used for all
-     * {@link org.palladiosimulator.pcm.completions.Completion} instances. <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     *
+     * {@link org.palladiosimulator.analyzer.completions.Completion} instances. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     protected CompletionItemProvider completionItemProvider;
 
     /**
-     * This creates an adapter for a {@link org.palladiosimulator.pcm.completions.Completion}. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * This creates an adapter for a {@link org.palladiosimulator.analyzer.completions.Completion}.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -97,18 +97,18 @@ public class CompletionsItemProviderAdapterFactory extends CompletionsAdapterFac
 
     /**
      * This keeps track of the one adapter used for all
-     * {@link org.palladiosimulator.pcm.completions.CompletionRepository} instances. <!--
+     * {@link org.palladiosimulator.analyzer.completions.CompletionRepository} instances. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected CompletionRepositoryItemProvider completionRepositoryItemProvider;
 
     /**
      * This creates an adapter for a
-     * {@link org.palladiosimulator.pcm.completions.CompletionRepository}. <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     *
+     * {@link org.palladiosimulator.analyzer.completions.CompletionRepository}. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -122,18 +122,18 @@ public class CompletionsItemProviderAdapterFactory extends CompletionsAdapterFac
 
     /**
      * This keeps track of the one adapter used for all
-     * {@link org.palladiosimulator.pcm.completions.DelegatingExternalCallAction} instances. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * {@link org.palladiosimulator.analyzer.completions.DelegatingExternalCallAction} instances.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     protected DelegatingExternalCallActionItemProvider delegatingExternalCallActionItemProvider;
 
     /**
      * This creates an adapter for a
-     * {@link org.palladiosimulator.pcm.completions.DelegatingExternalCallAction}. <!--
+     * {@link org.palladiosimulator.analyzer.completions.DelegatingExternalCallAction}. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -147,18 +147,18 @@ public class CompletionsItemProviderAdapterFactory extends CompletionsAdapterFac
 
     /**
      * This keeps track of the one adapter used for all
-     * {@link org.palladiosimulator.pcm.completions.NetworkDemandParametricResourceDemand}
+     * {@link org.palladiosimulator.analyzer.completions.NetworkDemandParametricResourceDemand}
      * instances. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected NetworkDemandParametricResourceDemandItemProvider networkDemandParametricResourceDemandItemProvider;
 
     /**
      * This creates an adapter for a
-     * {@link org.palladiosimulator.pcm.completions.NetworkDemandParametricResourceDemand}. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * {@link org.palladiosimulator.analyzer.completions.NetworkDemandParametricResourceDemand}.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @generated
      */
     @Override
@@ -174,7 +174,7 @@ public class CompletionsItemProviderAdapterFactory extends CompletionsAdapterFac
     /**
      * This returns the root adapter factory that contains this factory. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -185,7 +185,7 @@ public class CompletionsItemProviderAdapterFactory extends CompletionsAdapterFac
     /**
      * This sets the composed adapter factory that contains this factory. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -195,7 +195,7 @@ public class CompletionsItemProviderAdapterFactory extends CompletionsAdapterFac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -206,7 +206,7 @@ public class CompletionsItemProviderAdapterFactory extends CompletionsAdapterFac
     /**
      * This implementation substitutes the factory itself as the key for the adapter. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -216,7 +216,7 @@ public class CompletionsItemProviderAdapterFactory extends CompletionsAdapterFac
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -233,7 +233,7 @@ public class CompletionsItemProviderAdapterFactory extends CompletionsAdapterFac
 
     /**
      * This adds a listener. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -243,7 +243,7 @@ public class CompletionsItemProviderAdapterFactory extends CompletionsAdapterFac
 
     /**
      * This removes a listener. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -254,7 +254,7 @@ public class CompletionsItemProviderAdapterFactory extends CompletionsAdapterFac
     /**
      * This delegates to {@link #changeNotifier} and to {@link #parentAdapterFactory}. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -269,7 +269,7 @@ public class CompletionsItemProviderAdapterFactory extends CompletionsAdapterFac
     /**
      * This disposes all of the item providers created by this factory. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

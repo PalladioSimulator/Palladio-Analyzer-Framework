@@ -1,7 +1,7 @@
 /**
  * Copyright SDQ, IPD, U Karlsruhe, 2007
  */
-package org.palladiosimulator.pcm.completions;
+package org.palladiosimulator.analyzer.completions;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -20,8 +20,8 @@ import org.palladiosimulator.pcm.seff.seff_performance.SeffPerformancePackage;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- *
- * @see org.palladiosimulator.pcm.completions.CompletionsFactory
+ * 
+ * @see org.palladiosimulator.analyzer.completions.CompletionsFactory
  * @model kind="package"
  * @generated
  */
@@ -29,38 +29,39 @@ public interface CompletionsPackage extends EPackage {
 
     /**
      * The package name. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     String eNAME = "completions";
 
     /**
      * The package namespace URI. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
-    String eNS_URI = "http://palladiosimulator.org/PCM/Completions/1.0";
+    String eNS_URI = "http://palladiosimulator.org/AnalyzerFramework/Completions/1.0";
 
     /**
      * The package namespace name. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     String eNS_PREFIX = "completions";
 
     /**
      * The singleton instance of the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
-    CompletionsPackage eINSTANCE = org.palladiosimulator.pcm.completions.impl.CompletionsPackageImpl.init();
+    CompletionsPackage eINSTANCE = org.palladiosimulator.analyzer.completions.impl.CompletionsPackageImpl.init();
 
     /**
-     * The meta object id for the '{@link org.palladiosimulator.pcm.completions.impl.CompletionImpl
-     * <em>Completion</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see org.palladiosimulator.pcm.completions.impl.CompletionImpl
-     * @see org.palladiosimulator.pcm.completions.impl.CompletionsPackageImpl#getCompletion()
+     * The meta object id for the '
+     * {@link org.palladiosimulator.analyzer.completions.impl.CompletionImpl <em>Completion</em>}'
+     * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+     * 
+     * @see org.palladiosimulator.analyzer.completions.impl.CompletionImpl
+     * @see org.palladiosimulator.analyzer.completions.impl.CompletionsPackageImpl#getCompletion()
      * @generated
      */
     int COMPLETION = 0;
@@ -68,7 +69,7 @@ public interface CompletionsPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -77,7 +78,7 @@ public interface CompletionsPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Entity Name</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -86,7 +87,7 @@ public interface CompletionsPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Assembly Contexts Composed Structure</b></em>' containment
      * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -96,7 +97,7 @@ public interface CompletionsPackage extends EPackage {
      * The feature id for the '
      * <em><b>Resource Required Delegation Connectors Composed Structure</b></em>' containment
      * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -105,7 +106,7 @@ public interface CompletionsPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Event Channel Composed Structure</b></em>' containment
      * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -114,7 +115,7 @@ public interface CompletionsPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Connectors Composed Structure</b></em>' containment reference
      * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -123,7 +124,7 @@ public interface CompletionsPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Provided Roles Interface Providing Entity</b></em>'
      * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -133,7 +134,7 @@ public interface CompletionsPackage extends EPackage {
      * The feature id for the '
      * <em><b>Resource Required Roles Resource Interface Requiring Entity</b></em>' containment
      * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -142,7 +143,7 @@ public interface CompletionsPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Required Roles Interface Requiring Entity</b></em>'
      * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -151,7 +152,7 @@ public interface CompletionsPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Repository Repository Component</b></em>' container reference.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -161,7 +162,7 @@ public interface CompletionsPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Parent Complete Component Types</b></em>' reference list. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -172,7 +173,7 @@ public interface CompletionsPackage extends EPackage {
      * The feature id for the '
      * <em><b>Component Parameter Usage Implementation Component Type</b></em>' containment
      * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -182,7 +183,7 @@ public interface CompletionsPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Component Type</b></em>' attribute. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -191,7 +192,7 @@ public interface CompletionsPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Completion</em>' class. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -199,11 +200,11 @@ public interface CompletionsPackage extends EPackage {
 
     /**
      * The meta object id for the '
-     * {@link org.palladiosimulator.pcm.completions.impl.CompletionRepositoryImpl
+     * {@link org.palladiosimulator.analyzer.completions.impl.CompletionRepositoryImpl
      * <em>Completion Repository</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see org.palladiosimulator.pcm.completions.impl.CompletionRepositoryImpl
-     * @see org.palladiosimulator.pcm.completions.impl.CompletionsPackageImpl#getCompletionRepository()
+     * 
+     * @see org.palladiosimulator.analyzer.completions.impl.CompletionRepositoryImpl
+     * @see org.palladiosimulator.analyzer.completions.impl.CompletionsPackageImpl#getCompletionRepository()
      * @generated
      */
     int COMPLETION_REPOSITORY = 1;
@@ -211,7 +212,7 @@ public interface CompletionsPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Completions Completion Repository</b></em>' reference list.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -220,7 +221,7 @@ public interface CompletionsPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Completion Repository</em>' class. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -228,12 +229,12 @@ public interface CompletionsPackage extends EPackage {
 
     /**
      * The meta object id for the '
-     * {@link org.palladiosimulator.pcm.completions.impl.DelegatingExternalCallActionImpl
+     * {@link org.palladiosimulator.analyzer.completions.impl.DelegatingExternalCallActionImpl
      * <em>Delegating External Call Action</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc
      * -->
-     *
-     * @see org.palladiosimulator.pcm.completions.impl.DelegatingExternalCallActionImpl
-     * @see org.palladiosimulator.pcm.completions.impl.CompletionsPackageImpl#getDelegatingExternalCallAction()
+     * 
+     * @see org.palladiosimulator.analyzer.completions.impl.DelegatingExternalCallActionImpl
+     * @see org.palladiosimulator.analyzer.completions.impl.CompletionsPackageImpl#getDelegatingExternalCallAction()
      * @generated
      */
     int DELEGATING_EXTERNAL_CALL_ACTION = 2;
@@ -241,7 +242,7 @@ public interface CompletionsPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -250,7 +251,7 @@ public interface CompletionsPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Entity Name</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -259,7 +260,7 @@ public interface CompletionsPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Predecessor Abstract Action</b></em>' reference. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -268,7 +269,7 @@ public interface CompletionsPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Successor Abstract Action</b></em>' reference. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -277,7 +278,7 @@ public interface CompletionsPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Resource Demanding Behaviour Abstract Action</b></em>'
      * container reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -286,7 +287,7 @@ public interface CompletionsPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Input Variable Usages Call Action</b></em>' containment
      * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -295,7 +296,7 @@ public interface CompletionsPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Return Variable Usage Call Return Action</b></em>' containment
      * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -304,7 +305,7 @@ public interface CompletionsPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Failure Types Failure Handling Entity</b></em>' reference
      * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -313,7 +314,7 @@ public interface CompletionsPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Called Service External Service</b></em>' reference. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -322,7 +323,7 @@ public interface CompletionsPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Role External Service</b></em>' reference. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -331,7 +332,7 @@ public interface CompletionsPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Retry Count</b></em>' attribute. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -340,7 +341,7 @@ public interface CompletionsPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Delegating External Call Action</em>' class.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -348,12 +349,13 @@ public interface CompletionsPackage extends EPackage {
 
     /**
      * The meta object id for the '
-     * {@link org.palladiosimulator.pcm.completions.impl.NetworkDemandParametricResourceDemandImpl
+     * {@link org.palladiosimulator.analyzer.completions.impl.NetworkDemandParametricResourceDemandImpl
      * <em>Network Demand Parametric Resource Demand</em>}' class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
-     * @see org.palladiosimulator.pcm.completions.impl.NetworkDemandParametricResourceDemandImpl
-     * @see org.palladiosimulator.pcm.completions.impl.CompletionsPackageImpl#getNetworkDemandParametricResourceDemand()
+     * 
+     * @see org.palladiosimulator.analyzer.completions.impl.
+     *      NetworkDemandParametricResourceDemandImpl
+     * @see org.palladiosimulator.analyzer.completions.impl.CompletionsPackageImpl#getNetworkDemandParametricResourceDemand()
      * @generated
      */
     int NETWORK_DEMAND_PARAMETRIC_RESOURCE_DEMAND = 3;
@@ -361,7 +363,7 @@ public interface CompletionsPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Specification Parameteric Resource Demand</b></em>'
      * containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -370,7 +372,7 @@ public interface CompletionsPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Required Resource Parametric Resource Demand</b></em>'
      * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -379,7 +381,7 @@ public interface CompletionsPackage extends EPackage {
     /**
      * The feature id for the '<em><b>Action Parametric Resource Demand</b></em>' container
      * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -389,7 +391,7 @@ public interface CompletionsPackage extends EPackage {
      * The feature id for the '
      * <em><b>Required Communication Link Resource Parametric Resource Demand</b></em>' reference.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -399,7 +401,7 @@ public interface CompletionsPackage extends EPackage {
     /**
      * The number of structural features of the '<em>Network Demand Parametric Resource Demand</em>'
      * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      * @ordered
      */
@@ -407,33 +409,34 @@ public interface CompletionsPackage extends EPackage {
             + 1;
 
     /**
-     * Returns the meta object for class '{@link org.palladiosimulator.pcm.completions.Completion
-     * <em>Completion</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * Returns the meta object for class '
+     * {@link org.palladiosimulator.analyzer.completions.Completion <em>Completion</em>}'. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     * 
      * @return the meta object for class '<em>Completion</em>'.
-     * @see org.palladiosimulator.pcm.completions.Completion
+     * @see org.palladiosimulator.analyzer.completions.Completion
      * @generated
      */
     EClass getCompletion();
 
     /**
      * Returns the meta object for class '
-     * {@link org.palladiosimulator.pcm.completions.CompletionRepository
+     * {@link org.palladiosimulator.analyzer.completions.CompletionRepository
      * <em>Completion Repository</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Completion Repository</em>'.
-     * @see org.palladiosimulator.pcm.completions.CompletionRepository
+     * @see org.palladiosimulator.analyzer.completions.CompletionRepository
      * @generated
      */
     EClass getCompletionRepository();
 
     /**
      * Returns the meta object for the reference list '
-     * {@link org.palladiosimulator.pcm.completions.CompletionRepository#getCompletions_CompletionRepository
+     * {@link org.palladiosimulator.analyzer.completions.CompletionRepository#getCompletions_CompletionRepository
      * <em>Completions Completion Repository</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the reference list '<em>Completions Completion Repository</em>'.
-     * @see org.palladiosimulator.pcm.completions.CompletionRepository#getCompletions_CompletionRepository()
+     * @see org.palladiosimulator.analyzer.completions.CompletionRepository#getCompletions_CompletionRepository()
      * @see #getCompletionRepository()
      * @generated
      */
@@ -441,36 +444,36 @@ public interface CompletionsPackage extends EPackage {
 
     /**
      * Returns the meta object for class '
-     * {@link org.palladiosimulator.pcm.completions.DelegatingExternalCallAction
+     * {@link org.palladiosimulator.analyzer.completions.DelegatingExternalCallAction
      * <em>Delegating External Call Action</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Delegating External Call Action</em>'.
-     * @see org.palladiosimulator.pcm.completions.DelegatingExternalCallAction
+     * @see org.palladiosimulator.analyzer.completions.DelegatingExternalCallAction
      * @generated
      */
     EClass getDelegatingExternalCallAction();
 
     /**
      * Returns the meta object for class '
-     * {@link org.palladiosimulator.pcm.completions.NetworkDemandParametricResourceDemand
+     * {@link org.palladiosimulator.analyzer.completions.NetworkDemandParametricResourceDemand
      * <em>Network Demand Parametric Resource Demand</em>}'. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @return the meta object for class '<em>Network Demand Parametric Resource Demand</em>'.
-     * @see org.palladiosimulator.pcm.completions.NetworkDemandParametricResourceDemand
+     * @see org.palladiosimulator.analyzer.completions.NetworkDemandParametricResourceDemand
      * @generated
      */
     EClass getNetworkDemandParametricResourceDemand();
 
     /**
      * Returns the meta object for the reference '
-     * {@link org.palladiosimulator.pcm.completions.NetworkDemandParametricResourceDemand#getRequiredCommunicationLinkResource_ParametricResourceDemand
+     * {@link org.palladiosimulator.analyzer.completions.NetworkDemandParametricResourceDemand#getRequiredCommunicationLinkResource_ParametricResourceDemand
      * <em>Required Communication Link Resource Parametric Resource Demand</em>}'. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @return the meta object for the reference '
      *         <em>Required Communication Link Resource Parametric Resource Demand</em>'.
-     * @see org.palladiosimulator.pcm.completions.NetworkDemandParametricResourceDemand#getRequiredCommunicationLinkResource_ParametricResourceDemand()
+     * @see org.palladiosimulator.analyzer.completions.NetworkDemandParametricResourceDemand#getRequiredCommunicationLinkResource_ParametricResourceDemand()
      * @see #getNetworkDemandParametricResourceDemand()
      * @generated
      */
@@ -479,7 +482,7 @@ public interface CompletionsPackage extends EPackage {
     /**
      * Returns the factory that creates the instances of the model. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @return the factory that creates the instances of the model.
      * @generated
      */
@@ -494,29 +497,29 @@ public interface CompletionsPackage extends EPackage {
      * <li>and each data type</li>
      * </ul>
      * <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     interface Literals {
 
         /**
          * The meta object literal for the '
-         * {@link org.palladiosimulator.pcm.completions.impl.CompletionImpl <em>Completion</em>}'
-         * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
-         * @see org.palladiosimulator.pcm.completions.impl.CompletionImpl
-         * @see org.palladiosimulator.pcm.completions.impl.CompletionsPackageImpl#getCompletion()
+         * {@link org.palladiosimulator.analyzer.completions.impl.CompletionImpl <em>Completion</em>
+         * }' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+         * 
+         * @see org.palladiosimulator.analyzer.completions.impl.CompletionImpl
+         * @see org.palladiosimulator.analyzer.completions.impl.CompletionsPackageImpl#getCompletion()
          * @generated
          */
         EClass COMPLETION = eINSTANCE.getCompletion();
 
         /**
          * The meta object literal for the '
-         * {@link org.palladiosimulator.pcm.completions.impl.CompletionRepositoryImpl
+         * {@link org.palladiosimulator.analyzer.completions.impl.CompletionRepositoryImpl
          * <em>Completion Repository</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
-         * @see org.palladiosimulator.pcm.completions.impl.CompletionRepositoryImpl
-         * @see org.palladiosimulator.pcm.completions.impl.CompletionsPackageImpl#getCompletionRepository()
+         * 
+         * @see org.palladiosimulator.analyzer.completions.impl.CompletionRepositoryImpl
+         * @see org.palladiosimulator.analyzer.completions.impl.CompletionsPackageImpl#getCompletionRepository()
          * @generated
          */
         EClass COMPLETION_REPOSITORY = eINSTANCE.getCompletionRepository();
@@ -524,7 +527,7 @@ public interface CompletionsPackage extends EPackage {
         /**
          * The meta object literal for the '<em><b>Completions Completion Repository</b></em>'
          * reference list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference COMPLETION_REPOSITORY__COMPLETIONS_COMPLETION_REPOSITORY = eINSTANCE
@@ -532,24 +535,25 @@ public interface CompletionsPackage extends EPackage {
 
         /**
          * The meta object literal for the '
-         * {@link org.palladiosimulator.pcm.completions.impl.DelegatingExternalCallActionImpl
+         * {@link org.palladiosimulator.analyzer.completions.impl.DelegatingExternalCallActionImpl
          * <em>Delegating External Call Action</em>}' class. <!-- begin-user-doc --> <!--
          * end-user-doc -->
-         *
-         * @see org.palladiosimulator.pcm.completions.impl.DelegatingExternalCallActionImpl
-         * @see org.palladiosimulator.pcm.completions.impl.CompletionsPackageImpl#getDelegatingExternalCallAction()
+         * 
+         * @see org.palladiosimulator.analyzer.completions.impl.DelegatingExternalCallActionImpl
+         * @see org.palladiosimulator.analyzer.completions.impl.CompletionsPackageImpl#getDelegatingExternalCallAction()
          * @generated
          */
         EClass DELEGATING_EXTERNAL_CALL_ACTION = eINSTANCE.getDelegatingExternalCallAction();
 
         /**
          * The meta object literal for the '
-         * {@link org.palladiosimulator.pcm.completions.impl.NetworkDemandParametricResourceDemandImpl
+         * {@link org.palladiosimulator.analyzer.completions.impl.NetworkDemandParametricResourceDemandImpl
          * <em>Network Demand Parametric Resource Demand</em>}' class. <!-- begin-user-doc --> <!--
          * end-user-doc -->
-         *
-         * @see org.palladiosimulator.pcm.completions.impl.NetworkDemandParametricResourceDemandImpl
-         * @see org.palladiosimulator.pcm.completions.impl.CompletionsPackageImpl#getNetworkDemandParametricResourceDemand()
+         * 
+         * @see org.palladiosimulator.analyzer.completions.impl.
+         *      NetworkDemandParametricResourceDemandImpl
+         * @see org.palladiosimulator.analyzer.completions.impl.CompletionsPackageImpl#getNetworkDemandParametricResourceDemand()
          * @generated
          */
         EClass NETWORK_DEMAND_PARAMETRIC_RESOURCE_DEMAND = eINSTANCE.getNetworkDemandParametricResourceDemand();
@@ -558,7 +562,7 @@ public interface CompletionsPackage extends EPackage {
          * The meta object literal for the '
          * <em><b>Required Communication Link Resource Parametric Resource Demand</b></em>'
          * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
+         * 
          * @generated
          */
         EReference NETWORK_DEMAND_PARAMETRIC_RESOURCE_DEMAND__REQUIRED_COMMUNICATION_LINK_RESOURCE_PARAMETRIC_RESOURCE_DEMAND = eINSTANCE

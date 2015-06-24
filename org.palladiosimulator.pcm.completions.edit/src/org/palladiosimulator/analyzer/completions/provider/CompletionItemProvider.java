@@ -1,7 +1,7 @@
 /**
  * Copyright SDQ, IPD, U Karlsruhe, 2007
  */
-package org.palladiosimulator.pcm.completions.provider;
+package org.palladiosimulator.analyzer.completions.provider;
 
 import java.util.Collection;
 import java.util.List;
@@ -14,16 +14,17 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.palladiosimulator.pcm.completions.Completion;
-import org.palladiosimulator.pcm.completions.CompletionsPackage;
+import org.palladiosimulator.analyzer.completions.Completion;
+import org.palladiosimulator.analyzer.completions.CompletionsPackage;
 import org.palladiosimulator.pcm.core.entity.provider.ComposedProvidingRequiringEntityItemProvider;
 import org.palladiosimulator.pcm.parameter.ParameterFactory;
 import org.palladiosimulator.pcm.repository.RepositoryPackage;
 
 /**
- * This is the item provider adapter for a {@link org.palladiosimulator.pcm.completions.Completion}
- * object. <!-- begin-user-doc --> <!-- end-user-doc -->
- *
+ * This is the item provider adapter for a
+ * {@link org.palladiosimulator.analyzer.completions.Completion} object. <!-- begin-user-doc -->
+ * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class CompletionItemProvider extends ComposedProvidingRequiringEntityItemProvider {
@@ -31,7 +32,7 @@ public class CompletionItemProvider extends ComposedProvidingRequiringEntityItem
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     public CompletionItemProvider(final AdapterFactory adapterFactory) {
@@ -41,7 +42,7 @@ public class CompletionItemProvider extends ComposedProvidingRequiringEntityItem
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -58,7 +59,7 @@ public class CompletionItemProvider extends ComposedProvidingRequiringEntityItem
     /**
      * This adds a property descriptor for the Parent Complete Component Types feature. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addParentCompleteComponentTypesPropertyDescriptor(final Object object) {
@@ -75,7 +76,7 @@ public class CompletionItemProvider extends ComposedProvidingRequiringEntityItem
     /**
      * This adds a property descriptor for the Component Type feature. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     protected void addComponentTypePropertyDescriptor(final Object object) {
@@ -95,7 +96,7 @@ public class CompletionItemProvider extends ComposedProvidingRequiringEntityItem
      * {@link org.eclipse.emf.edit.command.RemoveCommand} or
      * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -110,7 +111,7 @@ public class CompletionItemProvider extends ComposedProvidingRequiringEntityItem
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -123,7 +124,7 @@ public class CompletionItemProvider extends ComposedProvidingRequiringEntityItem
 
     /**
      * This returns Completion.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -134,7 +135,7 @@ public class CompletionItemProvider extends ComposedProvidingRequiringEntityItem
     /**
      * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc
      * -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -148,7 +149,7 @@ public class CompletionItemProvider extends ComposedProvidingRequiringEntityItem
      * This handles model notifications by calling {@link #updateChildren} to update any cached
      * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -169,7 +170,7 @@ public class CompletionItemProvider extends ComposedProvidingRequiringEntityItem
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
      * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -184,7 +185,7 @@ public class CompletionItemProvider extends ComposedProvidingRequiringEntityItem
     /**
      * Return the resource locator for this item provider's resources. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override

@@ -9,7 +9,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EcorePackage;
 
-import org.palladiosimulator.pcm.completions.CompletionsPackage;
+import org.palladiosimulator.analyzer.completions.CompletionsPackage;
 import de.uka.ipd.sdq.identifier.IdentifierPackage;
 
 import org.palladiosimulator.analyzer.workflow.ConstantsContainer;

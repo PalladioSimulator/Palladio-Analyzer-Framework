@@ -1,7 +1,7 @@
 /**
  * Copyright SDQ, IPD, U Karlsruhe, 2007
  */
-package org.palladiosimulator.pcm.completions.provider;
+package org.palladiosimulator.analyzer.completions.provider;
 
 import java.util.Collection;
 import java.util.List;
@@ -18,15 +18,15 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.palladiosimulator.pcm.completions.CompletionRepository;
-import org.palladiosimulator.pcm.completions.CompletionsFactory;
-import org.palladiosimulator.pcm.completions.CompletionsPackage;
+import org.palladiosimulator.analyzer.completions.CompletionRepository;
+import org.palladiosimulator.analyzer.completions.CompletionsFactory;
+import org.palladiosimulator.analyzer.completions.CompletionsPackage;
 
 /**
  * This is the item provider adapter for a
- * {@link org.palladiosimulator.pcm.completions.CompletionRepository} object. <!-- begin-user-doc
- * --> <!-- end-user-doc -->
- *
+ * {@link org.palladiosimulator.analyzer.completions.CompletionRepository} object. <!--
+ * begin-user-doc --> <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class CompletionRepositoryItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
@@ -35,7 +35,7 @@ public class CompletionRepositoryItemProvider extends ItemProviderAdapter implem
     /**
      * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     public CompletionRepositoryItemProvider(final AdapterFactory adapterFactory) {
@@ -45,7 +45,7 @@ public class CompletionRepositoryItemProvider extends ItemProviderAdapter implem
     /**
      * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -63,7 +63,7 @@ public class CompletionRepositoryItemProvider extends ItemProviderAdapter implem
      * {@link org.eclipse.emf.edit.command.RemoveCommand} or
      * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}. <!--
      * begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -78,7 +78,7 @@ public class CompletionRepositoryItemProvider extends ItemProviderAdapter implem
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -91,7 +91,7 @@ public class CompletionRepositoryItemProvider extends ItemProviderAdapter implem
 
     /**
      * This returns CompletionRepository.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -102,7 +102,7 @@ public class CompletionRepositoryItemProvider extends ItemProviderAdapter implem
     /**
      * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc
      * -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -114,7 +114,7 @@ public class CompletionRepositoryItemProvider extends ItemProviderAdapter implem
      * This handles model notifications by calling {@link #updateChildren} to update any cached
      * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}
      * . <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -132,7 +132,7 @@ public class CompletionRepositoryItemProvider extends ItemProviderAdapter implem
     /**
      * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
      * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
@@ -147,7 +147,7 @@ public class CompletionRepositoryItemProvider extends ItemProviderAdapter implem
     /**
      * Return the resource locator for this item provider's resources. <!-- begin-user-doc --> <!--
      * end-user-doc -->
-     *
+     * 
      * @generated
      */
     @Override
