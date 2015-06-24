@@ -13,8 +13,6 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.palladiosimulator.analyzer.workflow.blackboard.PCMResourceSetPartition;
 import org.palladiosimulator.analyzer.workflow.configurations.AbstractPCMWorkflowRunConfiguration;
 
@@ -31,7 +29,7 @@ import de.uka.ipd.sdq.workflow.mdsd.blackboard.MDSDBlackboard;
  *
  * Prerequisite of this job: This job copies the models to the configured project created in the
  * workflow. It has to exist to be able to store the model copy into it.
- * 
+ *
  * The job currently only creates a working copy of the partition containing the pcm models:
  * {@link LoadPCMModelsIntoBlackboardJob}.PCM_MODELS_PARTITION_ID
  *
@@ -57,7 +55,7 @@ public class CreateWorkingCopyOfModelsJob implements IJob, IBlackboardInteractin
      * @param configuration
      *            The configuration for this job.
      */
-    public CreateWorkingCopyOfModelsJob(AbstractPCMWorkflowRunConfiguration configuration) {
+    public CreateWorkingCopyOfModelsJob(final AbstractPCMWorkflowRunConfiguration configuration) {
         this.configuration = configuration;
     }
 
@@ -65,18 +63,18 @@ public class CreateWorkingCopyOfModelsJob implements IJob, IBlackboardInteractin
      * Execute this job and create the model copy.
      */
     @Override
-    public void execute(IProgressMonitor monitor) throws JobFailedException, UserCanceledException {
+    public void execute(final IProgressMonitor monitor) throws JobFailedException, UserCanceledException {
 
-        IFolder modelFolder = getOrCreateModelFolder();
+        final IFolder modelFolder = getOrCreateModelFolder();
 
-        URI modelFolderURI = URI.createFileURI(modelFolder.getLocation().toOSString());
+        final URI modelFolderURI = URI.createFileURI(modelFolder.getLocation().toOSString());
 
         // access the resources
-        PCMResourceSetPartition partition = (PCMResourceSetPartition) this.blackboard
+        final PCMResourceSetPartition partition = (PCMResourceSetPartition) this.blackboard
                 .getPartition(LoadPCMModelsIntoBlackboardJob.PCM_MODELS_PARTITION_ID);
-        ResourceSet resourceSet = partition.getResourceSet();
-        
-        PCMResourceSetPartition workingCopyPartition = new PCMResourceSetPartition();
+        final ResourceSet resourceSet = partition.getResourceSet();
+
+        final PCMResourceSetPartition workingCopyPartition = new PCMResourceSetPartition();
 
         // Cannot do a deep copy within iterating the resource set, because if
         // proxies are resolved, new resources are created within the resource
@@ -88,37 +86,37 @@ public class CreateWorkingCopyOfModelsJob implements IJob, IBlackboardInteractin
         // ResourceSet).
         // Thus, create new ArrayList to iterate.
         // TODO test whether the resource of resolved proxy is copied as expected.
-        
+
         // TODO check whether latest change conflicts with the deep copy issue from above (Sebastian Krach)
         // should not be the case since there is no deep copy anymore
-        
-        List<Resource> resourceListToIterate = new ArrayList<Resource>();
+
+        final List<Resource> resourceListToIterate = new ArrayList<Resource>();
         resourceListToIterate.addAll(resourceSet.getResources());
-        
-        List<String> originalModelPaths = new ArrayList<String>();
-        
-        for (Resource resource : resourceListToIterate) {
+
+        final List<String> originalModelPaths = new ArrayList<String>();
+
+        for (final Resource resource : resourceListToIterate) {
             if (resource.getURI().scheme().equals("pathmap")) {
                 //If its a pathmap resource we do not need to change its path
-                workingCopyPartition.setContents(resource.getURI(), 
+                workingCopyPartition.setContents(resource.getURI(),
                         resource.getContents());
             } else {
                 //Otherwise redirect path to generated simulation plugin
                 final URI uri = resource.getURI();
-                
-				// Use all segments of URI as model files may reside in
-				// different folders or projects and may have the same file
-				// name, e.g. a myproject/default.system referencing a
-				// myproject/default.repository and a
-				// anotherproject/default.repository.
-				final String[] segments = uri.segments();
+
+                // Use all segments of URI as model files may reside in
+                // different folders or projects and may have the same file
+                // name, e.g. a myproject/default.system referencing a
+                // myproject/default.repository and a
+                // anotherproject/default.repository.
+                final String[] segments = uri.segments();
                 final String schemeSegment = uri.scheme();
-                
+
                 final URI newURI = modelFolderURI.appendSegment(schemeSegment).appendSegments(segments) ;
 
                 // Add base Plug-in ID and model paths to the configuration
                 if (configuration.getBaseProjectID() == null) {
-                    String[] splitString = uri.toString().split("/");
+                    final String[] splitString = uri.toString().split("/");
                     configuration.setBaseProjectID(splitString[2]);
                 }
 
@@ -126,46 +124,46 @@ public class CreateWorkingCopyOfModelsJob implements IJob, IBlackboardInteractin
                 if (uri.toString() != null) {
                     originalModelPaths.add(uri.toString());
                 }
-                
+
                 workingCopyPartition.setContents(newURI, resource.getContents());
             }
         }
-        
+
         try {
             workingCopyPartition.storeAllResources();
-        } catch (IOException e) {
+        } catch (final IOException e) {
             if(LOGGER.isEnabledFor(Level.ERROR)) {
                 LOGGER.error("Unable to serialize the working copy of the pcm models." ,e);
             }
         }
-        
+
         //Remove the partition which references the models in the original project
         this.blackboard.removePartition(
                 LoadPCMModelsIntoBlackboardJob.PCM_MODELS_PARTITION_ID);
-        
+
         //and replace it with the new working copy, so that further modifications of the
         //model do not change the original model files.
         this.blackboard.addPartition(
-                LoadPCMModelsIntoBlackboardJob.PCM_MODELS_PARTITION_ID, 
+                LoadPCMModelsIntoBlackboardJob.PCM_MODELS_PARTITION_ID,
                 workingCopyPartition);
-        
+
         configuration.setModelPaths(originalModelPaths);
     }
 
     private IFolder getOrCreateModelFolder() throws JobFailedException {
         assert (this.configuration != null);
-        IProject project = CreatePluginProjectJob.getProject(this.configuration.getStoragePluginID());
+        final IProject project = CreatePluginProjectJob.getProject(this.configuration.getStoragePluginID());
         assert (project != null);
 
         // prepare the target path
-        IFolder modelFolder = project.getFolder(MODEL_FOLDER);
+        final IFolder modelFolder = project.getFolder(MODEL_FOLDER);
         if (project.isOpen() && !modelFolder.exists()) {
             if (LOGGER.isDebugEnabled()) {
                 LOGGER.debug("Creating folder " + modelFolder.getName());
             }
             try {
                 modelFolder.create(false, true, null);
-            } catch (CoreException e) {
+            } catch (final CoreException e) {
                 if (LOGGER.isEnabledFor(Level.ERROR)) {
                     LOGGER.error("unable to create model folder");
                 }
@@ -181,12 +179,12 @@ public class CreateWorkingCopyOfModelsJob implements IJob, IBlackboardInteractin
     }
 
     @Override
-    public void cleanup(IProgressMonitor monitor) throws CleanupFailedException {
+    public void cleanup(final IProgressMonitor monitor) throws CleanupFailedException {
         // nothing to clean up
     }
 
     @Override
-    public void setBlackboard(MDSDBlackboard blackboard) {
+    public void setBlackboard(final MDSDBlackboard blackboard) {
         this.blackboard = blackboard;
     }
 
