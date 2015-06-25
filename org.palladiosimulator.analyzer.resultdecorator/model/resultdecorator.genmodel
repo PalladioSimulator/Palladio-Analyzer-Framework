@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel"
-    modelDirectory="/org.palladiosimulator.pcm.resultdecorator/src"
-    editDirectory="/org.palladiosimulator.pcm.resultdecorator.edit/src" editorDirectory="/org.palladiosimulator.pcm.resultdecorator.editor/src"
-    modelPluginID="org.palladiosimulator.pcm.resultdecorator" modelName="Resultdecorator"
-    editPluginClass="org.palladiosimulator.pcm.resultdecorator.provider.ResultdecoratorEditPlugin"
-    editorPluginClass="org.palladiosimulator.pcm.resultdecorator.presentation.ResultdecoratorEditorPlugin"
-    codeFormatting="true" testSuiteClass="org.palladiosimulator.pcm.resultdecorator.tests.ResultdecoratorAllTests"
+    modelDirectory="/org.palladiosimulator.analyzer.resultdecorator/src"
+    editDirectory="/org.palladiosimulator.analyzer.resultdecorator.edit/src" editorDirectory="/org.palladiosimulator.analyzer.resultdecorator.editor/src"
+    modelPluginID="org.palladiosimulator.analyzer.resultdecorator" modelName="Resultdecorator"
+    editPluginClass="org.palladiosimulator.analyzer.resultdecorator.provider.ResultdecoratorEditPlugin"
+    editorPluginClass="org.palladiosimulator.analyzer.resultdecorator.presentation.ResultdecoratorEditorPlugin"
+    codeFormatting="true" testSuiteClass="org.palladiosimulator.analyzer.resultdecorator.tests.ResultdecoratorAllTests"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
-    editPluginID="org.palladiosimulator.pcm.resultdecorator.edit" editorPluginID="org.palladiosimulator.pcm.resultdecorator.editor"
+    editPluginID="org.palladiosimulator.analyzer.resultdecorator.edit" editorPluginID="org.palladiosimulator.analyzer.resultdecorator.editor"
     usedGenPackages="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.genmodel#//identifier ../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm platform:/plugin/de.uka.ipd.sdq.probfunction/model/ProbabilityFunction.genmodel#//probfunction platform:/plugin/de.uka.ipd.sdq.stoex/model/stoex.genmodel#//stoex platform:/plugin/de.uka.ipd.sdq.units/model/Units.genmodel#//units"
     cleanup="true">
   <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
@@ -30,7 +30,7 @@
     <details key="SUPER_CLASS_ORDER" value="PROCESS"/>
   </genAnnotations>
   <foreignModel>resultdecorator.ecore</foreignModel>
-  <genPackages xsi:type="genmodel:GenPackage" prefix="Resultdecorator" basePackage="org.palladiosimulator.pcm"
+  <genPackages xsi:type="genmodel:GenPackage" prefix="Resultdecorator" basePackage="org.palladiosimulator.analyzer"
       disposableProviderFactory="true" ecorePackage="resultdecorator.ecore#/">
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="resultdecorator.ecore#//ResultDecoratorRepository">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -41,8 +41,8 @@
           createChild="true" ecoreFeature="ecore:EReference resultdecorator.ecore#//ResultDecoratorRepository/serviceResult_ResultDecoratorRepository"/>
     </genClasses>
     <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Repositorydecorator"
-        basePackage="org.palladiosimulator.pcm.resultdecorator" resource="XML" disposableProviderFactory="true"
-        ecorePackage="resultdecorator.ecore#//repositorydecorator">
+        basePackage="org.palladiosimulator.analyzer.resultdecorator" resource="XML"
+        disposableProviderFactory="true" ecorePackage="resultdecorator.ecore#//repositorydecorator">
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="resultdecorator.ecore#//repositorydecorator/InterfaceProvidingRequiringEntityResults">
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
             propertySortChoices="true" ecoreFeature="ecore:EReference resultdecorator.ecore#//repositorydecorator/InterfaceProvidingRequiringEntityResults/interfaceProvidingRequiringEntity_InterfaceProvidingRequiringEntityResult"/>
@@ -70,8 +70,8 @@
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Resourceenvironmentdecorator"
-        basePackage="org.palladiosimulator.pcm.resultdecorator" resource="XML" disposableProviderFactory="true"
-        ecorePackage="resultdecorator.ecore#//resourceenvironmentdecorator">
+        basePackage="org.palladiosimulator.analyzer.resultdecorator" resource="XML"
+        disposableProviderFactory="true" ecorePackage="resultdecorator.ecore#//resourceenvironmentdecorator">
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="resultdecorator.ecore#//resourceenvironmentdecorator/LinkingResourceResults">
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
             propertySortChoices="true" ecoreFeature="ecore:EReference resultdecorator.ecore#//resourceenvironmentdecorator/LinkingResourceResults/linkingResource_LinkingResourceResults"/>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="resultdecorator" nsURI="http://palladiosimulator.org/PCM/ResultDecorator/1.0"
-    nsPrefix="resultdecorator">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="resultdecorator" nsURI="http://palladiosimulator.org/Analyzer/ResultDecorator/1.0"
+    nsPrefix="org.palladiosimulator.analyzer">
   <eClassifiers xsi:type="ecore:EClass" name="ResultDecoratorRepository" eSuperTypes="../../org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="componentResults_ResultDecoratorRepository"
         ordered="false" upperBound="-1" eType="#//repositorydecorator/ComponentResult"
@@ -13,8 +13,8 @@
         ordered="false" upperBound="-1" eType="#//repositorydecorator/ServiceResult"
         containment="true"/>
   </eClassifiers>
-  <eSubpackages name="repositorydecorator" nsURI="http://palladiosimulator.org/PCM/ResultDecorator/Repository/1.0"
-      nsPrefix="repositorydecorator">
+  <eSubpackages name="repositorydecorator" nsURI="http://palladiosimulator.org/Analyzer/ResultDecorator/Repository/1.0"
+      nsPrefix="org.palladiosimulator.analyzer.resultdecorator">
     <eClassifiers xsi:type="ecore:EClass" name="InterfaceProvidingRequiringEntityResults"
         eSuperTypes="#//repositorydecorator/ComponentResult">
       <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceProvidingRequiringEntity_InterfaceProvidingRequiringEntityResult"
@@ -55,8 +55,8 @@
           ordered="false" lowerBound="1" eType="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//allocation/AllocationContext"/>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="resourceenvironmentdecorator" nsURI="http://palladiosimulator.org/PCM/ResultDecorator/ResourceEnvironment/1.0"
-      nsPrefix="resourceenvironmentdecorator">
+  <eSubpackages name="resourceenvironmentdecorator" nsURI="http://palladiosimulator.org/Analyzer/ResultDecorator/ResourceEnvironment/1.0"
+      nsPrefix="org.palladiosimulator.analyzer.resultdecorator">
     <eClassifiers xsi:type="ecore:EClass" name="LinkingResourceResults" eSuperTypes="#//resourceenvironmentdecorator/ActiveResourceUtilisationResult">
       <eStructuralFeatures xsi:type="ecore:EReference" name="linkingResource_LinkingResourceResults"
           ordered="false" eType="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/LinkingResource"/>
