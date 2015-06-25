@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Accuracy Influence Analysis
 Bundle-SymbolicName: org.palladiosimulator.analyzer.accuracy
 Bundle-Version: 1.0.0.qualifier
-Bundle-Vendor: FZI Forschungszentrum Informatik, Forschungsbereich SE
+Bundle-Vendor: palladiosimulator.org
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.palladiosimulator.analyzer.workflow;bundle-version="1.0.0",
  de.uka.ipd.sdq.workflow.mdsd;bundle-version="1.0.0",
