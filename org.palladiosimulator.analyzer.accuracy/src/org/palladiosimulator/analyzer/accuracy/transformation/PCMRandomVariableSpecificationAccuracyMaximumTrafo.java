@@ -3,6 +3,8 @@
  */
 package org.palladiosimulator.analyzer.accuracy.transformation;
 
+import static org.palladiosimulator.analyzer.quality.util.StoExHelper.*;
+
 import org.apache.log4j.Logger;
 
 import de.fzi.se.quality.qualityannotation.ExactlyAsSpecifiedPrecision;
@@ -10,7 +12,7 @@ import de.fzi.se.quality.qualityannotation.LimitedDeviationPrecision;
 import de.fzi.se.quality.qualityannotation.NoPrecision;
 import de.fzi.se.quality.qualityannotation.Precision;
 import de.fzi.se.quality.qualityannotation.util.QualityAnnotationSwitch;
-import static de.fzi.se.quality.util.StoExHelper.*;
+
 import org.palladiosimulator.pcm.core.PCMRandomVariable;
 
 /**Modifies a given PCM Random Variable according to the maximum allowed by a precision.

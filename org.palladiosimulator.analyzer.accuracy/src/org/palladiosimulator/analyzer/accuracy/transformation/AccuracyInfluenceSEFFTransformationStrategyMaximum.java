@@ -7,8 +7,8 @@ import org.apache.log4j.Logger;
 
 import de.fzi.se.quality.qualityannotation.NoPrecision;
 import de.fzi.se.quality.qualityannotation.REPrecision;
-import de.fzi.se.quality.util.EcoreCopierCreatingNewIds;
 
+import org.palladiosimulator.analyzer.quality.util.EcoreCopierCreatingNewIds;
 import org.palladiosimulator.analyzer.workflow.blackboard.PCMResourceSetPartition;
 import org.palladiosimulator.analyzer.workflow.runconfig.AccuracyInfluenceAnalysisState;
 import org.palladiosimulator.pcm.core.PCMRandomVariable;
