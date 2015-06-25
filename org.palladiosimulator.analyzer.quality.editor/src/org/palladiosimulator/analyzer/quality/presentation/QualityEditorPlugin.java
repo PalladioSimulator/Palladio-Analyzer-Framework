@@ -40,8 +40,14 @@ public final class QualityEditorPlugin extends EMFPlugin {
      * @generated
      */
     public QualityEditorPlugin() {
-        super(new ResourceLocator[] { IdentifierEditPlugin.INSTANCE, PalladioComponentModelEditPlugin.INSTANCE,
-                StoexEditPlugin.INSTANCE, UnitsEditPlugin.INSTANCE, ProbabilityFunctionEditPlugin.INSTANCE, });
+        super(new ResourceLocator[]
+                {
+                IdentifierEditPlugin.INSTANCE,
+                PalladioComponentModelEditPlugin.INSTANCE,
+                StoexEditPlugin.INSTANCE,
+                UnitsEditPlugin.INSTANCE,
+                ProbabilityFunctionEditPlugin.INSTANCE,
+                });
     }
 
     /**
