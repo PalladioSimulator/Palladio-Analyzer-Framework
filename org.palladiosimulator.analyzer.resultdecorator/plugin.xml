@@ -13,34 +13,34 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
             uri="http://palladiosimulator.org/PCM/ResultDecorator/1.0"
-            class="org.palladiosimulator.pcm.resultdecorator.ResultdecoratorPackage"
+            class="org.palladiosimulator.analyzer.resultdecorator.ResultdecoratorPackage"
             genModel="model/resultdecorator.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
             uri="http://palladiosimulator.org/PCM/ResultDecorator/Repository/1.0"
-            class="org.palladiosimulator.pcm.resultdecorator.repositorydecorator.RepositorydecoratorPackage"
+            class="org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.RepositorydecoratorPackage"
             genModel="model/resultdecorator.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.extension_parser">
       <parser
             type="repositorydecorator"
-            class="org.palladiosimulator.pcm.resultdecorator.repositorydecorator.util.RepositorydecoratorResourceFactoryImpl"/>
+            class="org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.util.RepositorydecoratorResourceFactoryImpl"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <package
             uri="http://palladiosimulator.org/PCM/ResultDecorator/ResourceEnvironment/1.0"
-            class="org.palladiosimulator.pcm.resultdecorator.resourceenvironmentdecorator.ResourceenvironmentdecoratorPackage"
+            class="org.palladiosimulator.analyzer.resultdecorator.resourceenvironmentdecorator.ResourceenvironmentdecoratorPackage"
             genModel="model/resultdecorator.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.extension_parser">
       <parser
             type="resourceenvironmentdecorator"
-            class="org.palladiosimulator.pcm.resultdecorator.resourceenvironmentdecorator.util.ResourceenvironmentdecoratorResourceFactoryImpl"/>
+            class="org.palladiosimulator.analyzer.resultdecorator.resourceenvironmentdecorator.util.ResourceenvironmentdecoratorResourceFactoryImpl"/>
    </extension>
 
 null

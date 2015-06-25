@@ -7,15 +7,15 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: org.palladiosimulator.pcm.resultdecorator,
- org.palladiosimulator.pcm.resultdecorator.impl,
- org.palladiosimulator.pcm.resultdecorator.repositorydecorator,
- org.palladiosimulator.pcm.resultdecorator.repositorydecorator.impl,
- org.palladiosimulator.pcm.resultdecorator.repositorydecorator.util,
- org.palladiosimulator.pcm.resultdecorator.resourceenvironmentdecorator,
- org.palladiosimulator.pcm.resultdecorator.resourceenvironmentdecorator.impl,
- org.palladiosimulator.pcm.resultdecorator.resourceenvironmentdecorator.util,
- org.palladiosimulator.pcm.resultdecorator.util
+Export-Package: org.palladiosimulator.analyzer.resultdecorator,
+ org.palladiosimulator.analyzer.resultdecorator.impl,
+ org.palladiosimulator.analyzer.resultdecorator.repositorydecorator,
+ org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.impl,
+ org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.util,
+ org.palladiosimulator.analyzer.resultdecorator.resourceenvironmentdecorator,
+ org.palladiosimulator.analyzer.resultdecorator.resourceenvironmentdecorator.impl,
+ org.palladiosimulator.analyzer.resultdecorator.resourceenvironmentdecorator.util,
+ org.palladiosimulator.analyzer.resultdecorator.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
