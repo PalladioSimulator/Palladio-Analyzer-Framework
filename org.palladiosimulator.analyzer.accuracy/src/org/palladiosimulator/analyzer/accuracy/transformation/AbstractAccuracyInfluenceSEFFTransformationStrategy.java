@@ -8,16 +8,16 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
-import de.fzi.se.quality.QualityPackage;
-import de.fzi.se.quality.QualityRepository;
-import de.fzi.se.quality.qualityannotation.ExactlyAsSpecifiedPrecision;
-import de.fzi.se.quality.qualityannotation.PCMRECategory;
-import de.fzi.se.quality.qualityannotation.PCMRERequestCategory;
-import de.fzi.se.quality.qualityannotation.PCMServiceSpecification;
-import de.fzi.se.quality.qualityannotation.QualityAnnotation;
-import de.fzi.se.quality.qualityannotation.QualityAnnotationFactory;
-import de.fzi.se.quality.qualityannotation.REPrecision;
-import de.fzi.se.quality.qualityannotation.RequiredElement;
+import org.palladiosimulator.analyzer.quality.QualityPackage;
+import org.palladiosimulator.analyzer.quality.QualityRepository;
+import org.palladiosimulator.analyzer.quality.qualityannotation.ExactlyAsSpecifiedPrecision;
+import org.palladiosimulator.analyzer.quality.qualityannotation.PCMRECategory;
+import org.palladiosimulator.analyzer.quality.qualityannotation.PCMRERequestCategory;
+import org.palladiosimulator.analyzer.quality.qualityannotation.PCMServiceSpecification;
+import org.palladiosimulator.analyzer.quality.qualityannotation.QualityAnnotation;
+import org.palladiosimulator.analyzer.quality.qualityannotation.QualityAnnotationFactory;
+import org.palladiosimulator.analyzer.quality.qualityannotation.REPrecision;
+import org.palladiosimulator.analyzer.quality.qualityannotation.RequiredElement;
 import de.uka.ipd.sdq.errorhandling.SeverityAndIssue;
 import de.uka.ipd.sdq.errorhandling.SeverityEnum;
 

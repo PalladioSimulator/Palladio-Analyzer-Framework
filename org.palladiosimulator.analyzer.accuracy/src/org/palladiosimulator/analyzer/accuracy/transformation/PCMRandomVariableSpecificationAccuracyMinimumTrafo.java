@@ -7,11 +7,11 @@ import static org.palladiosimulator.analyzer.quality.util.StoExHelper.*;
 
 import org.apache.log4j.Logger;
 
-import de.fzi.se.quality.qualityannotation.ExactlyAsSpecifiedPrecision;
-import de.fzi.se.quality.qualityannotation.LimitedDeviationPrecision;
-import de.fzi.se.quality.qualityannotation.NoPrecision;
-import de.fzi.se.quality.qualityannotation.Precision;
-import de.fzi.se.quality.qualityannotation.util.QualityAnnotationSwitch;
+import org.palladiosimulator.analyzer.quality.qualityannotation.ExactlyAsSpecifiedPrecision;
+import org.palladiosimulator.analyzer.quality.qualityannotation.LimitedDeviationPrecision;
+import org.palladiosimulator.analyzer.quality.qualityannotation.NoPrecision;
+import org.palladiosimulator.analyzer.quality.qualityannotation.Precision;
+import org.palladiosimulator.analyzer.quality.qualityannotation.util.QualityAnnotationSwitch;
 
 import org.palladiosimulator.pcm.core.PCMRandomVariable;
 

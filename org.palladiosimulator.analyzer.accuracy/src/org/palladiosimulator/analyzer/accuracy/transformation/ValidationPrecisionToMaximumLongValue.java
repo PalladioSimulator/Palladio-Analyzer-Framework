@@ -5,10 +5,10 @@ package org.palladiosimulator.analyzer.accuracy.transformation;
 
 import org.apache.log4j.Logger;
 
-import de.fzi.se.quality.qualityannotation.ExactlyAsSpecifiedPrecision;
-import de.fzi.se.quality.qualityannotation.LimitedDeviationPrecision;
-import de.fzi.se.quality.qualityannotation.NoPrecision;
-import de.fzi.se.quality.qualityannotation.util.QualityAnnotationSwitch;
+import org.palladiosimulator.analyzer.quality.qualityannotation.ExactlyAsSpecifiedPrecision;
+import org.palladiosimulator.analyzer.quality.qualityannotation.LimitedDeviationPrecision;
+import org.palladiosimulator.analyzer.quality.qualityannotation.NoPrecision;
+import org.palladiosimulator.analyzer.quality.qualityannotation.util.QualityAnnotationSwitch;
 
 import static java.lang.Math.*;
 

@@ -5,8 +5,8 @@ package org.palladiosimulator.analyzer.accuracy.transformation;
 
 import org.apache.log4j.Logger;
 
-import de.fzi.se.quality.qualityannotation.NoPrecision;
-import de.fzi.se.quality.qualityannotation.REPrecision;
+import org.palladiosimulator.analyzer.quality.qualityannotation.NoPrecision;
+import org.palladiosimulator.analyzer.quality.qualityannotation.REPrecision;
 
 import org.palladiosimulator.analyzer.quality.util.EcoreCopierCreatingNewIds;
 import org.palladiosimulator.analyzer.workflow.blackboard.PCMResourceSetPartition;
@@ -59,7 +59,7 @@ public class AccuracyInfluenceSEFFTransformationStrategyMaximum extends
 	}
 
 	/* (non-Javadoc)
-	 * @see de.uka.ipd.sdq.codegen.simucontroller.workflow.jobs.AbstractAccuracyInfluenceSEFFTransformationStrategy#modifyComponentExternalCall(org.palladiosimulator.pcm.seff.ExternalCallAction, de.fzi.se.quality.qualityannotation.REPrecision)
+	 * @see de.uka.ipd.sdq.codegen.simucontroller.workflow.jobs.AbstractAccuracyInfluenceSEFFTransformationStrategy#modifyComponentExternalCall(org.palladiosimulator.pcm.seff.ExternalCallAction, org.palladiosimulator.analyzer.quality.qualityannotation.REPrecision)
 	 */
 	@Override
 	protected void modifyComponentExternalCall(ExternalCallAction call,
@@ -100,7 +100,7 @@ public class AccuracyInfluenceSEFFTransformationStrategyMaximum extends
 	}
 
 	/* (non-Javadoc)
-	 * @see de.uka.ipd.sdq.codegen.simucontroller.workflow.jobs.AbstractAccuracyInfluenceSEFFTransformationStrategy#modifyComponentInternalCall(org.palladiosimulator.pcm.seff.InternalCallAction, de.fzi.se.quality.qualityannotation.REPrecision)
+	 * @see de.uka.ipd.sdq.codegen.simucontroller.workflow.jobs.AbstractAccuracyInfluenceSEFFTransformationStrategy#modifyComponentInternalCall(org.palladiosimulator.pcm.seff.InternalCallAction, org.palladiosimulator.analyzer.quality.qualityannotation.REPrecision)
 	 */
 	@Override
 	protected void modifyComponentInternalCall(InternalCallAction call,
@@ -138,7 +138,7 @@ public class AccuracyInfluenceSEFFTransformationStrategyMaximum extends
 	}
 
 	/* (non-Javadoc)
-	 * @see de.uka.ipd.sdq.codegen.simucontroller.workflow.jobs.AbstractAccuracyInfluenceSEFFTransformationStrategy#modifyInfrastructureCall(org.palladiosimulator.pcm.seff.seff_performance.InfrastructureCall, de.fzi.se.quality.qualityannotation.REPrecision)
+	 * @see de.uka.ipd.sdq.codegen.simucontroller.workflow.jobs.AbstractAccuracyInfluenceSEFFTransformationStrategy#modifyInfrastructureCall(org.palladiosimulator.pcm.seff.seff_performance.InfrastructureCall, org.palladiosimulator.analyzer.quality.qualityannotation.REPrecision)
 	 */
 	@Override
 	protected void modifyInfrastructureCall(InfrastructureCall call,
@@ -151,7 +151,7 @@ public class AccuracyInfluenceSEFFTransformationStrategyMaximum extends
 	}
 
 	/* (non-Javadoc)
-	 * @see de.uka.ipd.sdq.codegen.simucontroller.workflow.jobs.AbstractAccuracyInfluenceSEFFTransformationStrategy#modifyResourceCall(org.palladiosimulator.pcm.seff.seff_performance.ResourceCall, de.fzi.se.quality.qualityannotation.REPrecision)
+	 * @see de.uka.ipd.sdq.codegen.simucontroller.workflow.jobs.AbstractAccuracyInfluenceSEFFTransformationStrategy#modifyResourceCall(org.palladiosimulator.pcm.seff.seff_performance.ResourceCall, org.palladiosimulator.analyzer.quality.qualityannotation.REPrecision)
 	 */
 	@Override
 	protected void modifyResourceCall(ResourceCall call, REPrecision precision) {
@@ -168,7 +168,7 @@ public class AccuracyInfluenceSEFFTransformationStrategyMaximum extends
 	}
 
 	/* (non-Javadoc)
-	 * @see de.uka.ipd.sdq.codegen.simucontroller.workflow.jobs.AbstractAccuracyInfluenceSEFFTransformationStrategy#modifyResourceDemand(org.palladiosimulator.pcm.seff.seff_performance.ParametricResourceDemand, de.fzi.se.quality.qualityannotation.REPrecision)
+	 * @see de.uka.ipd.sdq.codegen.simucontroller.workflow.jobs.AbstractAccuracyInfluenceSEFFTransformationStrategy#modifyResourceDemand(org.palladiosimulator.pcm.seff.seff_performance.ParametricResourceDemand, org.palladiosimulator.analyzer.quality.qualityannotation.REPrecision)
 	 */
 	@Override
 	protected void modifyResourceDemand(ParametricResourceDemand demand,

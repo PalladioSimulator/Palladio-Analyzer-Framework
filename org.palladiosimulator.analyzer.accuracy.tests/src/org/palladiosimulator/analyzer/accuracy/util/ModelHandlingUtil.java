@@ -17,8 +17,8 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
-import de.fzi.se.quality.parameters.ParametersPackage;
-import de.fzi.se.quality.qualityannotation.QualityAnnotationPackage;
+import org.palladiosimulator.analyzer.quality.parameters.ParametersPackage;
+import org.palladiosimulator.analyzer.quality.qualityannotation.QualityAnnotationPackage;
 import org.palladiosimulator.pcm.PcmPackage;
 import org.palladiosimulator.pcm.repository.RepositoryPackage;
 

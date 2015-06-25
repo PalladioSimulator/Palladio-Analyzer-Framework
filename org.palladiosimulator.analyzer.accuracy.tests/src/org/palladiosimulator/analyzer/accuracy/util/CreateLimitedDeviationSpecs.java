@@ -3,16 +3,16 @@
  */
 package org.palladiosimulator.analyzer.accuracy.util;
 
-import de.fzi.se.quality.QualityFactory;
-import de.fzi.se.quality.QualityRepository;
-import de.fzi.se.quality.qualityannotation.LimitedDeviationPrecision;
-import de.fzi.se.quality.qualityannotation.PCMRECategory;
-import de.fzi.se.quality.qualityannotation.PCMRERequestCategory;
-import de.fzi.se.quality.qualityannotation.PCMServiceSpecification;
-import de.fzi.se.quality.qualityannotation.Precision;
-import de.fzi.se.quality.qualityannotation.QualityAnnotation;
-import de.fzi.se.quality.qualityannotation.QualityAnnotationFactory;
-import de.fzi.se.quality.qualityannotation.REPrecision;
+import org.palladiosimulator.analyzer.quality.QualityFactory;
+import org.palladiosimulator.analyzer.quality.QualityRepository;
+import org.palladiosimulator.analyzer.quality.qualityannotation.LimitedDeviationPrecision;
+import org.palladiosimulator.analyzer.quality.qualityannotation.PCMRECategory;
+import org.palladiosimulator.analyzer.quality.qualityannotation.PCMRERequestCategory;
+import org.palladiosimulator.analyzer.quality.qualityannotation.PCMServiceSpecification;
+import org.palladiosimulator.analyzer.quality.qualityannotation.Precision;
+import org.palladiosimulator.analyzer.quality.qualityannotation.QualityAnnotation;
+import org.palladiosimulator.analyzer.quality.qualityannotation.QualityAnnotationFactory;
+import org.palladiosimulator.analyzer.quality.qualityannotation.REPrecision;
 import org.palladiosimulator.pcm.repository.BasicComponent;
 import org.palladiosimulator.pcm.repository.Repository;
 import org.palladiosimulator.pcm.repository.RepositoryComponent;

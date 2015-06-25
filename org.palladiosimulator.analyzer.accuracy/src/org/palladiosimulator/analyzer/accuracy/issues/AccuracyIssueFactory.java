@@ -5,7 +5,7 @@ package org.palladiosimulator.analyzer.accuracy.issues;
 
 import org.eclipse.emf.ecore.EObject;
 
-import de.fzi.se.quality.qualityannotation.CharacterisedPCMParameterPartition;
+import org.palladiosimulator.analyzer.quality.qualityannotation.CharacterisedPCMParameterPartition;
 import de.uka.ipd.sdq.errorhandling.SeverityAndIssue;
 import de.uka.ipd.sdq.errorhandling.SeverityEnum;
 
