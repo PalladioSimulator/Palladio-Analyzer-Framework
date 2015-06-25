@@ -51,6 +51,8 @@
       <import plugin="org.eclipse.emf.edit.ui"/>
       <import plugin="org.eclipse.ui.ide"/>
       <import plugin="de.uka.ipd.sdq.workflow.launchconfig" version="2.0.3" match="greaterOrEqual"/>
+      <import plugin="org.palladiosimulator.analyzer.resultdecorator.edit" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.palladiosimulator.pcm.edit" version="3.6.0" match="greaterOrEqual"/>
    </requires>
 
    <plugin
@@ -90,6 +92,27 @@
 
    <plugin
          id="org.palladiosimulator.analyzer.quality.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.palladiosimulator.analyzer.resultdecorator"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.palladiosimulator.analyzer.resultdecorator.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.palladiosimulator.analyzer.resultdecorator.editor"
          download-size="0"
          install-size="0"
          version="0.0.0"

@@ -14,6 +14,10 @@
          id="org.palladiosimulator.analyzer.feature"
          version="0.0.0"/>
 
+   <requires>
+      <import plugin="org.junit"/>
+   </requires>
+
    <plugin
          id="org.palladiosimulator.analyzer.tests"
          download-size="0"
