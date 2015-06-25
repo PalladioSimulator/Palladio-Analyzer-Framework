@@ -9,13 +9,13 @@
 -->
 
 <plugin>
-
    <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated resultdecorator -->
       <category
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="org.palladiosimulator.pcm.resultdecorator.presentation.ResultdecoratorModelWizardID"
+            id="org.palladiosimulator.analyzer.resultdecorator.presentation.ResultdecoratorModelWizardID"
             name="%_UI_ResultdecoratorModelWizard_label"
             class="org.palladiosimulator.analyzer.resultdecorator.presentation.ResultdecoratorModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
@@ -26,8 +26,9 @@
    </extension>
 
    <extension point="org.eclipse.ui.editors">
+      <!-- @generated resultdecorator -->
       <editor
-            id="org.palladiosimulator.pcm.resultdecorator.presentation.ResultdecoratorEditorID"
+            id="org.palladiosimulator.analyzer.resultdecorator.presentation.ResultdecoratorEditorID"
             name="%_UI_ResultdecoratorEditor_label"
             icon="icons/full/obj16/ResultdecoratorModelFile.gif"
             extensions="resultdecorator"
@@ -37,11 +38,12 @@
    </extension>
 
    <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated resultdecorator -->
       <category
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="org.palladiosimulator.pcm.resultdecorator.repositorydecorator.presentation.RepositorydecoratorModelWizardID"
+            id="org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.presentation.RepositorydecoratorModelWizardID"
             name="%_UI_RepositorydecoratorModelWizard_label"
             class="org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.presentation.RepositorydecoratorModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
@@ -52,8 +54,9 @@
    </extension>
 
    <extension point="org.eclipse.ui.editors">
+      <!-- @generated resultdecorator -->
       <editor
-            id="org.palladiosimulator.pcm.resultdecorator.repositorydecorator.presentation.RepositorydecoratorEditorID"
+            id="org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.presentation.RepositorydecoratorEditorID"
             name="%_UI_RepositorydecoratorEditor_label"
             icon="icons/full/obj16/RepositorydecoratorModelFile.gif"
             extensions="repositorydecorator"
@@ -63,11 +66,12 @@
    </extension>
 
    <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated resultdecorator -->
       <category
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="org.palladiosimulator.pcm.resultdecorator.resourceenvironmentdecorator.presentation.ResourceenvironmentdecoratorModelWizardID"
+            id="org.palladiosimulator.analyzer.resultdecorator.resourceenvironmentdecorator.presentation.ResourceenvironmentdecoratorModelWizardID"
             name="%_UI_ResourceenvironmentdecoratorModelWizard_label"
             class="org.palladiosimulator.analyzer.resultdecorator.resourceenvironmentdecorator.presentation.ResourceenvironmentdecoratorModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
@@ -78,8 +82,9 @@
    </extension>
 
    <extension point="org.eclipse.ui.editors">
+      <!-- @generated resultdecorator -->
       <editor
-            id="org.palladiosimulator.pcm.resultdecorator.resourceenvironmentdecorator.presentation.ResourceenvironmentdecoratorEditorID"
+            id="org.palladiosimulator.analyzer.resultdecorator.resourceenvironmentdecorator.presentation.ResourceenvironmentdecoratorEditorID"
             name="%_UI_ResourceenvironmentdecoratorEditor_label"
             icon="icons/full/obj16/ResourceenvironmentdecoratorModelFile.gif"
             extensions="resourceenvironmentdecorator"
@@ -87,10 +92,4 @@
             contributorClass="org.palladiosimulator.analyzer.resultdecorator.resourceenvironmentdecorator.presentation.ResourceenvironmentdecoratorActionBarContributor">
       </editor>
    </extension>
-
-null
-null
-null
-null
-null
-null</plugin>
+</plugin>

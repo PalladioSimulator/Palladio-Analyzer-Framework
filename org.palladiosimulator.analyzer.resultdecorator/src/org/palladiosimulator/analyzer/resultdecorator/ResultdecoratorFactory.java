@@ -18,7 +18,8 @@ public interface ResultdecoratorFactory extends EFactory {
      *
      * @generated
      */
-    ResultdecoratorFactory eINSTANCE = org.palladiosimulator.analyzer.resultdecorator.impl.ResultdecoratorFactoryImpl.init();
+    ResultdecoratorFactory eINSTANCE = org.palladiosimulator.analyzer.resultdecorator.impl.ResultdecoratorFactoryImpl
+            .init();
 
     /**
      * Returns a new object of class '<em>Result Decorator Repository</em>'. <!-- begin-user-doc -->

@@ -36,21 +36,22 @@ public interface ResultdecoratorPackage extends EPackage {
      *
      * @generated
      */
-    String eNS_URI = "http://palladiosimulator.org/PCM/ResultDecorator/1.0";
+    String eNS_URI = "http://palladiosimulator.org/Analyzer/ResultDecorator/1.0";
 
     /**
      * The package namespace name. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      */
-    String eNS_PREFIX = "resultdecorator";
+    String eNS_PREFIX = "org.palladiosimulator.analyzer";
 
     /**
      * The singleton instance of the package. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      */
-    ResultdecoratorPackage eINSTANCE = org.palladiosimulator.analyzer.resultdecorator.impl.ResultdecoratorPackageImpl.init();
+    ResultdecoratorPackage eINSTANCE = org.palladiosimulator.analyzer.resultdecorator.impl.ResultdecoratorPackageImpl
+            .init();
 
     /**
      * The meta object id for the '

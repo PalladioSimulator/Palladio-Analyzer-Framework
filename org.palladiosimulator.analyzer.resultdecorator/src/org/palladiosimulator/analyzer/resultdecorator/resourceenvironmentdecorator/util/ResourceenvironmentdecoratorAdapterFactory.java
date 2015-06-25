@@ -164,7 +164,8 @@ public class ResourceenvironmentdecoratorAdapterFactory extends AdapterFactoryIm
      * catch all the cases anyway. <!-- end-user-doc -->
      *
      * @return the new adapter.
-     * @see org.palladiosimulator.analyzer.resultdecorator.resourceenvironmentdecorator.UtilisationResult
+     * @see org.palladiosimulator.analyzer.resultdecorator.resourceenvironmentdecorator.
+     *      UtilisationResult
      * @generated
      */
     public Adapter createUtilisationResultAdapter() {

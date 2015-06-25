@@ -19,8 +19,8 @@ import org.palladiosimulator.pcm.core.entity.provider.NamedElementItemProvider;
 
 /**
  * This is the item provider adapter for a
- * {@link org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.ComponentResult} object.
- * <!-- begin-user-doc --> <!-- end-user-doc -->
+ * {@link org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.ComponentResult}
+ * object. <!-- begin-user-doc --> <!-- end-user-doc -->
  *
  * @generated
  */

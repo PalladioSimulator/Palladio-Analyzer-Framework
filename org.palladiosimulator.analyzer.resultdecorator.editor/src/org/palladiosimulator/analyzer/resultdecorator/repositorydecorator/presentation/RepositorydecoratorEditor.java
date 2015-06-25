@@ -605,7 +605,7 @@ public class RepositorydecoratorEditor extends MultiPageEditorPart
     protected void updateProblemIndication() {
         if (this.updateProblemIndication) {
             final BasicDiagnostic diagnostic = new BasicDiagnostic(Diagnostic.OK,
-                    "org.palladiosimulator.pcm.resultdecorator.editor", 0, null,
+                    "org.palladiosimulator.analyzer.resultdecorator.editor", 0, null,
                     new Object[] { this.editingDomain.getResourceSet() });
             for (final Diagnostic childDiagnostic : this.resourceToDiagnosticMap.values()) {
                 if (childDiagnostic.getSeverity() != Diagnostic.OK) {
@@ -995,13 +995,13 @@ public class RepositorydecoratorEditor extends MultiPageEditorPart
         if (hasErrors || !resource.getWarnings().isEmpty()) {
             final BasicDiagnostic basicDiagnostic = new BasicDiagnostic(
                     hasErrors ? Diagnostic.ERROR : Diagnostic.WARNING,
-                    "org.palladiosimulator.pcm.resultdecorator.editor", 0,
+                    "org.palladiosimulator.analyzer.resultdecorator.editor", 0,
                     getString("_UI_CreateModelError_message", resource.getURI()),
                     new Object[] { exception == null ? (Object) resource : exception });
             basicDiagnostic.merge(EcoreUtil.computeDiagnostic(resource, true));
             return basicDiagnostic;
         } else if (exception != null) {
-            return new BasicDiagnostic(Diagnostic.ERROR, "org.palladiosimulator.pcm.resultdecorator.editor", 0,
+            return new BasicDiagnostic(Diagnostic.ERROR, "org.palladiosimulator.analyzer.resultdecorator.editor", 0,
                     getString("_UI_CreateModelError_message", resource.getURI()), new Object[] { exception });
         } else {
             return Diagnostic.OK_INSTANCE;

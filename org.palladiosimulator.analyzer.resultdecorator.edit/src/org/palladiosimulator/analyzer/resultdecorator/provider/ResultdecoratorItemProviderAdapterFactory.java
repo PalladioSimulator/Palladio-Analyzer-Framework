@@ -72,8 +72,8 @@ public class ResultdecoratorItemProviderAdapterFactory extends ResultdecoratorAd
 
     /**
      * This keeps track of the one adapter used for all
-     * {@link org.palladiosimulator.analyzer.resultdecorator.ResultDecoratorRepository} instances. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
+     * {@link org.palladiosimulator.analyzer.resultdecorator.ResultDecoratorRepository} instances.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      */

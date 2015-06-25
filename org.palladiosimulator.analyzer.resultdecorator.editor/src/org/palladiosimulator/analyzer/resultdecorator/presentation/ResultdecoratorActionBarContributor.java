@@ -173,7 +173,7 @@ public class ResultdecoratorActionBarContributor extends EditingDomainActionBarC
 
         final IMenuManager submenuManager = new MenuManager(
                 ResultdecoratorEditorPlugin.INSTANCE.getString("_UI_ResultdecoratorEditor_menu"),
-                "org.palladiosimulator.pcm.resultdecoratorMenuID");
+                "org.palladiosimulator.analyzer.resultdecoratorMenuID");
         menuManager.insertAfter("additions", submenuManager);
         submenuManager.add(new Separator("settings"));
         submenuManager.add(new Separator("actions"));

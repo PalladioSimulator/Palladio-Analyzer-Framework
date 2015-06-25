@@ -24,8 +24,8 @@ import org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.Servic
 
 /**
  * This is the item provider adapter for a
- * {@link org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.ServiceResult} object. <!--
- * begin-user-doc --> <!-- end-user-doc -->
+ * {@link org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.ServiceResult} object.
+ * <!-- begin-user-doc --> <!-- end-user-doc -->
  *
  * @generated
  */

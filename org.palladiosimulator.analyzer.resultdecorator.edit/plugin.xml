@@ -9,10 +9,10 @@
 -->
 
 <plugin>
-
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated resultdecorator -->
       <factory
-            uri="http://palladiosimulator.org/PCM/ResultDecorator/1.0"
+            uri="http://palladiosimulator.org/Analyzer/ResultDecorator/1.0"
             class="org.palladiosimulator.analyzer.resultdecorator.provider.ResultdecoratorItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
@@ -23,8 +23,9 @@
    </extension>
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated resultdecorator -->
       <factory
-            uri="http://palladiosimulator.org/PCM/ResultDecorator/Repository/1.0"
+            uri="http://palladiosimulator.org/Analyzer/ResultDecorator/Repository/1.0"
             class="org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.provider.RepositorydecoratorItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
@@ -35,8 +36,9 @@
    </extension>
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated resultdecorator -->
       <factory
-            uri="http://palladiosimulator.org/PCM/ResultDecorator/ResourceEnvironment/1.0"
+            uri="http://palladiosimulator.org/Analyzer/ResultDecorator/ResourceEnvironment/1.0"
             class="org.palladiosimulator.analyzer.resultdecorator.resourceenvironmentdecorator.provider.ResourceenvironmentdecoratorItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
@@ -45,7 +47,4 @@
                org.eclipse.emf.edit.provider.IItemLabelProvider
                org.eclipse.emf.edit.provider.IItemPropertySource"/>
    </extension>
-
-null
-null
-null</plugin>
+</plugin>

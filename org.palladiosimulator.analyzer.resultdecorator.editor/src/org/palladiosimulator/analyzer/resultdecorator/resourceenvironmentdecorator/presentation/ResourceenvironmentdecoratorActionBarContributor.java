@@ -175,7 +175,7 @@ public class ResourceenvironmentdecoratorActionBarContributor extends EditingDom
 
         final IMenuManager submenuManager = new MenuManager(
                 ResultdecoratorEditorPlugin.INSTANCE.getString("_UI_ResourceenvironmentdecoratorEditor_menu"),
-                "org.palladiosimulator.pcm.resultdecorator.resourceenvironmentdecoratorMenuID");
+                "org.palladiosimulator.analyzer.resultdecorator.resourceenvironmentdecoratorMenuID");
         menuManager.insertAfter("additions", submenuManager);
         submenuManager.add(new Separator("settings"));
         submenuManager.add(new Separator("actions"));

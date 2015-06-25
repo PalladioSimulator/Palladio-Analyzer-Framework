@@ -20,7 +20,8 @@ import org.palladiosimulator.pcm.core.entity.NamedElement;
  * inheritance hierarchy until a non-null result is returned, which is the result of the switch.
  * <!-- end-user-doc -->
  *
- * @see org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.RepositorydecoratorPackage
+ * @see org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.
+ *      RepositorydecoratorPackage
  * @generated
  */
 public class RepositorydecoratorSwitch<T> extends Switch<T> {

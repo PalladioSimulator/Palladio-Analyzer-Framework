@@ -38,14 +38,14 @@ public interface ResourceenvironmentdecoratorPackage extends EPackage {
      *
      * @generated
      */
-    String eNS_URI = "http://palladiosimulator.org/PCM/ResultDecorator/ResourceEnvironment/1.0";
+    String eNS_URI = "http://palladiosimulator.org/Analyzer/ResultDecorator/ResourceEnvironment/1.0";
 
     /**
      * The package namespace name. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      */
-    String eNS_PREFIX = "resourceenvironmentdecorator";
+    String eNS_PREFIX = "org.palladiosimulator.analyzer.resultdecorator";
 
     /**
      * The singleton instance of the package. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -759,7 +759,8 @@ public interface ResourceenvironmentdecoratorPackage extends EPackage {
      * <em>Utilisation Result</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @return the meta object for class '<em>Utilisation Result</em>'.
-     * @see org.palladiosimulator.analyzer.resultdecorator.resourceenvironmentdecorator.UtilisationResult
+     * @see org.palladiosimulator.analyzer.resultdecorator.resourceenvironmentdecorator.
+     *      UtilisationResult
      * @generated
      */
     EClass getUtilisationResult();

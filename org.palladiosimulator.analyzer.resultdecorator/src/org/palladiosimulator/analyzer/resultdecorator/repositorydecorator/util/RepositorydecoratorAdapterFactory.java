@@ -18,7 +18,8 @@ import org.palladiosimulator.pcm.core.entity.NamedElement;
  * <!-- begin-user-doc --> The <b>Adapter Factory</b> for the model. It provides an adapter
  * <code>createXXX</code> method for each class of the model. <!-- end-user-doc -->
  *
- * @see org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.RepositorydecoratorPackage
+ * @see org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.
+ *      RepositorydecoratorPackage
  * @generated
  */
 public class RepositorydecoratorAdapterFactory extends AdapterFactoryImpl {
@@ -157,7 +158,8 @@ public class RepositorydecoratorAdapterFactory extends AdapterFactoryImpl {
      * inheritance will catch all the cases anyway. <!-- end-user-doc -->
      *
      * @return the new adapter.
-     * @see org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.AllocationContextResults
+     * @see org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.
+     *      AllocationContextResults
      * @generated
      */
     public Adapter createAllocationContextResultsAdapter() {
@@ -187,7 +189,8 @@ public class RepositorydecoratorAdapterFactory extends AdapterFactoryImpl {
      * inheritance will catch all the cases anyway. <!-- end-user-doc -->
      *
      * @return the new adapter.
-     * @see org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.AllocationServiceResult
+     * @see org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.
+     *      AllocationServiceResult
      * @generated
      */
     public Adapter createAllocationServiceResultAdapter() {

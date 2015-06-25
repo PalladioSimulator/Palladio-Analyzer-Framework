@@ -19,7 +19,8 @@ import org.palladiosimulator.pcm.core.entity.EntityPackage;
  * </ul>
  * <!-- end-user-doc -->
  *
- * @see org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.RepositorydecoratorFactory
+ * @see org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.
+ *      RepositorydecoratorFactory
  * @model kind="package"
  * @generated
  */
@@ -37,14 +38,14 @@ public interface RepositorydecoratorPackage extends EPackage {
      *
      * @generated
      */
-    String eNS_URI = "http://palladiosimulator.org/PCM/ResultDecorator/Repository/1.0";
+    String eNS_URI = "http://palladiosimulator.org/Analyzer/ResultDecorator/Repository/1.0";
 
     /**
      * The package namespace name. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      */
-    String eNS_PREFIX = "repositorydecorator";
+    String eNS_PREFIX = "org.palladiosimulator.analyzer.resultdecorator";
 
     /**
      * The singleton instance of the package. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -59,7 +60,8 @@ public interface RepositorydecoratorPackage extends EPackage {
      * {@link org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.impl.ComponentResultImpl
      * <em>Component Result</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
-     * @see org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.impl.ComponentResultImpl
+     * @see org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.impl.
+     *      ComponentResultImpl
      * @see org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.impl.RepositorydecoratorPackageImpl#getComponentResult()
      * @generated
      */
@@ -305,7 +307,8 @@ public interface RepositorydecoratorPackage extends EPackage {
      * {@link org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.impl.ServiceResultImpl
      * <em>Service Result</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
-     * @see org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.impl.ServiceResultImpl
+     * @see org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.impl.
+     *      ServiceResultImpl
      * @see org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.impl.RepositorydecoratorPackageImpl#getServiceResult()
      * @generated
      */
@@ -509,7 +512,8 @@ public interface RepositorydecoratorPackage extends EPackage {
      * <em>Allocation Context Results</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @return the meta object for class '<em>Allocation Context Results</em>'.
-     * @see org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.AllocationContextResults
+     * @see org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.
+     *      AllocationContextResults
      * @generated
      */
     EClass getAllocationContextResults();
@@ -583,7 +587,8 @@ public interface RepositorydecoratorPackage extends EPackage {
      * <em>Allocation Service Result</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @return the meta object for class '<em>Allocation Service Result</em>'.
-     * @see org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.AllocationServiceResult
+     * @see org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.
+     *      AllocationServiceResult
      * @generated
      */
     EClass getAllocationServiceResult();
@@ -730,7 +735,8 @@ public interface RepositorydecoratorPackage extends EPackage {
          * {@link org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.impl.ServiceResultImpl
          * <em>Service Result</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
          *
-         * @see org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.impl.ServiceResultImpl
+         * @see org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.impl.
+         *      ServiceResultImpl
          * @see org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.impl.RepositorydecoratorPackageImpl#getServiceResult()
          * @generated
          */

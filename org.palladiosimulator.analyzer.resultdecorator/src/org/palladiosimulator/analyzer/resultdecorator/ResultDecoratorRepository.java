@@ -37,8 +37,8 @@ public interface ResultDecoratorRepository extends EObject, NamedElement {
     /**
      * Returns the value of the '<em><b>Component Results Result Decorator Repository</b></em>'
      * containment reference list. The list contents are of type
-     * {@link org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.ComponentResult}. <!--
-     * begin-user-doc -->
+     * {@link org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.ComponentResult}.
+     * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Component Results Result Decorator Repository</em>' containment
      * reference list isn't clear, there really should be more of a description here...
@@ -75,8 +75,8 @@ public interface ResultDecoratorRepository extends EObject, NamedElement {
     /**
      * Returns the value of the '<em><b>Service Result Result Decorator Repository</b></em>'
      * containment reference list. The list contents are of type
-     * {@link org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.ServiceResult}. <!--
-     * begin-user-doc -->
+     * {@link org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.ServiceResult}.
+     * <!-- begin-user-doc -->
      * <p>
      * If the meaning of the '<em>Service Result Result Decorator Repository</em>' containment
      * reference list isn't clear, there really should be more of a description here...
