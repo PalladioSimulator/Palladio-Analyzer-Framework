@@ -72,9 +72,9 @@ public class RepositorydecoratorModelWizard extends Wizard implements INewWizard
      * 
      * @generated
      */
-    public static final List<String> FILE_EXTENSIONS = Collections
-            .unmodifiableList(Arrays.asList(ResultdecoratorEditorPlugin.INSTANCE
-                    .getString("_UI_RepositorydecoratorEditorFilenameExtensions").split("\\s*,\\s*")));
+    public static final List<String> FILE_EXTENSIONS = Collections.unmodifiableList(Arrays
+            .asList(ResultdecoratorEditorPlugin.INSTANCE.getString("_UI_RepositorydecoratorEditorFilenameExtensions")
+                    .split("\\s*,\\s*")));
 
     /**
      * A formatted list of supported file extensions, suitable for display. <!-- begin-user-doc -->
@@ -82,8 +82,8 @@ public class RepositorydecoratorModelWizard extends Wizard implements INewWizard
      * 
      * @generated
      */
-    public static final String FORMATTED_FILE_EXTENSIONS = ResultdecoratorEditorPlugin.INSTANCE
-            .getString("_UI_RepositorydecoratorEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
+    public static final String FORMATTED_FILE_EXTENSIONS = ResultdecoratorEditorPlugin.INSTANCE.getString(
+            "_UI_RepositorydecoratorEditorFilenameExtensions").replaceAll("\\s*,\\s*", ", ");
 
     /**
      * This caches an instance of the model package. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -147,8 +147,8 @@ public class RepositorydecoratorModelWizard extends Wizard implements INewWizard
         this.workbench = workbench;
         this.selection = selection;
         this.setWindowTitle(ResultdecoratorEditorPlugin.INSTANCE.getString("_UI_Wizard_label"));
-        this.setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE.getImageDescriptor(
-                ResultdecoratorEditorPlugin.INSTANCE.getImage("full/wizban/NewRepositorydecorator")));
+        this.setDefaultPageImageDescriptor(ExtendedImageRegistry.INSTANCE
+                .getImageDescriptor(ResultdecoratorEditorPlugin.INSTANCE.getImage("full/wizban/NewRepositorydecorator")));
     }
 
     /**
@@ -158,12 +158,16 @@ public class RepositorydecoratorModelWizard extends Wizard implements INewWizard
      * @generated
      */
     protected Collection<String> getInitialObjectNames() {
-        if (this.initialObjectNames == null) {
+        if (this.initialObjectNames == null)
+        {
             this.initialObjectNames = new ArrayList<String>();
-            for (final EClassifier eClassifier : this.repositorydecoratorPackage.getEClassifiers()) {
-                if (eClassifier instanceof EClass) {
+            for (final EClassifier eClassifier : this.repositorydecoratorPackage.getEClassifiers())
+            {
+                if (eClassifier instanceof EClass)
+                {
                     final EClass eClass = (EClass) eClassifier;
-                    if (!eClass.isAbstract()) {
+                    if (!eClass.isAbstract())
+                    {
                         this.initialObjectNames.add(eClass.getName());
                     }
                 }
@@ -179,8 +183,8 @@ public class RepositorydecoratorModelWizard extends Wizard implements INewWizard
      * @generated
      */
     protected EObject createInitialModel() {
-        final EClass eClass = (EClass) this.repositorydecoratorPackage
-                .getEClassifier(this.initialObjectCreationPage.getInitialObjectName());
+        final EClass eClass = (EClass) this.repositorydecoratorPackage.getEClassifier(this.initialObjectCreationPage
+                .getInitialObjectName());
         final EObject rootObject = this.repositorydecoratorFactory.create(eClass);
         return rootObject;
     }
@@ -192,25 +196,30 @@ public class RepositorydecoratorModelWizard extends Wizard implements INewWizard
      */
     @Override
     public boolean performFinish() {
-        try {
+        try
+        {
             // Remember the file.
             //
             final IFile modelFile = this.getModelFile();
 
             // Do the work within an operation.
             //
-            final WorkspaceModifyOperation operation = new WorkspaceModifyOperation() {
-
+            final WorkspaceModifyOperation operation =
+                    new WorkspaceModifyOperation()
+            {
                 @Override
-                protected void execute(final IProgressMonitor progressMonitor) {
-                    try {
+                protected void execute(final IProgressMonitor progressMonitor)
+                {
+                    try
+                    {
                         // Create a resource set
                         //
                         final ResourceSet resourceSet = new ResourceSetImpl();
 
                         // Get the URI of the model file.
                         //
-                        final URI fileURI = URI.createPlatformResourceURI(modelFile.getFullPath().toString(), true);
+                        final URI fileURI = URI.createPlatformResourceURI(modelFile.getFullPath().toString(),
+                                        true);
 
                         // Create a resource for this file.
                         //
@@ -219,7 +228,8 @@ public class RepositorydecoratorModelWizard extends Wizard implements INewWizard
                         // Add the initial model object to the contents.
                         //
                         final EObject rootObject = RepositorydecoratorModelWizard.this.createInitialModel();
-                        if (rootObject != null) {
+                        if (rootObject != null)
+                        {
                             resource.getContents().add(rootObject);
                         }
 
@@ -227,11 +237,15 @@ public class RepositorydecoratorModelWizard extends Wizard implements INewWizard
                         //
                         final Map<Object, Object> options = new HashMap<Object, Object>();
                         options.put(XMLResource.OPTION_ENCODING,
-                                RepositorydecoratorModelWizard.this.initialObjectCreationPage.getEncoding());
+                                        RepositorydecoratorModelWizard.this.initialObjectCreationPage.getEncoding());
                         resource.save(options);
-                    } catch (final Exception exception) {
+                    }
+                    catch (final Exception exception)
+                    {
                         ResultdecoratorEditorPlugin.INSTANCE.log(exception);
-                    } finally {
+                    }
+                    finally
+                    {
                         progressMonitor.done();
                     }
                 }
@@ -244,12 +258,15 @@ public class RepositorydecoratorModelWizard extends Wizard implements INewWizard
             final IWorkbenchWindow workbenchWindow = this.workbench.getActiveWorkbenchWindow();
             final IWorkbenchPage page = workbenchWindow.getActivePage();
             final IWorkbenchPart activePart = page.getActivePart();
-            if (activePart instanceof ISetSelectionTarget) {
+            if (activePart instanceof ISetSelectionTarget)
+            {
                 final ISelection targetSelection = new StructuredSelection(modelFile);
-                this.getShell().getDisplay().asyncExec(new Runnable() {
-
+                this.getShell().getDisplay().asyncExec
+                (new Runnable()
+                {
                     @Override
-                    public void run() {
+                    public void run()
+                    {
                         ((ISetSelectionTarget) activePart).selectReveal(targetSelection);
                     }
                 });
@@ -257,10 +274,14 @@ public class RepositorydecoratorModelWizard extends Wizard implements INewWizard
 
             // Open an editor on the new file.
             //
-            try {
-                page.openEditor(new FileEditorInput(modelFile), this.workbench.getEditorRegistry()
-                        .getDefaultEditor(modelFile.getFullPath().toString()).getId());
-            } catch (final PartInitException exception) {
+            try
+            {
+                page.openEditor
+                (new FileEditorInput(modelFile),
+                        this.workbench.getEditorRegistry().getDefaultEditor(modelFile.getFullPath().toString())
+                        .getId());
+            } catch (final PartInitException exception)
+            {
                 MessageDialog.openError(workbenchWindow.getShell(),
                         ResultdecoratorEditorPlugin.INSTANCE.getString("_UI_OpenEditorError_label"),
                         exception.getMessage());
@@ -268,7 +289,8 @@ public class RepositorydecoratorModelWizard extends Wizard implements INewWizard
             }
 
             return true;
-        } catch (final Exception exception) {
+        } catch (final Exception exception)
+        {
             ResultdecoratorEditorPlugin.INSTANCE.log(exception);
             return false;
         }
@@ -299,9 +321,11 @@ public class RepositorydecoratorModelWizard extends Wizard implements INewWizard
          */
         @Override
         protected boolean validatePage() {
-            if (super.validatePage()) {
+            if (super.validatePage())
+            {
                 final String extension = new Path(this.getFileName()).getFileExtension();
-                if (extension == null || !FILE_EXTENSIONS.contains(extension)) {
+                if (extension == null || !FILE_EXTENSIONS.contains(extension))
+                {
                     final String key = FILE_EXTENSIONS.size() > 1 ? "_WARN_FilenameExtensions"
                             : "_WARN_FilenameExtension";
                     this.setErrorMessage(ResultdecoratorEditorPlugin.INSTANCE.getString(key,
@@ -398,11 +422,13 @@ public class RepositorydecoratorModelWizard extends Wizard implements INewWizard
                 this.initialObjectField.setLayoutData(data);
             }
 
-            for (final String objectName : RepositorydecoratorModelWizard.this.getInitialObjectNames()) {
+            for (final String objectName : RepositorydecoratorModelWizard.this.getInitialObjectNames())
+            {
                 this.initialObjectField.add(this.getLabel(objectName));
             }
 
-            if (this.initialObjectField.getItemCount() == 1) {
+            if (this.initialObjectField.getItemCount() == 1)
+            {
                 this.initialObjectField.select(0);
             }
             this.initialObjectField.addModifyListener(this.validator);
@@ -423,7 +449,8 @@ public class RepositorydecoratorModelWizard extends Wizard implements INewWizard
                 this.encodingField.setLayoutData(data);
             }
 
-            for (final String encoding : this.getEncodings()) {
+            for (final String encoding : this.getEncodings())
+            {
                 this.encodingField.add(encoding);
             }
 
@@ -439,10 +466,11 @@ public class RepositorydecoratorModelWizard extends Wizard implements INewWizard
          * 
          * @generated
          */
-        protected ModifyListener validator = new ModifyListener() {
-
+        protected ModifyListener validator = new ModifyListener()
+        {
             @Override
-            public void modifyText(final ModifyEvent e) {
+            public void modifyText(final ModifyEvent e)
+            {
                 RepositorydecoratorModelWizardInitialObjectCreationPage.this
                         .setPageComplete(RepositorydecoratorModelWizardInitialObjectCreationPage.this.validatePage());
             }
@@ -465,11 +493,15 @@ public class RepositorydecoratorModelWizard extends Wizard implements INewWizard
         @Override
         public void setVisible(final boolean visible) {
             super.setVisible(visible);
-            if (visible) {
-                if (this.initialObjectField.getItemCount() == 1) {
+            if (visible)
+            {
+                if (this.initialObjectField.getItemCount() == 1)
+                {
                     this.initialObjectField.clearSelection();
                     this.encodingField.setFocus();
-                } else {
+                }
+                else
+                {
                     this.encodingField.clearSelection();
                     this.initialObjectField.setFocus();
                 }
@@ -484,8 +516,10 @@ public class RepositorydecoratorModelWizard extends Wizard implements INewWizard
         public String getInitialObjectName() {
             final String label = this.initialObjectField.getText();
 
-            for (final String name : RepositorydecoratorModelWizard.this.getInitialObjectNames()) {
-                if (this.getLabel(name).equals(label)) {
+            for (final String name : RepositorydecoratorModelWizard.this.getInitialObjectNames())
+            {
+                if (this.getLabel(name).equals(label))
+                {
                     return name;
                 }
             }
@@ -508,9 +542,11 @@ public class RepositorydecoratorModelWizard extends Wizard implements INewWizard
          * @generated
          */
         protected String getLabel(final String typeName) {
-            try {
+            try
+            {
                 return ResultdecoratorEditPlugin.INSTANCE.getString("_UI_" + typeName + "_type");
-            } catch (final MissingResourceException mre) {
+            } catch (final MissingResourceException mre)
+            {
                 ResultdecoratorEditorPlugin.INSTANCE.log(mre);
             }
             return typeName;
@@ -522,11 +558,13 @@ public class RepositorydecoratorModelWizard extends Wizard implements INewWizard
          * @generated
          */
         protected Collection<String> getEncodings() {
-            if (this.encodings == null) {
+            if (this.encodings == null)
+            {
                 this.encodings = new ArrayList<String>();
                 for (final StringTokenizer stringTokenizer = new StringTokenizer(
                         ResultdecoratorEditorPlugin.INSTANCE.getString("_UI_XMLEncodingChoices")); stringTokenizer
-                                .hasMoreTokens();) {
+                        .hasMoreTokens();)
+                {
                     this.encodings.add(stringTokenizer.nextToken());
                 }
             }
@@ -545,32 +583,35 @@ public class RepositorydecoratorModelWizard extends Wizard implements INewWizard
         // Create a page, set the title, and the initial model file name.
         //
         this.newFileCreationPage = new RepositorydecoratorModelWizardNewFileCreationPage("Whatever", this.selection);
-        this.newFileCreationPage
-                .setTitle(ResultdecoratorEditorPlugin.INSTANCE.getString("_UI_RepositorydecoratorModelWizard_label"));
-        this.newFileCreationPage.setDescription(
-                ResultdecoratorEditorPlugin.INSTANCE.getString("_UI_RepositorydecoratorModelWizard_description"));
-        this.newFileCreationPage.setFileName(
-                ResultdecoratorEditorPlugin.INSTANCE.getString("_UI_RepositorydecoratorEditorFilenameDefaultBase") + "."
-                        + FILE_EXTENSIONS.get(0));
+        this.newFileCreationPage.setTitle(ResultdecoratorEditorPlugin.INSTANCE
+                .getString("_UI_RepositorydecoratorModelWizard_label"));
+        this.newFileCreationPage.setDescription(ResultdecoratorEditorPlugin.INSTANCE
+                .getString("_UI_RepositorydecoratorModelWizard_description"));
+        this.newFileCreationPage.setFileName(ResultdecoratorEditorPlugin.INSTANCE
+                .getString("_UI_RepositorydecoratorEditorFilenameDefaultBase") + "." + FILE_EXTENSIONS.get(0));
         this.addPage(this.newFileCreationPage);
 
         // Try and get the resource selection to determine a current directory for the file dialog.
         //
-        if (this.selection != null && !this.selection.isEmpty()) {
+        if (this.selection != null && !this.selection.isEmpty())
+        {
             // Get the resource...
             //
             final Object selectedElement = this.selection.iterator().next();
-            if (selectedElement instanceof IResource) {
+            if (selectedElement instanceof IResource)
+            {
                 // Get the resource parent, if its a file.
                 //
                 IResource selectedResource = (IResource) selectedElement;
-                if (selectedResource.getType() == IResource.FILE) {
+                if (selectedResource.getType() == IResource.FILE)
+                {
                     selectedResource = selectedResource.getParent();
                 }
 
                 // This gives us a directory...
                 //
-                if (selectedResource instanceof IFolder || selectedResource instanceof IProject) {
+                if (selectedResource instanceof IFolder || selectedResource instanceof IProject)
+                {
                     // Set this for the container.
                     //
                     this.newFileCreationPage.setContainerFullPath(selectedResource.getFullPath());
@@ -581,7 +622,8 @@ public class RepositorydecoratorModelWizard extends Wizard implements INewWizard
                             .getString("_UI_RepositorydecoratorEditorFilenameDefaultBase");
                     final String defaultModelFilenameExtension = FILE_EXTENSIONS.get(0);
                     String modelFilename = defaultModelBaseFilename + "." + defaultModelFilenameExtension;
-                    for (int i = 1; ((IContainer) selectedResource).findMember(modelFilename) != null; ++i) {
+                    for (int i = 1; ((IContainer) selectedResource).findMember(modelFilename) != null; ++i)
+                    {
                         modelFilename = defaultModelBaseFilename + i + "." + defaultModelFilenameExtension;
                     }
                     this.newFileCreationPage.setFileName(modelFilename);
@@ -589,10 +631,10 @@ public class RepositorydecoratorModelWizard extends Wizard implements INewWizard
             }
         }
         this.initialObjectCreationPage = new RepositorydecoratorModelWizardInitialObjectCreationPage("Whatever2");
-        this.initialObjectCreationPage
-                .setTitle(ResultdecoratorEditorPlugin.INSTANCE.getString("_UI_RepositorydecoratorModelWizard_label"));
-        this.initialObjectCreationPage.setDescription(
-                ResultdecoratorEditorPlugin.INSTANCE.getString("_UI_Wizard_initial_object_description"));
+        this.initialObjectCreationPage.setTitle(ResultdecoratorEditorPlugin.INSTANCE
+                .getString("_UI_RepositorydecoratorModelWizard_label"));
+        this.initialObjectCreationPage.setDescription(ResultdecoratorEditorPlugin.INSTANCE
+                .getString("_UI_Wizard_initial_object_description"));
         this.addPage(this.initialObjectCreationPage);
     }
 

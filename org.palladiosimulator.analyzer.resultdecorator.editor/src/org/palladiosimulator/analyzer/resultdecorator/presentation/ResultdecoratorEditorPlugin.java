@@ -40,8 +40,14 @@ public final class ResultdecoratorEditorPlugin extends EMFPlugin {
      * @generated
      */
     public ResultdecoratorEditorPlugin() {
-        super(new ResourceLocator[] { IdentifierEditPlugin.INSTANCE, PalladioComponentModelEditPlugin.INSTANCE,
-                ProbabilityFunctionEditPlugin.INSTANCE, StoexEditPlugin.INSTANCE, UnitsEditPlugin.INSTANCE, });
+        super(new ResourceLocator[]
+                {
+                IdentifierEditPlugin.INSTANCE,
+                PalladioComponentModelEditPlugin.INSTANCE,
+                ProbabilityFunctionEditPlugin.INSTANCE,
+                StoexEditPlugin.INSTANCE,
+                UnitsEditPlugin.INSTANCE,
+                });
     }
 
     /**
