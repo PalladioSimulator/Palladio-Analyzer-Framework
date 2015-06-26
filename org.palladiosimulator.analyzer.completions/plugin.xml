@@ -10,14 +10,6 @@
 
 <plugin>
 
-  <extension point="org.eclipse.emf.ecore.generated_package">
-    <package 
-       uri = "http://palladiosimulator.org/AnalyzerFramework/Completions/1.0" 
-       class = "org.palladiosimulator.analyzer.completions.CompletionsPackage"
-       genModel = "model/completions.genmodel" /> 
-  </extension>
-
-null
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated completions -->
       <package
