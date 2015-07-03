@@ -20,6 +20,10 @@
 		href="https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/Palladio/Core/trunk/Editors/org.palladiosimulator.editors.buckminster/editors.rmap" />
   <rm:redirect pattern="^org\.palladiosimulator\.editor.*"
 		href="https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/Palladio/Core/trunk/Editors/org.palladiosimulator.editors.buckminster/editors.rmap" />
+  <rm:redirect pattern="^de\.uka\.ipd\.sdq\.pcm\.stochasticexpressions.*"
+		href="https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/Palladio/Core/trunk/PCM/org.palladiosimulator.pcm.buckminster/pcm.rmap" />
+  <rm:redirect pattern="^de\.uka\.ipd\.sdq\.stoex\.analyser.*"
+		href="https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/Palladio/Core/trunk/PCM/org.palladiosimulator.pcm.buckminster/pcm.rmap" />
 
   <!-- QuAL -->
   <rm:redirect pattern=".*"
