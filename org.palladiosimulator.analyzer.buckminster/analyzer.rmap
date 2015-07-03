@@ -1,42 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rm:rmap xmlns:bc="http://www.eclipse.org/buckminster/Common-1.0" xmlns:rm="http://www.eclipse.org/buckminster/RMap-1.0">
 
+  <rm:property key="resolveFrom" value="release"/>
+
   <rm:locator pattern="^org\.palladiosimulator\.analyzer.*" searchPathRef="AnalyzerFramework" failOnError="true"/>
 
-  <rm:locator pattern="^de\.uka\.ipd\.sdq\.workflow.*" searchPathRef="WorkflowEngine" failOnError="true"/>
-  <rm:locator pattern="^de\.uka\.ipd\.sdq\.qvtrengine.*" searchPathRef="WorkflowEngine" failOnError="true"/>
+  <rm:redirect pattern="^de\.uka\.ipd\.sdq\.workflow.*"
+		href="https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/WorkflowEngine/trunk/de.uka.ipd.sdq.workflow.buckminster/workflow.rmap" />
+  <rm:redirect pattern="^de\.uka\.ipd\.sdq\.qvtrengine.*"
+		href="https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/WorkflowEngine/trunk/de.uka.ipd.sdq.workflow.buckminster/workflow.rmap" />
 
-  <rm:locator pattern="^de\.uka\.ipd\.sdq\.feature.*" searchPathRef="FeatureModel" failOnError="false"/>
-  
-  <rm:locator pattern="^de\.uka\.ipd\.sdq\.pcm\.gmf*" searchPathRef="editors" failOnError="true"/>
-  <rm:locator pattern="^org\.palladiosimulator\.editors.*" searchPathRef="editors" failOnError="true"/>
-  <rm:locator pattern="^org\.palladiosimulator\.pcm.*" searchPathRef="editors" failOnError="false"/>
-  
+  <rm:redirect pattern="^de\.uka\.ipd\.sdq\.feature.*"
+		href="https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/FeatureModel/Core/trunk/de.uka.ipd.sdq.featuremodel.buckminster/featuremodel.rmap" />
+
   <rm:redirect pattern=".*"
-		href="https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/Palladio/Core/trunk/PCM/org.palladiosimulator.pcm.buckminster/pcm.rmap" />
+		href="https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/Palladio/Core/trunk/Editors/org.palladiosimulator.editors.buckminster/editors.rmap" />
 
   <rm:searchPath name="AnalyzerFramework">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" source="false" mutable="false">
+    <rm:provider componentTypes="eclipse.feature,osgi.bundle" readerType="svn" source="true">
+      <rm:uri format="https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/Palladio/Analyzer/Framework/trunk/{0}">
+      	<bc:propertyRef key="buckminster.component" />
+      </rm:uri>
+    </rm:provider>
+    <rm:provider resolutionFilter="(resolveFrom=nightly)" componentTypes="osgi.bundle,eclipse.feature" readerType="p2" source="false" mutable="false">
       <rm:uri format="https://sdqweb.ipd.kit.edu/eclipse/palladio/analyzer/framework/nightly/"/>
     </rm:provider>
-  </rm:searchPath>
-
-  <rm:searchPath name="WorkflowEngine">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature,buckminster" readerType="p2" source="false" mutable="false">
-      <rm:uri format="https://sdqweb.ipd.kit.edu/eclipse/workflowengine/nightly/"/>
+    <rm:provider resolutionFilter="(resolveFrom=release)" componentTypes="osgi.bundle,eclipse.feature" readerType="p2" source="false" mutable="false">
+      <rm:uri format="https://sdqweb.ipd.kit.edu/eclipse/palladio/analyzer/framework/releases/latest/"/>
     </rm:provider>
-  </rm:searchPath>
-
-  <rm:searchPath name="FeatureModel">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature,buckminster" readerType="p2" source="false" mutable="false">
-      <rm:uri format="https://sdqweb.ipd.kit.edu/eclipse/featuremodel/nightly/"/>
-    </rm:provider>
-  </rm:searchPath>
   
-  <rm:searchPath name="editors">
-    <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" source="false" mutable="false">
-      <rm:uri format="https://sdqweb.ipd.kit.edu/eclipse/palladio/core/editors/nightly/"/>
-    </rm:provider>
   </rm:searchPath>
   
 </rm:rmap>
