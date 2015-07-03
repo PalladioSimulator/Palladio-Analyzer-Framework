@@ -24,6 +24,10 @@
 		href="https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/Palladio/Core/trunk/PCM/org.palladiosimulator.pcm.buckminster/pcm.rmap" />
   <rm:redirect pattern="^de\.uka\.ipd\.sdq\.stoex\.analyser.*"
 		href="https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/Palladio/Core/trunk/PCM/org.palladiosimulator.pcm.buckminster/pcm.rmap" />
+  <rm:redirect pattern="^org\.palladiosimulator\.mdsdprofiles.*"
+		href="https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/Palladio/Incubation/Profiles/trunk/org.palladiosimulator.mdsdprofiles.buckminster/mdsdprofiles.rmap" />
+  <rm:redirect pattern="^org\.modelversioning\.emfprofile.*"
+		href="https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/Palladio/Incubation/Profiles/trunk/org.palladiosimulator.mdsdprofiles.buckminster/mdsdprofiles.rmap" />
 
   <!-- QuAL -->
   <rm:redirect pattern=".*"
