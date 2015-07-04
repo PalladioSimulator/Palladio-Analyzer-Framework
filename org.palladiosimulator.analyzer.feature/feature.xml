@@ -3,6 +3,7 @@
       id="org.palladiosimulator.analyzer.feature"
       label="Palladio Analyzer Framework"
       version="1.0.0.qualifier"
+      plugin="org.palladiosimulator.branding"
       license-feature="org.palladiosimulator.license"
       license-feature-version="1.0.0">
 
@@ -112,6 +113,13 @@
 
    <plugin
          id="org.palladiosimulator.analyzer.resultdecorator.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.palladiosimulator.branding"
          download-size="0"
          install-size="0"
          version="0.0.0"
