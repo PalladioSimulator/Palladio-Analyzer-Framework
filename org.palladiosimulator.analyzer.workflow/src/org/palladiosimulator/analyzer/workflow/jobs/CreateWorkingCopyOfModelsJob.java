@@ -101,27 +101,19 @@ public class CreateWorkingCopyOfModelsJob implements IJob, IBlackboardInteractin
                         resource.getContents());
             } else {
                 //Otherwise redirect path to generated simulation plugin
-                final URI uri = resource.getURI();
+                final URI originalURI = resource.getURI();
 
-                // Use all segments of URI as model files may reside in
-                // different folders or projects and may have the same file
-                // name, e.g. a myproject/default.system referencing a
-                // myproject/default.repository and a
-                // anotherproject/default.repository.
-                final String[] segments = uri.segments();
-                final String schemeSegment = uri.scheme();
-
-                final URI newURI = modelFolderURI.appendSegment(schemeSegment).appendSegments(segments) ;
+                final URI newURI = concatenateURIs(modelFolderURI, originalURI);
 
                 // Add base Plug-in ID and model paths to the configuration
                 if (configuration.getBaseProjectID() == null) {
-                    final String[] splitString = uri.toString().split("/");
+                    final String[] splitString = originalURI.toString().split("/");
                     configuration.setBaseProjectID(splitString[2]);
                 }
 
 
-                if (uri.toString() != null) {
-                    originalModelPaths.add(uri.toString());
+                if (originalURI.toString() != null) {
+                    originalModelPaths.add(originalURI.toString());
                 }
 
                 workingCopyPartition.setContents(newURI, resource.getContents());
@@ -148,6 +140,19 @@ public class CreateWorkingCopyOfModelsJob implements IJob, IBlackboardInteractin
 
         configuration.setModelPaths(originalModelPaths);
     }
+
+	public static URI concatenateURIs(final URI modelFolderURI, final URI uri) {
+		// Use all segments of URI as model files may reside in
+		// different folders or projects and may have the same file
+		// name, e.g. a myproject/default.system referencing a
+		// myproject/default.repository and a
+		// anotherproject/default.repository.
+		final String[] segments = uri.segments();
+		final String schemeSegment = uri.scheme();
+
+		final URI newURI = modelFolderURI.appendSegment(schemeSegment).appendSegments(segments) ;
+		return newURI;
+	}
 
     private IFolder getOrCreateModelFolder() throws JobFailedException {
         assert (this.configuration != null);
