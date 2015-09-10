@@ -195,6 +195,30 @@ public class CreatePluginProjectJob implements IJob {
 	public static IProject getProject(String projectId) {
 		return ResourcesPlugin.getWorkspace().getRoot().getProject(projectId);
 	}
+	
+
+	/**
+	 * return a handle to the specified folder within the given project. Creates a new one if no such folder exists so far.  
+	 * @throws JobFailedException
+	 */
+    public static IFolder getOrCreateFolder(IProject project, String folderName) throws JobFailedException{
+        // prepare the target path
+        final IFolder modelFolder = project.getFolder(folderName);
+        if (project.isOpen() && !modelFolder.exists()) {
+            if (LOGGER.isDebugEnabled()) {
+                LOGGER.debug("Creating folder " + modelFolder.getName());
+            }
+            try {
+                modelFolder.create(false, true, null);
+            } catch (final CoreException e) {
+                if (LOGGER.isEnabledFor(Level.ERROR)) {
+                    LOGGER.error("unable to create folder called "+folderName);
+                }
+                throw new JobFailedException(e);
+            }
+        }
+        return modelFolder;
+    }
 
 	/**
 	 * The function implements all steps, which are necessary for the creation

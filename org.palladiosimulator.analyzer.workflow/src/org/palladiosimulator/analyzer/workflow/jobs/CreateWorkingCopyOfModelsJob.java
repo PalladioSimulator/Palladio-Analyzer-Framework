@@ -8,7 +8,6 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
-import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -154,24 +153,11 @@ public class CreateWorkingCopyOfModelsJob implements IJob, IBlackboardInteractin
         assert (this.configuration != null);
         final IProject project = CreatePluginProjectJob.getProject(this.configuration.getStoragePluginID());
         assert (project != null);
-
-        // prepare the target path
-        final IFolder modelFolder = project.getFolder(MODEL_FOLDER);
-        if (project.isOpen() && !modelFolder.exists()) {
-            if (LOGGER.isDebugEnabled()) {
-                LOGGER.debug("Creating folder " + modelFolder.getName());
-            }
-            try {
-                modelFolder.create(false, true, null);
-            } catch (final CoreException e) {
-                if (LOGGER.isEnabledFor(Level.ERROR)) {
-                    LOGGER.error("unable to create model folder");
-                }
-                throw new JobFailedException(e);
-            }
-        }
-        return modelFolder;
+        
+        return CreatePluginProjectJob.getOrCreateFolder(project, MODEL_FOLDER);
     }
+    
+
 
     @Override
     public String getName() {
