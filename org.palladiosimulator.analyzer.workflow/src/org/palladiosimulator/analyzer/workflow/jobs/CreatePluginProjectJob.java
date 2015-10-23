@@ -127,11 +127,14 @@ public class CreatePluginProjectJob implements IJob {
 			if (myProject == null) {
 				return;
 			}
-
-			try {
-				deleteProject(monitor, myProject);
-			} catch (CoreException e) {
-				throw new CleanupFailedException("Delete project failed", e);
+			
+			// project should only be deleted if it exists.
+			if(myProject.exists()) {
+			    try {
+			        deleteProject(monitor, myProject);
+			    } catch (CoreException e) {
+			        throw new CleanupFailedException("Delete project failed", e);
+			    }			    
 			}
 		}
 	}
