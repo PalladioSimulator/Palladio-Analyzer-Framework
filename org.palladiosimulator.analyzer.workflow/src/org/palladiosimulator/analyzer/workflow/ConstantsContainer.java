@@ -72,6 +72,7 @@ public class ConstantsContainer {
 	public static final String FEATURE_CONFIG_TARGET = "featureConfigTarget";
 	public static final String FEATURE_FILE = "featureFile";
 	public static final String SIMULATE_LINKING_RESOURCES = "simulateLinkingResources";
+	public static final String SIMULATE_THROUGHPUT_OF_LINKING_RESOURCES = "simulateThroughputOfLinkingResources";
 	public static final String SIMULATE_FAILURES = "simulateFailures";
 
 	// Default values
