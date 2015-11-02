@@ -67,13 +67,11 @@ public class ConstantsContainer {
     public static final String REGENERATE_USAGE = "regenerateUsage";
     public static final String REGENERATE_SYSTEM = "regenerateSystem";
 	
-	// Simulation features
+	// Simulation features 
+    // XXX: Move to SimuComConfig as well?
 	public static final String FEATURE_CONFIG = "featureConfig";
 	public static final String FEATURE_CONFIG_TARGET = "featureConfigTarget";
 	public static final String FEATURE_FILE = "featureFile";
-	public static final String SIMULATE_LINKING_RESOURCES = "simulateLinkingResources";
-	public static final String SIMULATE_THROUGHPUT_OF_LINKING_RESOURCES = "simulateThroughputOfLinkingResources";
-	public static final String SIMULATE_FAILURES = "simulateFailures";
 
 	// Default values
 	/** Default URI of the feature configuration file. */
