@@ -47,7 +47,7 @@ public class PreparePCMBlackboardPartitionJob implements IJob, IBlackboardIntera
 
     @Override
     public String getName() {
-        return "Prepare PCM Blackboard Partions";
+        return "Prepare PCM Blackboard Partitions";
     }
 
     @Override
