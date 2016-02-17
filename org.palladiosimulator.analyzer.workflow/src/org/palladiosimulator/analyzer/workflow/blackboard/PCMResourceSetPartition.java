@@ -4,12 +4,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.Resource;
-
-import de.uka.ipd.sdq.featureconfig.Configuration;
-import de.uka.ipd.sdq.featureconfig.featureconfigPackage;
 import org.palladiosimulator.pcm.allocation.Allocation;
 import org.palladiosimulator.pcm.allocation.AllocationPackage;
 import org.palladiosimulator.pcm.repository.Repository;
@@ -22,13 +16,16 @@ import org.palladiosimulator.pcm.system.System;
 import org.palladiosimulator.pcm.system.SystemPackage;
 import org.palladiosimulator.pcm.usagemodel.UsageModel;
 import org.palladiosimulator.pcm.usagemodel.UsagemodelPackage;
+
+import de.uka.ipd.sdq.featureconfig.Configuration;
+import de.uka.ipd.sdq.featureconfig.featureconfigPackage;
 import de.uka.ipd.sdq.workflow.blackboard.Blackboard;
 import de.uka.ipd.sdq.workflow.mdsd.blackboard.ResourceSetPartition;
 
 /**
- * This class is a specialised MDSDBlackboard partition which is specialised to load and hold PCM model
- * instances. Currently, the PCM instance is loaded as a list of files, each file containing a part of the PCM
- * model. It is sufficient to specify a PCM Allocation and a PCM UsageModel. All
+ * This class is a specialised MDSDBlackboard partition which is specialised to load and hold PCM
+ * model instances. Currently, the PCM instance is loaded as a list of files, each file containing a
+ * part of the PCM model. It is sufficient to specify a PCM Allocation and a PCM UsageModel. All
  * other model parts can then be derived automatically.
  *
  * Note that there is no specialised {@link Blackboard} for PCMResourceSetPartitions, because
@@ -49,21 +46,23 @@ public class PCMResourceSetPartition extends ResourceSetPartition {
         final List<Repository> allRepositories = getElement(RepositoryPackage.eINSTANCE.getRepository());
         final Iterator<Repository> iterator = allRepositories.iterator();
         final List<Repository> resultList = new ArrayList<Repository>();
-        while(iterator.hasNext()) {
+        while (iterator.hasNext()) {
             resultList.add(iterator.next());
         }
         return resultList;
     }
 
     /**
-     * @return Returns a PCM Repository which contains components of Steffen's and Jens' middleware completions
+     * @return Returns a PCM Repository which contains components of Steffen's and Jens' middleware
+     *         completions
      */
     public Repository getMiddlewareRepository() {
         return (Repository) getElement(RepositoryPackage.eINSTANCE.getRepository()).get(0);
     }
 
     /**
-     * @return Returns the feature configuration which annotates connectors with their technical realisation
+     * @return Returns the feature configuration which annotates connectors with their technical
+     *         realisation
      */
     public Configuration getFeatureConfig() {
         return (Configuration) getElement(featureconfigPackage.eINSTANCE.getConfiguration()).get(0);
@@ -102,28 +101,6 @@ public class PCMResourceSetPartition extends ResourceSetPartition {
      */
     public ResourceEnvironment getResourceEnvironment() {
         return (ResourceEnvironment) getElement(ResourceenvironmentPackage.eINSTANCE.getResourceEnvironment()).get(0);
-    }
-
-    /**
-     * Helper to find root objects of a specified class.
-     *
-     * @param clazz The class to get elements for.
-     * @return The list of found root elements. Empty list if none have been found.
-     */
-    @SuppressWarnings("unchecked")
-    @Override
-    public <T extends EObject> List<T> getElement(final EClass targetType) {
-        final ArrayList<T> result = new ArrayList<T>();
-        for (final Resource r : rs.getResources()) {
-            if (r != null && r.getContents().size() > 0 && r.getContents().get(0).eClass() == targetType ) {
-                result.add((T) r.getContents().get(0));
-            }
-        }
-        if (result.size() == 0) {
-            throw new RuntimeException("Failed to retrieve PCM model element "+targetType.getName());
-        } else {
-            return result;
-        }
     }
 
 }
