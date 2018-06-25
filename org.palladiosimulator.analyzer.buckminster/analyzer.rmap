@@ -6,6 +6,8 @@
   <rm:locator pattern="^org\.palladiosimulator\.analyzer.*" searchPathRef="AnalyzerFramework" failOnError="true"/>
   <rm:locator pattern="^de\.uka\.ipd\.sdq\.workflow.*" searchPathRef="workflowengine" failOnError="true"/>
   <rm:locator pattern="^de\.uka\.ipd\.sdq\.qvtrengine.*" searchPathRef="workflowengine" failOnError="true"/>
+  <rm:locator pattern="^org\.palladiosimulator\.mdsdprofiles\.*" searchPathRef="MDSDProfiles" failOnError="true"/>
+  <rm:locator pattern="^org\.modelversioning\.*" searchPathRef="EMFProfiles" failOnError="true"/>
 
   <!-- Workflowengine -->
   <rm:searchPath name="workflowengine">
@@ -30,10 +32,19 @@
 		href="https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/Palladio/Core/trunk/PCM/org.palladiosimulator.pcm.buckminster/pcm.rmap" />
   <rm:redirect pattern="^de\.uka\.ipd\.sdq\.stoex\.analyser.*"
 		href="https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/Palladio/Core/trunk/PCM/org.palladiosimulator.pcm.buckminster/pcm.rmap" />
-  <rm:redirect pattern="^org\.palladiosimulator\.mdsdprofiles.*"
-		href="https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/Palladio/Incubation/Profiles/trunk/org.palladiosimulator.mdsdprofiles.buckminster/mdsdprofiles.rmap" />
-  <rm:redirect pattern="^org\.modelversioning\.emfprofile.*"
-		href="https://anonymous:anonymous@svnserver.informatik.kit.edu/i43/svn/code/Palladio/Incubation/Profiles/trunk/org.palladiosimulator.mdsdprofiles.buckminster/mdsdprofiles.rmap" />
+  <rm:searchPath name="MDSDProfiles">
+    <rm:provider resolutionFilter="(resolveFrom=nightly)" componentTypes="osgi.bundle,eclipse.feature" readerType="p2" source="false" mutable="false">
+      <rm:uri format="https://sdqweb.ipd.kit.edu/eclipse/mdsdprofiles/nightly/"/>
+    </rm:provider>
+    <rm:provider resolutionFilter="(resolveFrom=release)" componentTypes="osgi.bundle,eclipse.feature" readerType="p2" source="false" mutable="false">
+      <rm:uri format="https://sdqweb.ipd.kit.edu/eclipse/mdsdprofiles/releases/latest/"/>
+    </rm:provider>
+  </rm:searchPath>
+  <rm:searchPath name="EMFProfiles">
+    <rm:provider componentTypes="osgi.bundle,eclipse.feature,buckminster" readerType="p2" source="false" mutable="false">
+      <rm:uri format="https://sdqweb.ipd.kit.edu/eclipse/emf-profiles/releases/latest"/>
+    </rm:provider>
+  </rm:searchPath>
 
   <!-- QuAL -->
   <rm:redirect pattern=".*"
