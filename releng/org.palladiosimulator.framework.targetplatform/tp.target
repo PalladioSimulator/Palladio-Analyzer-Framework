@@ -26,14 +26,6 @@
 <repository location="https://sdqweb.ipd.kit.edu/eclipse/palladio/pcm/nightly/"/>
 </location>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release" refresh="true">
-<unit id="org.palladiosimulator.analyzer.feature.feature.group" version="1.0.1.201709282213"/>
-<repository location="https://sdqweb.ipd.kit.edu/eclipse/palladio/analyzer/framework/releases/latest/"/>
-</location>
-<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly" refresh="true">
-<unit id="org.palladiosimulator.analyzer.feature.feature.group" version="1.0.1.201709282213"/>
-<repository location="https://sdqweb.ipd.kit.edu/eclipse/palladio/analyzer/framework/nightly/"/>
-</location>
-<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release" refresh="true">
 <unit id="de.uka.ipd.sdq.featureconfig" version="2.1.0.201511051634"/>
 <repository location="https://sdqweb.ipd.kit.edu/eclipse/featuremodel/releases/latest"/>
 </location>
