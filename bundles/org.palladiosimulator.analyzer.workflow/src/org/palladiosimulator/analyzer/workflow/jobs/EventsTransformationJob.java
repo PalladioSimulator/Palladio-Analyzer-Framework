@@ -103,13 +103,6 @@ public class EventsTransformationJob implements IBlackboardInteractingJob<MDSDBl
         final ResourceSetPartition partition = this.blackboard
                 .getPartition(LoadPCMModelsIntoBlackboardJob.PCM_MODELS_PARTITION_ID);
         partition.loadModel(this.configuration.getEventMiddlewareFile());
-
-        // save the modified model
-        final SavePartitionToDiskJob savePartitionJob = new SavePartitionToDiskJob(
-                LoadPCMModelsIntoBlackboardJob.PCM_MODELS_PARTITION_ID);
-        savePartitionJob.setBlackboard(this.blackboard);
-        savePartitionJob.execute(monitor);
-
     }
 
     /**
