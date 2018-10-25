@@ -1,13 +1,23 @@
 package org.palladiosimulator.analyzer.workflow.jobs;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -16,6 +26,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.palladiosimulator.analyzer.workflow.configurations.AbstractPCMWorkflowRunConfiguration;
 import org.palladiosimulator.pcm.repository.Repository;
 import org.palladiosimulator.pcm.repository.RepositoryPackage;
+
 import de.uka.ipd.sdq.workflow.jobs.CleanupFailedException;
 import de.uka.ipd.sdq.workflow.jobs.IBlackboardInteractingJob;
 import de.uka.ipd.sdq.workflow.jobs.JobFailedException;
@@ -23,223 +34,303 @@ import de.uka.ipd.sdq.workflow.jobs.UserCanceledException;
 import de.uka.ipd.sdq.workflow.mdsd.blackboard.MDSDBlackboard;
 import de.uka.ipd.sdq.workflow.mdsd.blackboard.ModelLocation;
 import de.uka.ipd.sdq.workflow.mdsd.blackboard.ResourceSetPartition;
-import de.uka.ipd.sdq.workflow.mdsd.blackboard.SavePartitionToDiskJob;
 import de.uka.ipd.sdq.workflow.mdsd.emf.qvto.QVTOTransformationJob;
 import de.uka.ipd.sdq.workflow.mdsd.emf.qvto.QVTOTransformationJobConfiguration;
 
 /**
- * Workflow job to transform the event related model elements to classic pcm model elements
+ * Workflow job to transform the event related model elements to classic pcm
+ * model elements
  * 
  * @author Benjamin Klatt <klatt@fzi.de>
  */
 public class EventsTransformationJob implements IBlackboardInteractingJob<MDSDBlackboard> {
+	private WithoutConfiguration delegate;
+	
+	/**
+	 * Constructor providing access to the SimuCom workflow specific configuration..
+	 * 
+	 * @param configuration
+	 *            The configuration object to work with.
+	 */
+	public EventsTransformationJob(final AbstractPCMWorkflowRunConfiguration configuration) {
+		super();
+		this.delegate = new WithoutConfiguration(configuration.getStoragePluginID(),
+				configuration.getEventMiddlewareFile(), true);
+	}
+	
+	
+	@Override
+	public void execute(IProgressMonitor monitor) throws JobFailedException, UserCanceledException {
+		delegate.execute(monitor);
+	}
 
-    /** Logger for this class. */
-    private static final Logger LOGGER = Logger.getLogger(EventsTransformationJob.class);
+	@Override
+	public void cleanup(IProgressMonitor monitor) throws CleanupFailedException {
+		delegate.cleanup(monitor);
+	}
 
-    /** Path to the qvto transformation script */
-    protected static final String TRANSFORMATION_SCRIPT = "platform:/plugin/org.palladiosimulator.pcm.resources/transformations/events/transformation-psm.qvto";
+	@Override
+	public String getName() {
+		return delegate.getName();
+	}
 
-    private static final String TRACESFOLDER = "traces";
+	@Override
+	public void setBlackboard(MDSDBlackboard blackboard) {
+		delegate.setBlackboard(blackboard);
+	}
+	
 
-    /** Reference to the blackboard to access it in the complete job */
-    private MDSDBlackboard blackboard;
+	/**
+	 * To preserve backwards compatibility, the actual implementation of the class is moved to this inner class
+	 * that can be used without having an {@link AbstractPCMWorkflowRunConfiguration} available.
+	 * TODO: This can be quickly resolved, by changing the call at all constructor call sites (i.e., only in the
+	 * de.uka.ipd.sdq.codegen.simucontroller.workflow.jobs.AbstractSimulationJob<C>?
+	 * 
+	 * @author Benjamin Klatt <klatt@fzi.de>
+	 * @author Dominik Werle
+	 */
+	public static class WithoutConfiguration implements IBlackboardInteractingJob<MDSDBlackboard> {
+		/** Logger for this class. */
+		private static final Logger LOGGER = Logger.getLogger(EventsTransformationJob.class);
 
-    /** SimuCom configuration to be used in this job */
-    private final AbstractPCMWorkflowRunConfiguration configuration;
+		/** Path to the qvto transformation script */
+		protected static final String TRANSFORMATION_SCRIPT = "platform:/plugin/org.palladiosimulator.pcm.resources/transformations/events/transformation-psm.qvto";
 
-    /**
-     * Constructor providing access to the SimuCom workflow specific configuration..
-     * 
-     * @param configuration
-     *            The configuration object to work with.
-     */
-    public EventsTransformationJob(final AbstractPCMWorkflowRunConfiguration configuration) {
-        super();
-        this.configuration = configuration;
-    }
+		private static final String TRACESFOLDER = "traces";
 
-    @Override
-    public void execute(final IProgressMonitor monitor) throws JobFailedException, UserCanceledException {
+		/** Reference to the blackboard to access it in the complete job */
+		private MDSDBlackboard blackboard;
 
-        // get the models to work with
-        final ModelLocation[] modelLocations = getRequiredModels(this.blackboard);
+		private final String storagePluginId;
+		private final String eventMiddlewareFile;
+		private final boolean storeTemporaryData;
 
-        if (checkEventGroups(modelLocations)) {
-            LOGGER.info("Skipping Event Transformation: No EventGroup was found");
-            return;
-        }
+		public WithoutConfiguration(String storagePluginId, String eventMiddlewareFile, boolean storeTemporaryData) {
+			this.storagePluginId = storagePluginId;
+			this.eventMiddlewareFile = eventMiddlewareFile;
+			this.storeTemporaryData = storeTemporaryData;
+		}
 
-        this.configuration.getEventMiddlewareFile();
+		@Override
+		public void execute(final IProgressMonitor monitor) throws JobFailedException, UserCanceledException {
 
-        // build file paths
-        final URI traceFileURI = URI.createURI(getProject(this.configuration.getStoragePluginID())
-                .getFolder(TRACESFOLDER).getFullPath().toOSString());
-        final URI scriptFileURI = URI.createURI(TRANSFORMATION_SCRIPT);
+			// get the models to work with
+			final ModelLocation[] modelLocations = getRequiredModels(this.blackboard);
 
-        // configure the QVTO Job
-        final QVTOTransformationJobConfiguration qvtoConfig = new QVTOTransformationJobConfiguration();
-        qvtoConfig.setInoutModels(modelLocations);
-        qvtoConfig.setTraceFileURI(traceFileURI);
-        qvtoConfig.setScriptFileURI(scriptFileURI);
-        qvtoConfig.setOptions(new HashMap<String, Object>());
+			if (checkEventGroups(modelLocations)) {
+				LOGGER.info("Skipping Event Transformation: No EventGroup was found");
+				return;
+			}
 
-        // create and add the qvto job
-        final QVTOTransformationJob job = new QVTOTransformationJob(qvtoConfig);
-        job.setBlackboard(this.blackboard);
+			// build file paths
+			final URI traceFileURI = URI.createURI(getProject(storagePluginId)
+					.getFolder(TRACESFOLDER).getFullPath().toOSString());
+			final URI scriptFileURI = URI.createURI(TRANSFORMATION_SCRIPT);
 
-        try {
-            job.execute(monitor);
-        } catch (final JobFailedException e) {
-            if (LOGGER.isEnabledFor(Level.ERROR)) {
-                LOGGER.error("Failed to perform Event Transformation: " + e.getMessage());
-            }
-            if (LOGGER.isEnabledFor(Level.INFO)) {
-                LOGGER.info("Trying to continue processing");
-            }
-        }
+			// configure the QVTO Job
+			final QVTOTransformationJobConfiguration qvtoConfig = new QVTOTransformationJobConfiguration();
+			qvtoConfig.setInoutModels(modelLocations);
+			qvtoConfig.setTraceFileURI(traceFileURI);
+			qvtoConfig.setScriptFileURI(scriptFileURI);
+			qvtoConfig.setOptions(new HashMap<String, Object>());
 
-        // add the event middleware model to the blackboard
-        final ResourceSetPartition partition = this.blackboard
-                .getPartition(LoadPCMModelsIntoBlackboardJob.PCM_MODELS_PARTITION_ID);
-        partition.loadModel(this.configuration.getEventMiddlewareFile());
+			// create and add the qvto job
+			final QVTOTransformationJob job = new QVTOTransformationJob(qvtoConfig);
+			job.setBlackboard(this.blackboard);
 
-        // save the modified model
-        final SavePartitionToDiskJob savePartitionJob = new SavePartitionToDiskJob(
-                LoadPCMModelsIntoBlackboardJob.PCM_MODELS_PARTITION_ID);
-        savePartitionJob.setBlackboard(this.blackboard);
-        savePartitionJob.execute(monitor);
+			try {
+				job.execute(monitor);
+			} catch (final JobFailedException e) {
+				if (LOGGER.isEnabledFor(Level.ERROR)) {
+					LOGGER.error("Failed to perform Event Transformation: " + e.getMessage());
+				}
+				if (LOGGER.isEnabledFor(Level.INFO)) {
+					LOGGER.info("Trying to continue processing");
+				}
+			}
 
-    }
+			// add the event middleware model to the blackboard
+			final ResourceSetPartition partition = this.blackboard
+					.getPartition(LoadPCMModelsIntoBlackboardJob.PCM_MODELS_PARTITION_ID);
+			partition.loadModel(eventMiddlewareFile);
+			
+			if (storeTemporaryData)
+				storeModelsToStorageProject(monitor);
+		}
 
-    /**
-     * Search for an EventGroup in the repository
-     * 
-     * @param modelLocations
-     *            the model locations
-     * @return true when no EventGroup is found
-     */
-    private boolean checkEventGroups(final ModelLocation[] modelLocations) {
-        boolean skipQVTO = true;
-        for (final ModelLocation loc : modelLocations) {
-            final URI modelId = loc.getModelID();
-            final String fileExtension = modelId.fileExtension();
-            if (fileExtension != null && fileExtension.equals("repository")) {
-                final ResourceSetPartition partition = this.blackboard.getPartition(loc.getPartitionID());
-                final List<EObject> contents = partition.getContents(modelId);
-                final Repository repo = (Repository) EcoreUtil.getObjectByType(contents,
-                        RepositoryPackage.eINSTANCE.getRepository());
-                if (repo == null) {
-                    continue;
-                }
+		/**
+		 * Stores all models in the blackboard in the temporary project.
+		 */
+		private void storeModelsToStorageProject(IProgressMonitor monitor) {
+			IProject storageProject = getProject(storagePluginId);
+			try {
+				if (!storageProject.exists())
+					storageProject.create(monitor);
+				if (!storageProject.isOpen())
+					storageProject.open(monitor);
+			} catch (CoreException e1) {
+				e1.printStackTrace();
+			}
+			
+			List<Resource> resources = this.blackboard
+					.getPartition(LoadPCMModelsIntoBlackboardJob.PCM_MODELS_PARTITION_ID)
+					.getResourceSet().getResources();
+				
+				IFolder folderForCurrentRun = storageProject.getFolder(new SimpleDateFormat("yyyy-MM-dd'T'HHmmZ").format(new Date()));
+				if (!folderForCurrentRun.exists()) {
+					try {
+						folderForCurrentRun.create(true, true, monitor);
+					} catch (CoreException e) {
+						e.printStackTrace();
+					}
+				}
+				
+				for (Resource r : resources) {
+					try {
+						ByteArrayOutputStream os = new ByteArrayOutputStream();
+						r.save(os, Collections.emptyMap());
+						String lastSegment = r.getURI().lastSegment();
+						InputStream is = new ByteArrayInputStream(os.toByteArray());
+						
+						IFile file = folderForCurrentRun.getFile(lastSegment);
+						file.create(is, true, monitor);
+					} catch (IOException e) {
+						e.printStackTrace();
+					} catch (CoreException e) {
+						e.printStackTrace();
+					}
+				}
+		}
 
-                final Object eventgroup = EcoreUtil.getObjectByType(repo.getInterfaces__Repository(),
-                        RepositoryPackage.eINSTANCE.getEventGroup());
-                if (eventgroup != null) {
-                    skipQVTO = false;
-                }
-            }
+		/**
+		 * Search for an EventGroup in the repository
+		 * 
+		 * @param modelLocations
+		 *            the model locations
+		 * @return true when no EventGroup is found
+		 */
+		private boolean checkEventGroups(final ModelLocation[] modelLocations) {
+			boolean skipQVTO = true;
+			for (final ModelLocation loc : modelLocations) {
+				final URI modelId = loc.getModelID();
+				final String fileExtension = modelId.fileExtension();
+				if (fileExtension != null && fileExtension.equals("repository")) {
+					final ResourceSetPartition partition = this.blackboard.getPartition(loc.getPartitionID());
+					final List<EObject> contents = partition.getContents(modelId);
+					final Repository repo = (Repository) EcoreUtil.getObjectByType(contents,
+							RepositoryPackage.eINSTANCE.getRepository());
+					if (repo == null) {
+						continue;
+					}
 
-        }
-        return skipQVTO;
-    }
+					final Object eventgroup = EcoreUtil.getObjectByType(repo.getInterfaces__Repository(),
+							RepositoryPackage.eINSTANCE.getEventGroup());
+					if (eventgroup != null) {
+						skipQVTO = false;
+					}
+				}
 
-    /**
-     * Build the location objects out of the blackboards PCM model partition.
-     * 
-     * @param blackboard
-     *            The blackboard to work with.
-     * @return The prepared model locations for the PCM models.
-     */
-    private ModelLocation[] getRequiredModels(final MDSDBlackboard blackboard) {
+			}
+			return skipQVTO;
+		}
 
-        // prepare the models required for the transformation
-        ModelLocation allocationModelLocation = null;
-        ModelLocation systemModelLocation = null;
-        ModelLocation repositoryModelLocation = null;
+		/**
+		 * Build the location objects out of the blackboards PCM model partition.
+		 * 
+		 * @param blackboard
+		 *            The blackboard to work with.
+		 * @return The prepared model locations for the PCM models.
+		 */
+		private ModelLocation[] getRequiredModels(final MDSDBlackboard blackboard) {
 
-        // find the models in the blackboard
-        final String pcmModelPartitionId = LoadPCMModelsIntoBlackboardJob.PCM_MODELS_PARTITION_ID;
-        final ResourceSetPartition partition = blackboard.getPartition(pcmModelPartitionId);
-        partition.resolveAllProxies();
-        for (final Resource r : partition.getResourceSet().getResources()) {
-            final URI modelURI = r.getURI();
-            final String fileExtension = modelURI.fileExtension();
+			// prepare the models required for the transformation
+			ModelLocation allocationModelLocation = null;
+			ModelLocation systemModelLocation = null;
+			ModelLocation repositoryModelLocation = null;
 
-            if (fileExtension.equals("allocation")) {
-                allocationModelLocation = new ModelLocation(pcmModelPartitionId, modelURI);
-            }
+			// find the models in the blackboard
+			final String pcmModelPartitionId = LoadPCMModelsIntoBlackboardJob.PCM_MODELS_PARTITION_ID;
+			final ResourceSetPartition partition = blackboard.getPartition(pcmModelPartitionId);
+			partition.resolveAllProxies();
+			for (final Resource r : partition.getResourceSet().getResources()) {
+				final URI modelURI = r.getURI();
+				final String fileExtension = modelURI.fileExtension();
 
-            if (fileExtension.equals("system")) {
-                systemModelLocation = new ModelLocation(pcmModelPartitionId, modelURI);
-            }
+				if (fileExtension.equals("allocation")) {
+					allocationModelLocation = new ModelLocation(pcmModelPartitionId, modelURI);
+				}
 
-            if (fileExtension.equals("repository") && repositoryModelLocation == null
-                    && !modelURI.toString().startsWith("pathmap://")
-                    && !modelURI.toString().contains("PrimitiveTypes.repository")) {
-                repositoryModelLocation = new ModelLocation(pcmModelPartitionId, modelURI);
-            }
-        }
+				if (fileExtension.equals("system")) {
+					systemModelLocation = new ModelLocation(pcmModelPartitionId, modelURI);
+				}
 
-        // Build the model location list
-        final ArrayList<ModelLocation> modelLocations = new ArrayList<ModelLocation>();
-        modelLocations.add(allocationModelLocation);
-        modelLocations.add(systemModelLocation);
-        modelLocations.add(repositoryModelLocation);
+				if (fileExtension.equals("repository") && repositoryModelLocation == null
+						&& !modelURI.toString().startsWith("pathmap://")
+						&& !modelURI.toString().contains("PrimitiveTypes.repository")) {
+					repositoryModelLocation = new ModelLocation(pcmModelPartitionId, modelURI);
+				}
+			}
 
-        // add the additional event middleware model
-        modelLocations.add(getEventMiddlewareModel(blackboard));
+			// Build the model location list
+			final ArrayList<ModelLocation> modelLocations = new ArrayList<ModelLocation>();
+			modelLocations.add(allocationModelLocation);
+			modelLocations.add(systemModelLocation);
+			modelLocations.add(repositoryModelLocation);
 
-        return modelLocations.toArray(new ModelLocation[] {});
-    }
+			// add the additional event middleware model
+			modelLocations.add(getEventMiddlewareModel(blackboard));
 
-    /**
-     * Get the middleware repository from the PCM blackboard partition
-     * 
-     * @param blackboard
-     *            The blackboard to get the model from
-     * @return The event middleware model
-     */
-    private ModelLocation getEventMiddlewareModel(final MDSDBlackboard blackboard) {
+			return modelLocations.toArray(new ModelLocation[] {});
+		}
 
-        final ResourceSetPartition pcmPartition = blackboard
-                .getPartition(LoadPCMModelsIntoBlackboardJob.PCM_MODELS_PARTITION_ID);
-        pcmPartition.resolveAllProxies();
+		/**
+		 * Get the middleware repository from the PCM blackboard partition
+		 * 
+		 * @param blackboard
+		 *            The blackboard to get the model from
+		 * @return The event middleware model
+		 */
+		private ModelLocation getEventMiddlewareModel(final MDSDBlackboard blackboard) {
 
-        // Only the first resource is necessary.
-        // All the others are eventually referenced models like the PrimitiveTypes repository we do
-        // not need here
-        // Check for an empty list (happened when being called by PerOpteryx)
-        if (pcmPartition.getResourceSet().getResources().size() > 0) {
-            final Resource r = pcmPartition.getResourceSet().getResources().get(0);
-            return new ModelLocation(LoadPCMModelsIntoBlackboardJob.PCM_MODELS_PARTITION_ID, r.getURI());
-        } else {
-            return new ModelLocation(LoadPCMModelsIntoBlackboardJob.PCM_MODELS_PARTITION_ID, URI.createURI(""));
-        }
-    }
+			final ResourceSetPartition pcmPartition = blackboard
+					.getPartition(LoadPCMModelsIntoBlackboardJob.PCM_MODELS_PARTITION_ID);
+			pcmPartition.resolveAllProxies();
 
-    @Override
-    public void setBlackboard(final MDSDBlackboard blackboard) {
-        this.blackboard = blackboard;
-    }
+			// Only the first resource is necessary.
+			// All the others are eventually referenced models like the PrimitiveTypes
+			// repository we do
+			// not need here
+			// Check for an empty list (happened when being called by PerOpteryx)
+			if (pcmPartition.getResourceSet().getResources().size() > 0) {
+				final Resource r = pcmPartition.getResourceSet().getResources().get(0);
+				return new ModelLocation(LoadPCMModelsIntoBlackboardJob.PCM_MODELS_PARTITION_ID, r.getURI());
+			} else {
+				return new ModelLocation(LoadPCMModelsIntoBlackboardJob.PCM_MODELS_PARTITION_ID, URI.createURI(""));
+			}
+		}
 
-    @Override
-    public String getName() {
-        return "Add event transformation job";
-    }
+		@Override
+		public void setBlackboard(final MDSDBlackboard blackboard) {
+			this.blackboard = blackboard;
+		}
 
-    @Override
-    public void cleanup(final IProgressMonitor monitor) throws CleanupFailedException {
-        // Nothing to do for the roll back
-    }
+		@Override
+		public String getName() {
+			return "Add event transformation job";
+		}
 
-    /**
-     * returns a new project to be used for the simulation
-     * 
-     * @return a handle to the project to be used for the simulation
-     */
-    public static IProject getProject(final String projectId) {
-        return ResourcesPlugin.getWorkspace().getRoot().getProject(projectId);
-    }
+		@Override
+		public void cleanup(final IProgressMonitor monitor) throws CleanupFailedException {
+			// Nothing to do for the roll back
+		}
 
+		/**
+		 * returns a new project to be used for the simulation
+		 * 
+		 * @return a handle to the project to be used for the simulation
+		 */
+		public static IProject getProject(final String projectId) {
+			return ResourcesPlugin.getWorkspace().getRoot().getProject(projectId);
+		}
+	}
 }
