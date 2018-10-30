@@ -1,21 +1,31 @@
 package org.palladiosimulator.analyzer.workflow.jobs;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.palladiosimulator.analyzer.workflow.configurations.AbstractPCMWorkflowRunConfiguration;
 import org.palladiosimulator.pcm.repository.Repository;
 import org.palladiosimulator.pcm.repository.RepositoryPackage;
+
 import de.uka.ipd.sdq.workflow.jobs.CleanupFailedException;
 import de.uka.ipd.sdq.workflow.jobs.IBlackboardInteractingJob;
 import de.uka.ipd.sdq.workflow.jobs.JobFailedException;
@@ -23,7 +33,6 @@ import de.uka.ipd.sdq.workflow.jobs.UserCanceledException;
 import de.uka.ipd.sdq.workflow.mdsd.blackboard.MDSDBlackboard;
 import de.uka.ipd.sdq.workflow.mdsd.blackboard.ModelLocation;
 import de.uka.ipd.sdq.workflow.mdsd.blackboard.ResourceSetPartition;
-import de.uka.ipd.sdq.workflow.mdsd.blackboard.SavePartitionToDiskJob;
 import de.uka.ipd.sdq.workflow.mdsd.emf.qvto.QVTOTransformationJob;
 import de.uka.ipd.sdq.workflow.mdsd.emf.qvto.QVTOTransformationJobConfiguration;
 
@@ -45,8 +54,9 @@ public class EventsTransformationJob implements IBlackboardInteractingJob<MDSDBl
     /** Reference to the blackboard to access it in the complete job */
     private MDSDBlackboard blackboard;
 
-    /** SimuCom configuration to be used in this job */
-    private final AbstractPCMWorkflowRunConfiguration configuration;
+    private final String storagePluginId;
+    private final String eventMiddlewareFile;
+    private final boolean storeTemporaryData;
 
     /**
      * Constructor providing access to the SimuCom workflow specific configuration..
@@ -54,9 +64,11 @@ public class EventsTransformationJob implements IBlackboardInteractingJob<MDSDBl
      * @param configuration
      *            The configuration object to work with.
      */
-    public EventsTransformationJob(final AbstractPCMWorkflowRunConfiguration configuration) {
+    public EventsTransformationJob(String storagePluginId, String eventMiddlewareFile, boolean storeTemporaryData) {
         super();
-        this.configuration = configuration;
+        this.storagePluginId = storagePluginId;
+        this.eventMiddlewareFile = eventMiddlewareFile;
+        this.storeTemporaryData = storeTemporaryData;
     }
 
     @Override
@@ -70,10 +82,8 @@ public class EventsTransformationJob implements IBlackboardInteractingJob<MDSDBl
             return;
         }
 
-        this.configuration.getEventMiddlewareFile();
-
         // build file paths
-        final URI traceFileURI = URI.createURI(getProject(this.configuration.getStoragePluginID())
+        final URI traceFileURI = URI.createURI(getProject(storagePluginId)
                 .getFolder(TRACESFOLDER).getFullPath().toOSString());
         final URI scriptFileURI = URI.createURI(TRANSFORMATION_SCRIPT);
 
@@ -102,7 +112,10 @@ public class EventsTransformationJob implements IBlackboardInteractingJob<MDSDBl
         // add the event middleware model to the blackboard
         final ResourceSetPartition partition = this.blackboard
                 .getPartition(LoadPCMModelsIntoBlackboardJob.PCM_MODELS_PARTITION_ID);
-        partition.loadModel(this.configuration.getEventMiddlewareFile());
+        partition.loadModel(eventMiddlewareFile);
+
+        if (storeTemporaryData)
+            storeModelsToStorageProject(monitor);
     }
 
     /**
@@ -235,4 +248,48 @@ public class EventsTransformationJob implements IBlackboardInteractingJob<MDSDBl
         return ResourcesPlugin.getWorkspace().getRoot().getProject(projectId);
     }
 
+    /**
+     * Stores all models in the blackboard in the temporary project.
+     */
+    private void storeModelsToStorageProject(IProgressMonitor monitor) {
+        // TODO refactor project / resource handling to helper
+        IProject storageProject = getProject(storagePluginId);
+        try {
+            if (!storageProject.exists())
+                storageProject.create(monitor);
+            if (!storageProject.isOpen())
+                storageProject.open(monitor);
+        } catch (CoreException e) {
+            LOGGER.error("Error while creating project " + storagePluginId + " for storing models.", e);
+        }
+
+        List<Resource> resources = this.blackboard.getPartition(LoadPCMModelsIntoBlackboardJob.PCM_MODELS_PARTITION_ID)
+                .getResourceSet().getResources();
+
+        IFolder folderForCurrentRun = storageProject
+                .getFolder(new SimpleDateFormat("yyyy-MM-dd'T'HHmmss.SSSZ").format(new Date()));
+        if (!folderForCurrentRun.exists()) {
+            try {
+                folderForCurrentRun.create(true, true, monitor);
+            } catch (CoreException e) {
+                LOGGER.error("Error while creating folder for storing models.", e);
+            }
+        }
+
+        for (Resource r : resources) {
+            String lastSegment = r.getURI().lastSegment();
+            ByteArrayOutputStream os = new ByteArrayOutputStream();
+            try {
+                r.save(os, Collections.emptyMap());
+                InputStream is = new ByteArrayInputStream(os.toByteArray());
+
+                IFile file = folderForCurrentRun.getFile(lastSegment);
+                file.create(is, true, monitor);
+            } catch (IOException  e) {
+                LOGGER.error("Error while serializing model " + lastSegment, e);
+            } catch (CoreException e) {
+                LOGGER.error("Error while persisting model " + lastSegment, e);
+            }
+        }
+    }
 }
