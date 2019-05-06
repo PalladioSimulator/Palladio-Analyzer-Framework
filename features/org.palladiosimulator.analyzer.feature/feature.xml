@@ -53,6 +53,7 @@
       <import plugin="de.uka.ipd.sdq.workflow.launchconfig" version="2.0.3" match="greaterOrEqual"/>
       <import plugin="org.palladiosimulator.analyzer.resultdecorator.edit" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.palladiosimulator.pcm.edit" version="3.6.0" match="greaterOrEqual"/>
+      <import plugin="org.palladiosimulator.branding"/>
    </requires>
 
    <plugin
@@ -113,13 +114,6 @@
 
    <plugin
          id="org.palladiosimulator.analyzer.resultdecorator.editor"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.palladiosimulator.branding"
          download-size="0"
          install-size="0"
          version="0.0.0"
