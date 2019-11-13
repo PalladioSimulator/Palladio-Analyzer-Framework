@@ -18,4 +18,4 @@ Require-Bundle: org.eclipse.core.runtime;bundle-version="3.10.0",
  de.uka.ipd.sdq.units;bundle-version="2.1.0";visibility:=reexport,
  org.eclipse.ocl.ecore;bundle-version="3.3.100";visibility:=reexport
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-11

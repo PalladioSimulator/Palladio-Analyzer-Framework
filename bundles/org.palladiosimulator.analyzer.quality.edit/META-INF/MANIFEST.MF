@@ -7,7 +7,7 @@ Bundle-ClassPath: .
 Bundle-Activator: org.palladiosimulator.analyzer.quality.provider.QualityEditPlugin$Implementation
 Bundle-Vendor: palladiosimulator.org
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: org.palladiosimulator.analyzer.quality.parameters.pcm.provider,
  org.palladiosimulator.analyzer.quality.parameters.provider,
  org.palladiosimulator.analyzer.quality.provider,
