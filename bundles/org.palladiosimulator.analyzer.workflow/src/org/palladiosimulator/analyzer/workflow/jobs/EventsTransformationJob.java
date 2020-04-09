@@ -97,17 +97,7 @@ public class EventsTransformationJob implements IBlackboardInteractingJob<MDSDBl
         // create and add the qvto job
         final QVTOTransformationJob job = new QVTOTransformationJob(qvtoConfig);
         job.setBlackboard(this.blackboard);
-
-        try {
-            job.execute(monitor);
-        } catch (final JobFailedException e) {
-            if (LOGGER.isEnabledFor(Level.ERROR)) {
-                LOGGER.error("Failed to perform Event Transformation: " + e.getMessage());
-            }
-            if (LOGGER.isEnabledFor(Level.INFO)) {
-                LOGGER.info("Trying to continue processing");
-            }
-        }
+        job.execute(monitor);
 
         // add the event middleware model to the blackboard
         final ResourceSetPartition partition = this.blackboard
