@@ -49,8 +49,6 @@ public class EventsTransformationJob implements IBlackboardInteractingJob<MDSDBl
     /** Path to the qvto transformation script */
     protected static final String TRANSFORMATION_SCRIPT = "platform:/plugin/org.palladiosimulator.pcm.resources/transformations/events/transformation-psm.qvto";
 
-    private static final String TRACESFOLDER = "traces";
-
     /** Reference to the blackboard to access it in the complete job */
     private MDSDBlackboard blackboard;
 
@@ -83,14 +81,11 @@ public class EventsTransformationJob implements IBlackboardInteractingJob<MDSDBl
         }
 
         // build file paths
-        final URI traceFileURI = URI.createURI(getProject(storagePluginId)
-                .getFolder(TRACESFOLDER).getFullPath().toOSString());
         final URI scriptFileURI = URI.createURI(TRANSFORMATION_SCRIPT);
 
         // configure the QVTO Job
         final QVTOTransformationJobConfiguration qvtoConfig = new QVTOTransformationJobConfiguration();
         qvtoConfig.setInoutModels(modelLocations);
-        qvtoConfig.setTraceFileURI(traceFileURI);
         qvtoConfig.setScriptFileURI(scriptFileURI);
         qvtoConfig.setOptions(new HashMap<String, Object>());
 
