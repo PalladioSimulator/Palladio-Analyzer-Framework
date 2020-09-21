@@ -16,23 +16,21 @@ import org.palladiosimulator.pcm.seff.impl.ExternalCallActionImpl;
  */
 public class DelegatingExternalCallActionImpl extends ExternalCallActionImpl implements DelegatingExternalCallAction {
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
-     * @generated
-     */
-    protected DelegatingExternalCallActionImpl() {
-        super();
-    }
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DelegatingExternalCallActionImpl() {
+		super();
+	}
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
-     * @generated
-     */
-    @Override
-    protected EClass eStaticClass() {
-        return CompletionsPackage.Literals.DELEGATING_EXTERNAL_CALL_ACTION;
-    }
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return CompletionsPackage.Literals.DELEGATING_EXTERNAL_CALL_ACTION;
+	}
 
 } // DelegatingExternalCallActionImpl

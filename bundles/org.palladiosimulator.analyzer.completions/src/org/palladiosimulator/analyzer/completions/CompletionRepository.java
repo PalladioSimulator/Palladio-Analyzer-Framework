@@ -14,9 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- * <li>
- * {@link org.palladiosimulator.analyzer.completions.CompletionRepository#getCompletions_CompletionRepository
- * <em>Completions Completion Repository</em>}</li>
+ *   <li>{@link org.palladiosimulator.analyzer.completions.CompletionRepository#getCompletions_CompletionRepository <em>Completions Completion Repository</em>}</li>
  * </ul>
  *
  * @see org.palladiosimulator.analyzer.completions.CompletionsPackage#getCompletionRepository()
@@ -25,21 +23,20 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface CompletionRepository extends EObject {
 
-    /**
-     * Returns the value of the '<em><b>Completions Completion Repository</b></em>' reference list.
-     * The list contents are of type {@link org.palladiosimulator.analyzer.completions.Completion}.
-     * <!-- begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Completions Completion Repository</em>' reference list isn't
-     * clear, there really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     * 
-     * @return the value of the '<em>Completions Completion Repository</em>' reference list.
-     * @see org.palladiosimulator.analyzer.completions.CompletionsPackage#getCompletionRepository_Completions_CompletionRepository()
-     * @model ordered="false"
-     * @generated
-     */
-    EList<Completion> getCompletions_CompletionRepository();
+	/**
+	 * Returns the value of the '<em><b>Completions Completion Repository</b></em>' reference list.
+	 * The list contents are of type {@link org.palladiosimulator.analyzer.completions.Completion}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Completions Completion Repository</em>' reference list isn't
+	 * clear, there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Completions Completion Repository</em>' reference list.
+	 * @see org.palladiosimulator.analyzer.completions.CompletionsPackage#getCompletionRepository_Completions_CompletionRepository()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	EList<Completion> getCompletions_CompletionRepository();
 
 } // CompletionRepository
