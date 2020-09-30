@@ -2,6 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.palladiosimulator.analyzer.completions;singleton:=true
+Automatic-Module-Name: org.palladiosimulator.analyzer.completions
 Bundle-Version: 4.3.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
@@ -16,6 +17,7 @@ Require-Bundle: org.eclipse.core.runtime;bundle-version="3.10.0",
  de.uka.ipd.sdq.probfunction;bundle-version="2.1.0";visibility:=reexport,
  de.uka.ipd.sdq.stoex;bundle-version="2.2.0";visibility:=reexport,
  de.uka.ipd.sdq.units;bundle-version="2.1.0";visibility:=reexport,
- org.eclipse.ocl.ecore;bundle-version="3.3.100";visibility:=reexport
+ org.eclipse.ocl.ecore;bundle-version="3.3.100";visibility:=reexport,
+ org.palladiosimulator.framework.mwe2;bundle-version="4.3.0";resolution:=optional
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-11
