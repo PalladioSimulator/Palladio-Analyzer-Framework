@@ -3,6 +3,7 @@ package org.palladiosimulator.analyzer.workflow.jobs;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.palladiosimulator.analyzer.workflow.ConstantsContainer;
 import org.palladiosimulator.analyzer.workflow.configurations.AbstractPCMWorkflowRunConfiguration;
 
 import de.uka.ipd.sdq.workflow.jobs.CleanupFailedException;
@@ -23,51 +24,31 @@ import de.uka.ipd.sdq.workflow.mdsd.blackboard.ResourceSetPartition;
  * @author groenda
  *
  */
-public class LoadPCMModelsJob extends SequentialBlackboardInteractingJob<MDSDBlackboard> implements IJob,
-        IBlackboardInteractingJob<MDSDBlackboard> {
+public class LoadPCMModelsJob extends SequentialBlackboardInteractingJob<MDSDBlackboard> {
 
     private static final Logger LOGGER = Logger.getLogger(LoadPCMModelsJob.class);
-    private MDSDBlackboard blackboard;
-    private AbstractPCMWorkflowRunConfiguration configuration = null;
 
     public LoadPCMModelsJob(final AbstractPCMWorkflowRunConfiguration configuration) {
-        super(false);
-        this.configuration = configuration;
+        for (final String modelFile : configuration.getPCMModelFiles()) {
+            LoadModelIntoBlackboardJob.parseUriAndAddModelLoadJob(modelFile, this);
+        }
+        LoadModelIntoBlackboardJob.parseUriAndAddModelLoadJob(configuration.getRMIMiddlewareFile(), this);
+        LoadModelIntoBlackboardJob.parseUriAndAddModelLoadJob(configuration.getEventMiddlewareFile(), this);
+        this.add(new ResolveAllModelsOfPartitionJob(ConstantsContainer.DEFAULT_PCM_INSTANCE_PARTITION_ID));
     }
 
-    /*
-     * (non-Javadoc)
-     * 
-     * @see de.uka.ipd.sdq.workflow.IBlackboardInteractingJob#setBlackboard(de.uka.ipd.sdq.workflow.
-     * Blackboard)
-     */
-    @Override
-    public void setBlackboard(final MDSDBlackboard blackboard) {
-        this.blackboard = blackboard;
-    }
-
+    
     @Override
     public void execute(final IProgressMonitor monitor) throws JobFailedException, UserCanceledException {
-        final ResourceSetPartition pcmPartition = this.blackboard
-                .getPartition(LoadPCMModelsIntoBlackboardJob.PCM_MODELS_PARTITION_ID);
-
         // Load the PCM model itself
         if (LOGGER.isEnabledFor(Level.INFO))
             LOGGER.info("Loading PCM models");
-        for (final String modelFile : this.configuration.getPCMModelFiles()) {
-            pcmPartition.loadModel(modelFile);
-        }
-        pcmPartition.loadModel(this.configuration.getRMIMiddlewareFile());
-        pcmPartition.loadModel(this.configuration.getEventMiddlewareFile());
-        pcmPartition.resolveAllProxies();
+        
+        super.execute(monitor);
     }
 
     @Override
     public String getName() {
         return "Perform PCM Model Load";
-    }
-
-    @Override
-    public void cleanup(final IProgressMonitor monitor) throws CleanupFailedException {
     }
 }

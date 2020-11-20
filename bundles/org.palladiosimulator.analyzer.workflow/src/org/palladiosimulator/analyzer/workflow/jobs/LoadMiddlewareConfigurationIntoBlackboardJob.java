@@ -1,92 +1,31 @@
 package org.palladiosimulator.analyzer.workflow.jobs;
 
-import org.apache.log4j.Logger;
-import org.eclipse.core.runtime.IProgressMonitor;
+import org.palladiosimulator.analyzer.workflow.ConstantsContainer;
 import org.palladiosimulator.analyzer.workflow.configurations.AbstractCodeGenerationWorkflowRunConfiguration;
-import org.palladiosimulator.analyzer.workflow.configurations.AbstractPCMWorkflowRunConfiguration;
 
-import de.uka.ipd.sdq.workflow.jobs.CleanupFailedException;
-import de.uka.ipd.sdq.workflow.jobs.IBlackboardInteractingJob;
-import de.uka.ipd.sdq.workflow.jobs.IJob;
-import de.uka.ipd.sdq.workflow.jobs.JobFailedException;
-import de.uka.ipd.sdq.workflow.jobs.UserCanceledException;
+import de.uka.ipd.sdq.workflow.jobs.SequentialBlackboardInteractingJob;
 import de.uka.ipd.sdq.workflow.mdsd.blackboard.MDSDBlackboard;
-import de.uka.ipd.sdq.workflow.mdsd.blackboard.ResourceSetPartition;
 
-public class LoadMiddlewareConfigurationIntoBlackboardJob 
-implements IJob, IBlackboardInteractingJob<MDSDBlackboard> {
+public class LoadMiddlewareConfigurationIntoBlackboardJob extends SequentialBlackboardInteractingJob<MDSDBlackboard> {
 
-    private static final Logger LOGGER = Logger.getLogger(LoadPCMModelsIntoBlackboardJob.class);
+    @Deprecated
+	public static final String RMI_MIDDLEWARE_PARTITION_ID = ConstantsContainer.RMI_MIDDLEWARE_REPOSITORY_PARTITION_ID;
 	
-	public static final String RMI_MIDDLEWARE_PARTITION_ID = "de.uka.ipd.sdq.pcmmodels.partition.rmimiddleware";
-	public static final String EVENT_MIDDLEWARE_PARTITION_ID = "de.uka.ipd.sdq.pcmmodels.partition.eventmiddleware";
-
-	private MDSDBlackboard blackboard = null;
-	private AbstractPCMWorkflowRunConfiguration configuration = null;
+	@Deprecated
+	public static final String EVENT_MIDDLEWARE_PARTITION_ID = ConstantsContainer.EVENT_MIDDLEWARE_REPOSITORY_PARTITION_ID;
 
 	public LoadMiddlewareConfigurationIntoBlackboardJob(AbstractCodeGenerationWorkflowRunConfiguration config) {
-		super();
-		
-		this.configuration  = config;
-	}
-
-	@Override
-    public void execute(IProgressMonitor monitor) throws JobFailedException,
-			UserCanceledException {
-		ResourceSetPartition middlewareRepositoryPartition = null;
-		if (!this.blackboard.hasPartition(RMI_MIDDLEWARE_PARTITION_ID)) {
-			if(LOGGER.isDebugEnabled()) {
-                LOGGER.debug("Creating RMI Middleware Repository Partition");
-            }
-			
-			middlewareRepositoryPartition = new ResourceSetPartition();
-			this.blackboard.addPartition(RMI_MIDDLEWARE_PARTITION_ID, middlewareRepositoryPartition);
-			
-			if(LOGGER.isDebugEnabled()) {
-                LOGGER.debug("Initialising RMI Middleware EPackages");
-            }
-			middlewareRepositoryPartition.initialiseResourceSetEPackages(AbstractPCMWorkflowRunConfiguration.PCM_EPACKAGES);
-		} else {
-			middlewareRepositoryPartition = this.blackboard.getPartition(RMI_MIDDLEWARE_PARTITION_ID);
-		}
-		middlewareRepositoryPartition.loadModel(configuration.getRMIMiddlewareFile());
-		
-		// load event middleware 
-		ResourceSetPartition eventMiddlewareRepositoryPartition = null;
-		if (!this.blackboard.hasPartition(EVENT_MIDDLEWARE_PARTITION_ID)) {
-			if(LOGGER.isDebugEnabled()) {
-                LOGGER.debug("Creating Event Middleware Repository Partition");
-            }
-			
-			eventMiddlewareRepositoryPartition = new ResourceSetPartition();
-			this.blackboard.addPartition(EVENT_MIDDLEWARE_PARTITION_ID, eventMiddlewareRepositoryPartition);
-			
-			if(LOGGER.isDebugEnabled()) {
-                LOGGER.debug("Initialising Event Middleware EPackages");
-            }
-			eventMiddlewareRepositoryPartition.initialiseResourceSetEPackages(AbstractPCMWorkflowRunConfiguration.PCM_EPACKAGES);
-		} else {
-			eventMiddlewareRepositoryPartition = this.blackboard.getPartition(EVENT_MIDDLEWARE_PARTITION_ID);
-		}
-		if (configuration.getEventMiddlewareFile() != null) {
-			eventMiddlewareRepositoryPartition.loadModel(configuration.getEventMiddlewareFile());
-		}
+        add(new CreateBlackboardPartitionJob(ConstantsContainer.RMI_MIDDLEWARE_REPOSITORY_PARTITION_ID));
+        add(new CreateBlackboardPartitionJob(ConstantsContainer.EVENT_MIDDLEWARE_REPOSITORY_PARTITION_ID));
+        LoadModelIntoBlackboardJob.parseUriAndAddModelLoadJob(config.getRMIMiddlewareFile(),
+                ConstantsContainer.RMI_MIDDLEWARE_REPOSITORY_PARTITION_ID, this);
+        LoadModelIntoBlackboardJob.parseUriAndAddModelLoadJob(config.getEventMiddlewareFile(),
+                ConstantsContainer.EVENT_MIDDLEWARE_REPOSITORY_PARTITION_ID, this);
 	}
 
 	@Override
     public String getName() {
 		return "Load Middleware Configuration into Blackboard";
-	}
-
-	@Override
-    public void cleanup(IProgressMonitor monitor)
-			throws CleanupFailedException {
-		this.blackboard.removePartition(RMI_MIDDLEWARE_PARTITION_ID);
-	}
-
-	@Override
-    public void setBlackboard(MDSDBlackboard blackboard) {
-		this.blackboard = blackboard;
 	}
 
 }
