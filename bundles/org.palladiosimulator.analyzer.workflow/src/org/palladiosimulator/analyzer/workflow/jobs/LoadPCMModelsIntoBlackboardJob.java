@@ -1,5 +1,6 @@
 package org.palladiosimulator.analyzer.workflow.jobs;
 
+import org.palladiosimulator.analyzer.workflow.ConstantsContainer;
 import org.palladiosimulator.analyzer.workflow.blackboard.PCMResourceSetPartition;
 import org.palladiosimulator.analyzer.workflow.configurations.AbstractPCMWorkflowRunConfiguration;
 
@@ -22,7 +23,8 @@ public class LoadPCMModelsIntoBlackboardJob extends SequentialBlackboardInteract
      * ID of the blackboard partition containing the fully loaded PCM instance. The blackboard
      * partition is ensured to be of type {@link PCMResourceSetPartition}
      */
-    public static final String PCM_MODELS_PARTITION_ID = "org.palladiosimulator.pcmmodels.partition";
+    @Deprecated
+    public static final String PCM_MODELS_PARTITION_ID = ConstantsContainer.DEFAULT_PCM_INSTANCE_PARTITION_ID;
 
     /**
      * Constructor of the PCM loader job

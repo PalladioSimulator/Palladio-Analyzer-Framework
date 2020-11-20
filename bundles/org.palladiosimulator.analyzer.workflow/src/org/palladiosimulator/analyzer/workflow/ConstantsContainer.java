@@ -101,5 +101,10 @@ public class ConstantsContainer {
 	public static final Boolean DEFAULT_ANALYSE_ACCURACY = false;
 	/** Default value for the sensitivity analysis. */
 	public static final Boolean DEFAULT_DO_SENSITIVITY_ANALYSIS = false;
+	
+	//Default partition IDs
+	public static final String DEFAULT_PCM_INSTANCE_PARTITION_ID = "org.palladiosimulator.pcmmodels.partition";
+	public static final String RMI_MIDDLEWARE_REPOSITORY_PARTITION_ID = "de.uka.ipd.sdq.pcmmodels.partition.rmimiddleware";
+	public static final String EVENT_MIDDLEWARE_REPOSITORY_PARTITION_ID = "de.uka.ipd.sdq.pcmmodels.partition.eventmiddleware";
 
 }
