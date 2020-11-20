@@ -1,6 +1,7 @@
 package org.palladiosimulator.analyzer.workflow.jobs;
 
 import org.palladiosimulator.analyzer.workflow.ConstantsContainer;
+import org.palladiosimulator.analyzer.workflow.blackboard.PCMResourceSetPartition;
 
 import de.uka.ipd.sdq.workflow.jobs.SequentialBlackboardInteractingJob;
 import de.uka.ipd.sdq.workflow.mdsd.blackboard.MDSDBlackboard;
@@ -17,7 +18,7 @@ public class PreparePCMBlackboardPartitionJob extends SequentialBlackboardIntera
     }
     
     public PreparePCMBlackboardPartitionJob(String partitionId) {
-        add(new CreateBlackboardPartitionJob(partitionId));
+        add(new CreateBlackboardPartitionJob(partitionId, PCMResourceSetPartition::new));
         add(new LoadSharedPCMLibrariesIntoBlackboard(partitionId));
     }
 
