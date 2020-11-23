@@ -13,4 +13,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="requiredCommunicationLinkResource_ParametricResourceDemand"
         ordered="false" lowerBound="1" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//resourcetype/CommunicationLinkResourceType"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NetworkComponentAllocationContext" eSuperTypes="platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//allocation/AllocationContext">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="linkingResource" eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/LinkingResource"/>
+  </eClassifiers>
 </ecore:EPackage>
