@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Analyzer Framework MWE2 Workflow
 Bundle-SymbolicName: org.palladiosimulator.framework.mwe2
-Bundle-Version: 4.3.0.qualifier
+Bundle-Version: 5.0.0.qualifier
 Automatic-Module-Name: org.palladiosimulator.framework.mwe2
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Require-Bundle: tools.mdsd.ecoreworkflow.mwe2lib;bundle-version="0.1.1",
