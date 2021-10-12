@@ -30,10 +30,6 @@ extends SequentialBlackboardInteractingJob<MDSDBlackboard> {
 	public ValidatePCMModelsJob(AbstractPCMWorkflowRunConfiguration configuration) {
 		super(false);
 		this.setName("Checking PCM model constraints");
-		this.addJob(new PerformOAWCheckValidation(
-				LoadPCMModelsIntoBlackboardJob.PCM_MODELS_PARTITION_ID, 
-				PCM_CHECK_FILENAME, 
-				AbstractPCMWorkflowRunConfiguration.PCM_EPACKAGES));
 		this.addJob(new CheckEMFConstraintsJob(SeverityEnum.WARNING,LoadPCMModelsIntoBlackboardJob.PCM_MODELS_PARTITION_ID));
 		this.addJob(new ShowValidationErrorsJob(configuration, this.toArray(new ModelValidationJob[]{})));
 	}
