@@ -9,7 +9,6 @@ import de.uka.ipd.sdq.errorhandling.SeverityEnum;
 import de.uka.ipd.sdq.workflow.jobs.SequentialBlackboardInteractingJob;
 import de.uka.ipd.sdq.workflow.mdsd.blackboard.MDSDBlackboard;
 import de.uka.ipd.sdq.workflow.mdsd.emf.CheckEMFConstraintsJob;
-import de.uka.ipd.sdq.workflow.mdsd.oaw.PerformOAWCheckValidation;
 import de.uka.ipd.sdq.workflow.mdsd.validation.ModelValidationJob;
 import de.uka.ipd.sdq.workflow.mdsd.validation.ShowValidationErrorsJob;
 
@@ -22,7 +21,6 @@ import de.uka.ipd.sdq.workflow.mdsd.validation.ShowValidationErrorsJob;
 public class ValidatePCMModelsJob 
 extends SequentialBlackboardInteractingJob<MDSDBlackboard> {
 
-	private static final String PCM_CHECK_FILENAME = "pcm";
 	
 	/* (non-Javadoc)
 	 * @see de.uka.ipd.sdq.codegen.simucontroller.workflow.ISimulationJob#execute()
