@@ -7,7 +7,7 @@ Bundle-ClassPath: .
 Bundle-Activator: org.palladiosimulator.analyzer.resultdecorator.provider.ResultdecoratorEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.palladiosimulator.analyzer.resultdecorator.provider,
  org.palladiosimulator.analyzer.resultdecorator.repositorydecorator.provider,
  org.palladiosimulator.analyzer.resultdecorator.resourceenvironmentdecorator.provider
