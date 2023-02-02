@@ -5,8 +5,8 @@ Bundle-SymbolicName: org.palladiosimulator.framework.mwe2
 Bundle-Version: 5.1.0.qualifier
 Automatic-Module-Name: org.palladiosimulator.framework.mwe2
 Bundle-RequiredExecutionEnvironment: JavaSE-17
-Require-Bundle: tools.mdsd.ecoreworkflow.mwe2lib;bundle-version="0.1.1",
- tools.mdsd.ecoreworkflow.umlecoregenerator;bundle-version="1.0.0",
+Require-Bundle: tools.mdsd.ecoreworkflow.mwe2lib,
+ tools.mdsd.ecoreworkflow.umlecoregenerator,
  org.eclipse.emf.mwe2.runtime;bundle-version="2.11.3",
  org.eclipse.emf.mwe2.lib;bundle-version="2.11.3",
  org.eclipse.emf.mwe2.language;bundle-version="2.11.3",
