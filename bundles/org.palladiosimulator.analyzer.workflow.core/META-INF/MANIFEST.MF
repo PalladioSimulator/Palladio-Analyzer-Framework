@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: PCM Workflow Jobs and Configurations core
+Bundle-SymbolicName: org.palladiosimulator.analyzer.workflow.core
+Bundle-Version: 5.2.0.qualifier
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: sdq.ipd.uka.de
+Bundle-RequiredExecutionEnvironment: JavaSE-17
