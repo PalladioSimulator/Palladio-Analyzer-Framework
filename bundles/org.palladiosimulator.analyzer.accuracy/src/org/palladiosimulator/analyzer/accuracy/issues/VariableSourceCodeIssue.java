@@ -3,9 +3,10 @@
  */
 package org.palladiosimulator.analyzer.accuracy.issues;
 
-import de.uka.ipd.sdq.errorhandling.SeverityEnum;
 import org.palladiosimulator.pcm.seff.AbstractAction;
 import org.palladiosimulator.pcm.seff.ResourceDemandingSEFF;
+
+import de.uka.ipd.sdq.errorhandling.core.SeverityEnum;
 
 /**Issue for {@link AbstractAction}s within an {@link ResourceDemandingSEFF}.
  * @author groenda
