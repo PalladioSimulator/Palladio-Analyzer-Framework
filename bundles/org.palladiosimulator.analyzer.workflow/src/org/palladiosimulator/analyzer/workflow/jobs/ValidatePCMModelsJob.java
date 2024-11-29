@@ -3,7 +3,7 @@
  */
 package org.palladiosimulator.analyzer.workflow.jobs;
 
-import org.palladiosimulator.analyzer.workflow.configurations.AbstractPCMWorkflowRunConfiguration;
+import org.palladiosimulator.analyzer.workflow.core.configurations.AbstractPCMWorkflowRunConfiguration;
 
 import de.uka.ipd.sdq.errorhandling.core.SeverityEnum;
 import de.uka.ipd.sdq.workflow.jobs.SequentialBlackboardInteractingJob;
