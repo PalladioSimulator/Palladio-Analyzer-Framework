@@ -4,9 +4,8 @@
 package org.palladiosimulator.analyzer.accuracy.issues;
 
 import org.palladiosimulator.analyzer.quality.qualityannotation.CharacterisedPCMParameterPartition;
-
-import de.uka.ipd.sdq.errorhandling.core.SeverityAndIssue;
-import de.uka.ipd.sdq.errorhandling.core.SeverityEnum;
+import de.uka.ipd.sdq.errorhandling.SeverityAndIssue;
+import de.uka.ipd.sdq.errorhandling.SeverityEnum;
 
 /**Issue caused by an {@link CharacterisedPCMParameterPartition} which is experienced on source code level and contains the relevant UUIDs.
  * @author groenda
