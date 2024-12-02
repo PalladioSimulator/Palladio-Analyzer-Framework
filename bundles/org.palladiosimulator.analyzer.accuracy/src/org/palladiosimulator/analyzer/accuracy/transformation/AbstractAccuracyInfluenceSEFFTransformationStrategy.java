@@ -23,7 +23,7 @@ import org.palladiosimulator.analyzer.accuracy.jobs.TransformPCMForAccuracyInflu
 import org.palladiosimulator.analyzer.quality.util.EMFHelper;
 import org.palladiosimulator.analyzer.quality.util.QualityAnnotationLookup;
 import org.palladiosimulator.analyzer.workflow.blackboard.PCMResourceSetPartition;
-import org.palladiosimulator.analyzer.workflow.core.runconfig.AccuracyInfluenceAnalysisState;
+import org.palladiosimulator.analyzer.workflow.runconfig.AccuracyInfluenceAnalysisState;
 import org.palladiosimulator.pcm.seff.AbstractAction;
 import org.palladiosimulator.pcm.seff.AbstractBranchTransition;
 import org.palladiosimulator.pcm.seff.AbstractInternalControlFlowAction;

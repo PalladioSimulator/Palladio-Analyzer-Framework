@@ -3,7 +3,6 @@ package org.palladiosimulator.analyzer.workflow.configurations;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.palladiosimulator.analyzer.workflow.core.configurations.AbstractPCMWorkflowRunConfiguration;
 import org.palladiosimulator.analyzer.workflow.runconfig.SensitivityAnalysisConfiguration;
 
 /**

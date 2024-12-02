@@ -1,4 +1,4 @@
-package org.palladiosimulator.analyzer.workflow.core.configurations;
+package org.palladiosimulator.analyzer.workflow.configurations;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,9 +9,9 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.palladiosimulator.analyzer.completions.CompletionsPackage;
-import org.palladiosimulator.analyzer.workflow.core.ConstantsContainer;
-import org.palladiosimulator.analyzer.workflow.core.jobs.IIssueReceiver;
-import org.palladiosimulator.analyzer.workflow.core.runconfig.AccuracyInfluenceAnalysisState;
+import org.palladiosimulator.analyzer.workflow.ConstantsContainer;
+import org.palladiosimulator.analyzer.workflow.jobs.IIssueReceiver;
+import org.palladiosimulator.analyzer.workflow.runconfig.AccuracyInfluenceAnalysisState;
 import org.palladiosimulator.pcm.PcmPackage;
 import org.palladiosimulator.pcm.allocation.AllocationPackage;
 import org.palladiosimulator.pcm.core.CorePackage;

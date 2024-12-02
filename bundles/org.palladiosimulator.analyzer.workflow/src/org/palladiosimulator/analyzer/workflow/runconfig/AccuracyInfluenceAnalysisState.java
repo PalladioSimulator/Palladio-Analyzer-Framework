@@ -1,7 +1,7 @@
 /**
  *
  */
-package org.palladiosimulator.analyzer.workflow.core.runconfig;
+package org.palladiosimulator.analyzer.workflow.runconfig;
 
 /**The list of states for the accuracy analysis.
  * @author groenda
