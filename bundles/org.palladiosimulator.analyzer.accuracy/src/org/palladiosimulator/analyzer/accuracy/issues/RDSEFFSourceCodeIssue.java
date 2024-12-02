@@ -3,10 +3,9 @@
  */
 package org.palladiosimulator.analyzer.accuracy.issues;
 
+import de.uka.ipd.sdq.errorhandling.SeverityAndIssue;
+import de.uka.ipd.sdq.errorhandling.SeverityEnum;
 import org.palladiosimulator.pcm.seff.ResourceDemandingSEFF;
-
-import de.uka.ipd.sdq.errorhandling.core.SeverityAndIssue;
-import de.uka.ipd.sdq.errorhandling.core.SeverityEnum;
 
 /**Issue arised in an {@link ResourceDemandingSEFF} which is experienced on source code level and contains the relevant UUIDs.
  * @author groenda

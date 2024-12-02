@@ -1,7 +1,5 @@
 package org.palladiosimulator.analyzer.workflow.configurations;
 
-import org.palladiosimulator.analyzer.workflow.core.configurations.AbstractPCMWorkflowRunConfiguration;
-
 import de.uka.ipd.sdq.workflow.mdsd.AbstractWorkflowBasedMDSDLaunchConfigurationDelegate;
 
 /**

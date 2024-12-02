@@ -1,4 +1,4 @@
-package org.palladiosimulator.analyzer.workflow.core.configurations;
+package org.palladiosimulator.analyzer.workflow.configurations;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,10 +8,13 @@ import org.apache.log4j.Logger;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EcorePackage;
+
 import org.palladiosimulator.analyzer.completions.CompletionsPackage;
-import org.palladiosimulator.analyzer.workflow.core.ConstantsContainer;
-import org.palladiosimulator.analyzer.workflow.core.jobs.IIssueReceiver;
-import org.palladiosimulator.analyzer.workflow.core.runconfig.AccuracyInfluenceAnalysisState;
+import de.uka.ipd.sdq.identifier.IdentifierPackage;
+
+import org.palladiosimulator.analyzer.workflow.ConstantsContainer;
+import org.palladiosimulator.analyzer.workflow.jobs.IIssueReceiver;
+import org.palladiosimulator.analyzer.workflow.runconfig.AccuracyInfluenceAnalysisState;
 import org.palladiosimulator.pcm.PcmPackage;
 import org.palladiosimulator.pcm.allocation.AllocationPackage;
 import org.palladiosimulator.pcm.core.CorePackage;
@@ -25,13 +28,11 @@ import org.palladiosimulator.pcm.seff.SeffPackage;
 import org.palladiosimulator.pcm.seff.seff_reliability.SeffReliabilityPackage;
 import org.palladiosimulator.pcm.system.SystemPackage;
 import org.palladiosimulator.pcm.usagemodel.UsagemodelPackage;
-
-import de.uka.ipd.sdq.identifier.IdentifierPackage;
 import de.uka.ipd.sdq.probfunction.ProbfunctionPackage;
 import de.uka.ipd.sdq.stoex.StoexPackage;
 import de.uka.ipd.sdq.units.UnitsPackage;
 import de.uka.ipd.sdq.workflow.configuration.InvalidWorkflowJobConfigurationException;
-import de.uka.ipd.sdq.workflow.launchconfig.core.AbstractWorkflowBasedRunConfiguration;
+import de.uka.ipd.sdq.workflow.launchconfig.AbstractWorkflowBasedRunConfiguration;
 
 /**
  * Base class of workflow configuration objects where the workflow has to deal with a PCM model
@@ -40,8 +41,8 @@ import de.uka.ipd.sdq.workflow.launchconfig.core.AbstractWorkflowBasedRunConfigu
  *
  * @author Steffen Becker
  */
-public abstract class AbstractPCMWorkflowRunConfiguration extends AbstractWorkflowBasedRunConfiguration
-        implements Cloneable {
+public abstract class AbstractPCMWorkflowRunConfiguration extends AbstractWorkflowBasedRunConfiguration implements
+        Cloneable {
     /** Logger for this class. */
     private static final Logger LOGGER = Logger.getLogger(AbstractPCMWorkflowRunConfiguration.class);
 
@@ -50,13 +51,17 @@ public abstract class AbstractPCMWorkflowRunConfiguration extends AbstractWorkfl
      */
     public static final EPackage[] PCM_EPACKAGES = new EPackage[] {
             // Packages needed by QVT Transformations {{
-            EcorePackage.eINSTANCE, IdentifierPackage.eINSTANCE, UnitsPackage.eINSTANCE, ProbfunctionPackage.eINSTANCE,
+            EcorePackage.eINSTANCE,
+            IdentifierPackage.eINSTANCE,
+            UnitsPackage.eINSTANCE,
+            ProbfunctionPackage.eINSTANCE,
             PcmPackage.eINSTANCE,
             // }}
-            SeffPackage.eINSTANCE, RepositoryPackage.eINSTANCE, ParameterPackage.eINSTANCE, UsagemodelPackage.eINSTANCE,
-            SystemPackage.eINSTANCE, ResourcetypePackage.eINSTANCE, ResourceenvironmentPackage.eINSTANCE,
-            AllocationPackage.eINSTANCE, StoexPackage.eINSTANCE, CorePackage.eINSTANCE, CompletionsPackage.eINSTANCE,
-            ReliabilityPackage.eINSTANCE, QosReliabilityPackage.eINSTANCE, SeffReliabilityPackage.eINSTANCE };
+            SeffPackage.eINSTANCE, RepositoryPackage.eINSTANCE, ParameterPackage.eINSTANCE,
+            UsagemodelPackage.eINSTANCE, SystemPackage.eINSTANCE, ResourcetypePackage.eINSTANCE,
+            ResourceenvironmentPackage.eINSTANCE, AllocationPackage.eINSTANCE, StoexPackage.eINSTANCE,
+            CorePackage.eINSTANCE, CompletionsPackage.eINSTANCE, ReliabilityPackage.eINSTANCE,
+            QosReliabilityPackage.eINSTANCE, SeffReliabilityPackage.eINSTANCE };
 
     protected String rmiMiddlewareFile;
     protected String eventMiddlewareFile;
@@ -74,11 +79,11 @@ public abstract class AbstractPCMWorkflowRunConfiguration extends AbstractWorkfl
      * System
      */
     private List<String> modelPaths = null;
-
+    
     /**
-     * Contains the path for the generated plug-in. This is equal to the temporaryDataLocation when
-     * using the Rerun Simulator but due to the code of the SimuBench and the Rerun Simulation both
-     * attributes are needed
+     * Contains the path for the generated plug-in. This is equal to the
+     * temporaryDataLocation when using the Rerun Simulator but due to the code of the 
+     * SimuBench and the Rerun Simulation both attributes are needed
      */
     private String generatedProjectPath = null;
 
@@ -213,7 +218,7 @@ public abstract class AbstractPCMWorkflowRunConfiguration extends AbstractWorkfl
      *         instance
      */
     public List<String> getPCMModelFiles() {
-        ArrayList<String> files = new ArrayList<>();
+        ArrayList<String> files = new ArrayList<String>();
         files.addAll(allocationFiles);
         files.add(usageModelFile);
         if (accuracyInfluenceAnalysisEnabled) {
@@ -303,7 +308,7 @@ public abstract class AbstractPCMWorkflowRunConfiguration extends AbstractWorkfl
     public void setModelPaths(List<String> modelPaths) {
         this.modelPaths = modelPaths;
     }
-
+    
     public String getGeneratedProjectPath() {
         return generatedProjectPath;
     }
@@ -337,7 +342,7 @@ public abstract class AbstractPCMWorkflowRunConfiguration extends AbstractWorkfl
         config.accuracyInfluenceAnalysisEnabled = this.accuracyInfluenceAnalysisEnabled;
         config.accuracyInfluenceAnalysisState = this.accuracyInfluenceAnalysisState;
         config.accuracyInformationModelFile = new String(this.accuracyInformationModelFile);
-        ArrayList<String> newAllocationFiles = new ArrayList<>(this.allocationFiles.size());
+        ArrayList<String> newAllocationFiles = new ArrayList<String>(this.allocationFiles.size());
         for (String allocationFile : this.allocationFiles) {
             newAllocationFiles.add(new String(allocationFile));
         }
