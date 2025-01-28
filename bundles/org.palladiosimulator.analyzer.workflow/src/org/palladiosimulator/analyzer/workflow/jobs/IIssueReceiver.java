@@ -2,7 +2,7 @@ package org.palladiosimulator.analyzer.workflow.jobs;
 
 import java.util.List;
 
-import de.uka.ipd.sdq.errorhandling.SeverityAndIssue;
+import de.uka.ipd.sdq.errorhandling.core.SeverityAndIssue;
 
 /**Interface to describe that issues can be added to an implementing class.
  * Used for error reporting.

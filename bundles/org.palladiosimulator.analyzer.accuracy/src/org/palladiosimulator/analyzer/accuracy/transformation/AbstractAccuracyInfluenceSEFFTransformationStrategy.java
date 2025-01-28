@@ -18,9 +18,6 @@ import org.palladiosimulator.analyzer.quality.qualityannotation.QualityAnnotatio
 import org.palladiosimulator.analyzer.quality.qualityannotation.QualityAnnotationFactory;
 import org.palladiosimulator.analyzer.quality.qualityannotation.REPrecision;
 import org.palladiosimulator.analyzer.quality.qualityannotation.RequiredElement;
-import de.uka.ipd.sdq.errorhandling.SeverityAndIssue;
-import de.uka.ipd.sdq.errorhandling.SeverityEnum;
-
 import org.palladiosimulator.analyzer.accuracy.issues.AccuracyIssueFactory;
 import org.palladiosimulator.analyzer.accuracy.jobs.TransformPCMForAccuracyInfluenceAnalysisJob;
 import org.palladiosimulator.analyzer.quality.util.EMFHelper;
@@ -44,6 +41,9 @@ import org.palladiosimulator.pcm.seff.seff_performance.InfrastructureCall;
 import org.palladiosimulator.pcm.seff.seff_performance.ParametricResourceDemand;
 import org.palladiosimulator.pcm.seff.seff_performance.ResourceCall;
 import org.palladiosimulator.pcm.seff.util.SeffSwitch;
+
+import de.uka.ipd.sdq.errorhandling.core.SeverityAndIssue;
+import de.uka.ipd.sdq.errorhandling.core.SeverityEnum;
 
 /**
  * Abstract strategy implementing the transformation of given SEFFs for states

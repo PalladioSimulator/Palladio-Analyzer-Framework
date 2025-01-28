@@ -6,8 +6,9 @@ package org.palladiosimulator.analyzer.accuracy.issues;
 import org.eclipse.emf.ecore.EObject;
 
 import org.palladiosimulator.analyzer.quality.qualityannotation.CharacterisedPCMParameterPartition;
-import de.uka.ipd.sdq.errorhandling.SeverityAndIssue;
-import de.uka.ipd.sdq.errorhandling.SeverityEnum;
+
+import de.uka.ipd.sdq.errorhandling.core.SeverityAndIssue;
+import de.uka.ipd.sdq.errorhandling.core.SeverityEnum;
 
 /**
  * Factory to create accuracy influence analysis issues.
