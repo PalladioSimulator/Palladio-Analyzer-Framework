@@ -7,8 +7,7 @@
 </location>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly" refresh="true">
 <unit id="de.uka.ipd.sdq.workflow.feature.mdsd.feature.group" version="2.2.3.201709282207"/>
-<!--repository location="https://updatesite.palladio-simulator.com/palladio-supporting-workflowengine/nightly/"/-->
-<repository location="https://updatesite.palladio-simulator.com/palladio-supporting-workflowengine/branches/no_ui-errordialog/"/>
+<repository location="https://updatesite.palladio-simulator.com/palladio-supporting-workflowengine/nightly/"/>
 </location>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release" refresh="true">
 <unit id="org.palladiosimulator.commons.feature.feature.group" version="1.5.3.201611171324-7D7P1cBtalw7QCJsJJJz-JXQe"/>
@@ -16,8 +15,7 @@
 </location>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly" refresh="true">
 <unit id="org.palladiosimulator.commons.feature.feature.group" version="1.5.3.201611171324-7D7P1cBtalw7QCJsJJJz-JXQe"/>
-<!--repository location="https://updatesite.palladio-simulator.com/palladio-core-commons/nightly/"/-->
-<repository location="https://updatesite.palladio-simulator.com/palladio-core-commons/branches/no_ui-errordialog/"/>
+<repository location="https://updatesite.palladio-simulator.com/palladio-core-commons/nightly/"/>
 </location>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release" refresh="true">
 <unit id="org.palladiosimulator.pcm.feature.feature.group" version="4.1.0.201709282114"/>
@@ -25,8 +23,7 @@
 </location>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly" refresh="true">
 <unit id="org.palladiosimulator.pcm.feature.feature.group" version="4.1.0.201709282114"/>
-<!--repository location="https://updatesite.palladio-simulator.com/palladio-core-pcm/nightly/"/-->
-<repository location="https://updatesite.palladio-simulator.com/palladio-core-pcm/branches/no_ui-errordialog/"/>
+<repository location="https://updatesite.palladio-simulator.com/palladio-core-pcm/nightly/"/>
 </location>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release" refresh="true">
 <unit id="de.uka.ipd.sdq.featureconfig" version="2.1.0.201511051634"/>
