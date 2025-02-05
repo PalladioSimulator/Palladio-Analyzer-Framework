@@ -5,7 +5,7 @@ package org.palladiosimulator.analyzer.workflow.jobs;
 
 import org.palladiosimulator.analyzer.workflow.configurations.AbstractPCMWorkflowRunConfiguration;
 
-import de.uka.ipd.sdq.errorhandling.SeverityEnum;
+import de.uka.ipd.sdq.errorhandling.core.SeverityEnum;
 import de.uka.ipd.sdq.workflow.jobs.SequentialBlackboardInteractingJob;
 import de.uka.ipd.sdq.workflow.mdsd.blackboard.MDSDBlackboard;
 import de.uka.ipd.sdq.workflow.mdsd.emf.CheckEMFConstraintsJob;
