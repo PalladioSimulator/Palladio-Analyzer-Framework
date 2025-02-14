@@ -3,6 +3,18 @@ Bundle-ManifestVersion: 2
 Bundle-Name: PCM Workflow Jobs and Configurations Core
 Bundle-SymbolicName: org.palladiosimulator.analyzer.workflow.core
 Bundle-Version: 5.2.1.qualifier
+Export-Package: org.palladiosimulator.analyzer.workflow.core,
+ org.palladiosimulator.analyzer.workflow.core.configurations,
+ org.palladiosimulator.analyzer.workflow.core.jobs,
+ org.palladiosimulator.analyzer.workflow.core.runconfig
+Require-Bundle: org.apache.log4j;bundle-version="1.2.19",
+ org.eclipse.emf.ecore;bundle-version="2.33.0",
+ org.eclipse.debug.core;bundle-version="3.20.0",
+ de.uka.ipd.sdq.errorhandling.core;bundle-version="5.2.1",
+ org.palladiosimulator.pcm;bundle-version="5.2.1",
+ de.uka.ipd.sdq.workflow;bundle-version="5.2.1",
+ de.uka.ipd.sdq.workflow.launchconfig.core;bundle-version="5.2.1",
+ org.palladiosimulator.analyzer.completions;bundle-version="5.2.1"
 Bundle-Vendor: palladiosimulator.org
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy

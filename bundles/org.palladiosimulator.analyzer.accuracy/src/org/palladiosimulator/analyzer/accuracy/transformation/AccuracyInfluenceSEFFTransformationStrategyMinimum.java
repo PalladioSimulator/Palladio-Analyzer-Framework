@@ -9,7 +9,7 @@ import org.palladiosimulator.analyzer.quality.qualityannotation.NoPrecision;
 import org.palladiosimulator.analyzer.quality.qualityannotation.REPrecision;
 
 import org.palladiosimulator.analyzer.workflow.blackboard.PCMResourceSetPartition;
-import org.palladiosimulator.analyzer.workflow.runconfig.AccuracyInfluenceAnalysisState;
+import org.palladiosimulator.analyzer.workflow.core.runconfig.AccuracyInfluenceAnalysisState;
 import org.palladiosimulator.pcm.core.PCMRandomVariable;
 import org.palladiosimulator.pcm.parameter.VariableCharacterisation;
 import org.palladiosimulator.pcm.parameter.VariableUsage;

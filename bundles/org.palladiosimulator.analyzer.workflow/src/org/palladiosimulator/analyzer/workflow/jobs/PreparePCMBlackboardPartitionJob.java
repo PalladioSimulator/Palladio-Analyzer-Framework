@@ -1,7 +1,7 @@
 package org.palladiosimulator.analyzer.workflow.jobs;
 
-import org.palladiosimulator.analyzer.workflow.ConstantsContainer;
 import org.palladiosimulator.analyzer.workflow.blackboard.PCMResourceSetPartition;
+import org.palladiosimulator.analyzer.workflow.core.ConstantsContainer;
 
 import de.uka.ipd.sdq.workflow.jobs.SequentialBlackboardInteractingJob;
 import de.uka.ipd.sdq.workflow.mdsd.blackboard.MDSDBlackboard;

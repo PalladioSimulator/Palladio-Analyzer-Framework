@@ -13,7 +13,7 @@ import org.palladiosimulator.analyzer.accuracy.transformation.AccuracyInfluenceS
 import org.palladiosimulator.analyzer.accuracy.transformation.AccuracyInfluenceSEFFTransformationStrategyMaximum;
 import org.palladiosimulator.analyzer.accuracy.transformation.AccuracyInfluenceSEFFTransformationStrategyMinimum;
 import org.palladiosimulator.analyzer.workflow.blackboard.PCMResourceSetPartition;
-import org.palladiosimulator.analyzer.workflow.configurations.AbstractPCMWorkflowRunConfiguration;
+import org.palladiosimulator.analyzer.workflow.core.configurations.AbstractPCMWorkflowRunConfiguration;
 import org.palladiosimulator.analyzer.workflow.jobs.LoadPCMModelsIntoBlackboardJob;
 import org.palladiosimulator.pcm.allocation.Allocation;
 import org.palladiosimulator.pcm.allocation.AllocationContext;
