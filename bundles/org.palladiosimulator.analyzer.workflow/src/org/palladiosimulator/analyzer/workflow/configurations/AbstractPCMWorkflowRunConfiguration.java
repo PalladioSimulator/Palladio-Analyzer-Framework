@@ -32,7 +32,7 @@ import de.uka.ipd.sdq.probfunction.ProbfunctionPackage;
 import de.uka.ipd.sdq.stoex.StoexPackage;
 import de.uka.ipd.sdq.units.UnitsPackage;
 import de.uka.ipd.sdq.workflow.configuration.InvalidWorkflowJobConfigurationException;
-import de.uka.ipd.sdq.workflow.launchconfig.AbstractWorkflowBasedRunConfiguration;
+import de.uka.ipd.sdq.workflow.launchconfig.core.AbstractWorkflowBasedRunConfiguration;
 
 /**
  * Base class of workflow configuration objects where the workflow has to deal with a PCM model
