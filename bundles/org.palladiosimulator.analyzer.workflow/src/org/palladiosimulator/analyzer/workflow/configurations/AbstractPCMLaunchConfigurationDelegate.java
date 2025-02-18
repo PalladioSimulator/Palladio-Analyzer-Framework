@@ -2,7 +2,7 @@ package org.palladiosimulator.analyzer.workflow.configurations;
 
 import org.palladiosimulator.analyzer.workflow.core.configurations.AbstractPCMWorkflowRunConfiguration;
 
-import de.uka.ipd.sdq.workflow.mdsd.AbstractWorkflowBasedMDSDLaunchConfigurationDelegate;
+import de.uka.ipd.sdq.workflow.mdsd.core.AbstractWorkflowBasedMDSDLaunchConfigurationDelegate;
 
 /**
  * Base class for workflow based launch configurations (i.e., Eclipse Run and Debug tasks) which sets up a blackboard
