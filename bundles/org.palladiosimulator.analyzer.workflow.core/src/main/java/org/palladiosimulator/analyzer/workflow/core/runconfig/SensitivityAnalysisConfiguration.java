@@ -1,4 +1,4 @@
-package org.palladiosimulator.analyzer.workflow.runconfig;
+package org.palladiosimulator.analyzer.workflow.core.runconfig;
 
 public class SensitivityAnalysisConfiguration implements Cloneable {
 	double max;

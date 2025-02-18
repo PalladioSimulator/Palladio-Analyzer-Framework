@@ -3,6 +3,8 @@ package org.palladiosimulator.analyzer.workflow.runconfig;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.palladiosimulator.analyzer.workflow.core.runconfig.SensitivityAnalysisConfiguration;
+
 /**
  * Experiment run descriptor for sensitivity analyses. 
  * This descriptor contains the values chosen for each variable of the sensitivity analysis. 
