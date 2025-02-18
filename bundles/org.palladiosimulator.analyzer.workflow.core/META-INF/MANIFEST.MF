@@ -14,7 +14,10 @@ Require-Bundle: org.apache.log4j;bundle-version="1.2.19",
  org.palladiosimulator.pcm;bundle-version="5.2.1",
  de.uka.ipd.sdq.workflow;bundle-version="5.2.1",
  de.uka.ipd.sdq.workflow.launchconfig.core;bundle-version="5.2.1",
- org.palladiosimulator.analyzer.completions;bundle-version="5.2.1"
+ org.palladiosimulator.analyzer.completions;bundle-version="5.2.1",
+ de.uka.ipd.sdq.workflow.mdsd.core;bundle-version="5.2.1",
+ de.uka.ipd.sdq.workflow.logging.console;bundle-version="5.2.1",
+ de.uka.ipd.sdq.workflow.mdsd.blackboard;bundle-version="5.2.1"
 Bundle-Vendor: palladiosimulator.org
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
