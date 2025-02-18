@@ -8,7 +8,7 @@ import org.eclipse.debug.core.ILaunchConfiguration;
 import org.palladiosimulator.analyzer.workflow.core.ConstantsContainer;
 
 import de.uka.ipd.sdq.workflow.launchconfig.core.AbstractWorkflowBasedRunConfiguration;
-import de.uka.ipd.sdq.workflow.launchconfig.core.AbstractWorkflowConfigurationBuilder;
+import de.uka.ipd.sdq.workflow.launchconfig.core.configbuilder.AbstractWorkflowConfigurationBuilder;
 
 /**
  * Builder class which is able to fill the PCM specific parts of a workflow configuration object based on the PCM
