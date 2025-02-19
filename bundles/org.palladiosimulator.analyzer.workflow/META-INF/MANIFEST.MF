@@ -17,7 +17,6 @@ Require-Bundle: org.palladiosimulator.pcm;bundle-version="4.0.0",
  de.uka.ipd.sdq.errorhandling;bundle-version="1.0.0",
  org.eclipse.debug.ui;bundle-version="3.5.1";visibility:=reexport,
  org.palladiosimulator.analyzer.workflow.core;bundle-version="5.2.1";visibility:=reexport
-Export-Package: org.palladiosimulator.analyzer.workflow.blackboard,
- org.palladiosimulator.analyzer.workflow.jobs,
+Export-Package: org.palladiosimulator.analyzer.workflow.jobs,
  org.palladiosimulator.analyzer.workflow.runconfig
 Bundle-ActivationPolicy: lazy

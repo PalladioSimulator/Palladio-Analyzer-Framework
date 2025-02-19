@@ -5,7 +5,7 @@ import java.io.IOException;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.palladiosimulator.analyzer.workflow.blackboard.PCMResourceSetPartition;
+import org.palladiosimulator.analyzer.workflow.core.blackboard.PCMResourceSetPartition;
 import org.palladiosimulator.analyzer.workflow.core.configurations.AbstractPCMWorkflowRunConfiguration;
 
 import de.uka.ipd.sdq.workflow.jobs.CleanupFailedException;
