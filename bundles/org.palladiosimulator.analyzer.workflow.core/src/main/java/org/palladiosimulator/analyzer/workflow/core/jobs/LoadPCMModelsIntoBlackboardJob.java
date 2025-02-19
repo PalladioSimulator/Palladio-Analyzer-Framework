@@ -1,4 +1,4 @@
-package org.palladiosimulator.analyzer.workflow.jobs;
+package org.palladiosimulator.analyzer.workflow.core.jobs;
 
 import org.palladiosimulator.analyzer.workflow.core.ConstantsContainer;
 import org.palladiosimulator.analyzer.workflow.core.blackboard.PCMResourceSetPartition;
@@ -16,8 +16,8 @@ import de.uka.ipd.sdq.workflow.mdsd.blackboard.MDSDBlackboard;
  * 
  * @author Steffen Becker, Sebastian Lehrig
  */
-public class LoadPCMModelsIntoBlackboardJob extends SequentialBlackboardInteractingJob<MDSDBlackboard> implements IJob,
-        IBlackboardInteractingJob<MDSDBlackboard> {
+public class LoadPCMModelsIntoBlackboardJob extends SequentialBlackboardInteractingJob<MDSDBlackboard>
+        implements IJob, IBlackboardInteractingJob<MDSDBlackboard> {
 
     /**
      * ID of the blackboard partition containing the fully loaded PCM instance. The blackboard

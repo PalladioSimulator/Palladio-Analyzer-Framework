@@ -1,4 +1,4 @@
-package org.palladiosimulator.analyzer.workflow.jobs;
+package org.palladiosimulator.analyzer.workflow.core.jobs;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -6,14 +6,10 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.palladiosimulator.analyzer.workflow.core.ConstantsContainer;
 import org.palladiosimulator.analyzer.workflow.core.configurations.AbstractPCMWorkflowRunConfiguration;
 
-import de.uka.ipd.sdq.workflow.jobs.CleanupFailedException;
-import de.uka.ipd.sdq.workflow.jobs.IBlackboardInteractingJob;
-import de.uka.ipd.sdq.workflow.jobs.IJob;
 import de.uka.ipd.sdq.workflow.jobs.JobFailedException;
 import de.uka.ipd.sdq.workflow.jobs.SequentialBlackboardInteractingJob;
 import de.uka.ipd.sdq.workflow.jobs.UserCanceledException;
 import de.uka.ipd.sdq.workflow.mdsd.blackboard.MDSDBlackboard;
-import de.uka.ipd.sdq.workflow.mdsd.blackboard.ResourceSetPartition;
 
 /**
  * Loads the PCM models given in the configuration into a MDSD blackboard and store the models in a
@@ -37,13 +33,12 @@ public class LoadPCMModelsJob extends SequentialBlackboardInteractingJob<MDSDBla
         this.add(new ResolveAllModelsOfPartitionJob(ConstantsContainer.DEFAULT_PCM_INSTANCE_PARTITION_ID));
     }
 
-    
     @Override
     public void execute(final IProgressMonitor monitor) throws JobFailedException, UserCanceledException {
         // Load the PCM model itself
         if (LOGGER.isEnabledFor(Level.INFO))
             LOGGER.info("Loading PCM models");
-        
+
         super.execute(monitor);
     }
 
