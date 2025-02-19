@@ -1,9 +1,7 @@
-package org.palladiosimulator.analyzer.workflow.runconfig;
+package org.palladiosimulator.analyzer.workflow.core.runconfig;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import org.palladiosimulator.analyzer.workflow.core.runconfig.SensitivityAnalysisConfiguration;
 
 /**
  * Experiment run descriptor for sensitivity analyses. 
