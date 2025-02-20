@@ -1,4 +1,4 @@
-package org.palladiosimulator.analyzer.workflow.jobs;
+package org.palladiosimulator.analyzer.workflow.core.jobs;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package org.palladiosimulator.analyzer.workflow.blackboard;
+package org.palladiosimulator.analyzer.workflow.core.blackboard;
 
 import java.util.ArrayList;
 import java.util.Iterator;

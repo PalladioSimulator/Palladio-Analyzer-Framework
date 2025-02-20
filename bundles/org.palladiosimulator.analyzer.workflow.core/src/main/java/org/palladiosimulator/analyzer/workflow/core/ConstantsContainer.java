@@ -1,4 +1,4 @@
-package org.palladiosimulator.analyzer.workflow;
+package org.palladiosimulator.analyzer.workflow.core;
 
 /**
  * This class is used as a container for constants.
