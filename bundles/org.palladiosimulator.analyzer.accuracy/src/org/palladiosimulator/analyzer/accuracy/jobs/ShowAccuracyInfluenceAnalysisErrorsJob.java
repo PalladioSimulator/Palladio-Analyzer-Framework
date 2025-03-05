@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.palladiosimulator.analyzer.workflow.jobs.IIssueReceiver;
+import org.palladiosimulator.analyzer.workflow.core.jobs.IIssueReceiver;
 
 import de.uka.ipd.sdq.errorhandling.core.SeverityAndIssue;
 import de.uka.ipd.sdq.errorhandling.dialogs.issues.DisplayIssuesDialog;
@@ -13,7 +13,7 @@ import de.uka.ipd.sdq.workflow.jobs.CleanupFailedException;
 import de.uka.ipd.sdq.workflow.jobs.IJob;
 import de.uka.ipd.sdq.workflow.jobs.JobFailedException;
 import de.uka.ipd.sdq.workflow.jobs.UserCanceledException;
-import de.uka.ipd.sdq.workflow.launchconfig.AbstractWorkflowBasedRunConfiguration;
+import de.uka.ipd.sdq.workflow.launchconfig.core.AbstractWorkflowBasedRunConfiguration;
 
 public class ShowAccuracyInfluenceAnalysisErrorsJob
 implements IJob, IIssueReceiver {

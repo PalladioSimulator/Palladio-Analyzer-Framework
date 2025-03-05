@@ -1,4 +1,4 @@
-package org.palladiosimulator.analyzer.workflow.runconfig;
+package org.palladiosimulator.analyzer.workflow.core.runconfig;
 
 import java.util.ArrayList;
 import java.util.List;

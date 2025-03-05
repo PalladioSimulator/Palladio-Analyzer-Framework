@@ -4,9 +4,8 @@
 package org.palladiosimulator.analyzer.accuracy.transformation;
 
 import org.palladiosimulator.analyzer.quality.qualityannotation.REPrecision;
-
-import org.palladiosimulator.analyzer.workflow.blackboard.PCMResourceSetPartition;
-import org.palladiosimulator.analyzer.workflow.runconfig.AccuracyInfluenceAnalysisState;
+import org.palladiosimulator.analyzer.workflow.core.blackboard.PCMResourceSetPartition;
+import org.palladiosimulator.analyzer.workflow.core.runconfig.AccuracyInfluenceAnalysisState;
 import org.palladiosimulator.pcm.seff.ExternalCallAction;
 import org.palladiosimulator.pcm.seff.InternalCallAction;
 import org.palladiosimulator.pcm.seff.ServiceEffectSpecification;
