@@ -1,4 +1,4 @@
-package org.palladiosimulator.analyzer.accuracy.jobs;
+package org.palladiosimulator.analyzer.accuracy.ui.jobs;
 
 import org.eclipse.core.runtime.CoreException;
 import org.palladiosimulator.analyzer.workflow.core.configurations.AbstractPCMWorkflowRunConfiguration;
