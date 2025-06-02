@@ -1,9 +1,9 @@
-package org.palladiosimulator.analyzer.accuracy.jobs;
+package org.palladiosimulator.analyzer.accuracy.ui.jobs;
 
 import org.eclipse.core.runtime.CoreException;
 import org.palladiosimulator.analyzer.workflow.core.configurations.AbstractPCMWorkflowRunConfiguration;
+import org.palladiosimulator.analyzer.workflow.core.jobs.PCMWorkflowJobBuilder;
 import org.palladiosimulator.analyzer.workflow.core.runconfig.AccuracyInfluenceAnalysisState;
-import org.palladiosimulator.analyzer.workflow.jobs.PCMWorkflowJobBuilder;
 
 import de.uka.ipd.sdq.workflow.jobs.IBlackboardInteractingJob;
 import de.uka.ipd.sdq.workflow.jobs.SequentialBlackboardInteractingJob;
