@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.palladiosimulator.analyzer.completions;singleton:=true
 Automatic-Module-Name: org.palladiosimulator.analyzer.completions
-Bundle-Version: 5.2.2
+Bundle-Version: 6.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
@@ -12,12 +12,12 @@ Export-Package: org.palladiosimulator.analyzer.completions,
  org.palladiosimulator.analyzer.completions.util
 Require-Bundle: org.eclipse.core.runtime;bundle-version="3.10.0",
  org.eclipse.emf.ecore;bundle-version="2.10.2";visibility:=reexport,
- de.uka.ipd.sdq.identifier;bundle-version="2.1.0";visibility:=reexport,
- org.palladiosimulator.pcm;bundle-version="4.0.0";visibility:=reexport,
- de.uka.ipd.sdq.probfunction;bundle-version="2.1.0";visibility:=reexport,
- de.uka.ipd.sdq.stoex;bundle-version="2.2.0";visibility:=reexport,
- de.uka.ipd.sdq.units;bundle-version="2.1.0";visibility:=reexport,
+ de.uka.ipd.sdq.identifier;visibility:=reexport,
+ org.palladiosimulator.pcm;visibility:=reexport,
+ de.uka.ipd.sdq.probfunction;visibility:=reexport,
+ de.uka.ipd.sdq.stoex;visibility:=reexport,
+ de.uka.ipd.sdq.units;visibility:=reexport,
  org.eclipse.ocl.ecore;bundle-version="3.3.100";visibility:=reexport,
- org.palladiosimulator.framework.mwe2;bundle-version="5.2.2";resolution:=optional
+ org.palladiosimulator.framework.mwe2;resolution:=optional
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

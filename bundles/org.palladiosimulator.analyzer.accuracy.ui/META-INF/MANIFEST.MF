@@ -2,13 +2,13 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Accuracy Influence Analysis UI
 Bundle-SymbolicName: org.palladiosimulator.analyzer.accuracy.ui
-Bundle-Version: 5.2.2
+Bundle-Version: 6.0.0.qualifier
 Export-Package: org.palladiosimulator.analyzer.accuracy.ui.jobs
-Require-Bundle: de.uka.ipd.sdq.errorhandling;bundle-version="5.2.2",
- org.palladiosimulator.analyzer.accuracy;bundle-version="5.2.2",
- de.uka.ipd.sdq.workflow.mdsd.blackboard;bundle-version="5.2.2",
- org.palladiosimulator.analyzer.workflow.core;bundle-version="5.2.2",
- de.uka.ipd.sdq.workflow.launchconfig.core;bundle-version="5.2.2"
+Require-Bundle: de.uka.ipd.sdq.errorhandling,
+ org.palladiosimulator.analyzer.accuracy,
+ de.uka.ipd.sdq.workflow.mdsd.blackboard,
+ org.palladiosimulator.analyzer.workflow.core,
+ de.uka.ipd.sdq.workflow.launchconfig.core
 Bundle-Vendor: palladiosimulator.org
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 
