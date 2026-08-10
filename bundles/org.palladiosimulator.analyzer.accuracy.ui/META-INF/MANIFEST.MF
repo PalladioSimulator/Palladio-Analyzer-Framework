@@ -10,5 +10,5 @@ Require-Bundle: de.uka.ipd.sdq.errorhandling,
  org.palladiosimulator.analyzer.workflow.core,
  de.uka.ipd.sdq.workflow.launchconfig.core
 Bundle-Vendor: palladiosimulator.org
-Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-RequiredExecutionEnvironment: JavaSE-21
 
