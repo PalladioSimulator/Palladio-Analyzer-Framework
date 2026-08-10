@@ -21,5 +21,5 @@ Require-Bundle: org.apache.log4j;bundle-version="1.2.19",
  de.uka.ipd.sdq.workflow.mdsd.blackboard,
  de.uka.ipd.sdq.featureconfig
 Bundle-Vendor: palladiosimulator.org
-Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-RequiredExecutionEnvironment: JavaSE-21
 Bundle-ActivationPolicy: lazy
